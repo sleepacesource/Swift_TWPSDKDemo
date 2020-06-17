@@ -17,7 +17,7 @@ class MainViewController: UITabBarController {
         
         self.addChildVC(childVC: LoginViewController(), title: "登录", index: 0)
         self.addChildVC(childVC: DeviceViewController(), title: "设备", index: 1)
-        self.addChildVC(childVC: ReportViewController(), title: "报告", index: 2)
+        self.addChildVC(childVC: DataViewController(), title: "报告", index: 2)
     }
     
     func addChildVC(childVC:UIViewController,title:String,index:Int) {

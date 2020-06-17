@@ -9,6 +9,36 @@
 /* Begin PBXBuildFile section */
 		268329522492428E0032F3F4 /* SLPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268329502492428D0032F3F4 /* SLPCommon.framework */; };
 		268329532492428E0032F3F4 /* SLPTCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268329512492428D0032F3F4 /* SLPTCP.framework */; };
+		26841E262499C40600DC50D3 /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26841E232499C40600DC50D3 /* DataViewController.xib */; };
+		26841E272499C40600DC50D3 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E252499C40600DC50D3 /* DataViewController.m */; };
+		26841E512499C4A500DC50D3 /* SleepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E2F2499C4A500DC50D3 /* SleepView.m */; };
+		26841E522499C4A500DC50D3 /* FixView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E302499C4A500DC50D3 /* FixView.m */; };
+		26841E532499C4A500DC50D3 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E322499C4A500DC50D3 /* NSObject+SBJson.m */; };
+		26841E542499C4A500DC50D3 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E3B2499C4A500DC50D3 /* SBJsonStreamParser.m */; };
+		26841E552499C4A500DC50D3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E3C2499C4A500DC50D3 /* SBJsonParser.m */; };
+		26841E562499C4A500DC50D3 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E3D2499C4A500DC50D3 /* SBJsonStreamParserAccumulator.m */; };
+		26841E572499C4A500DC50D3 /* SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E3E2499C4A500DC50D3 /* SBJson.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		26841E582499C4A500DC50D3 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E3F2499C4A500DC50D3 /* SBJsonUTF8Stream.m */; };
+		26841E592499C4A500DC50D3 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E402499C4A500DC50D3 /* SBJsonStreamParserState.m */; };
+		26841E5A2499C4A500DC50D3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E422499C4A500DC50D3 /* SBJsonWriter.m */; };
+		26841E5B2499C4A500DC50D3 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E432499C4A500DC50D3 /* SBJsonStreamWriter.m */; };
+		26841E5C2499C4A500DC50D3 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E442499C4A500DC50D3 /* SBJsonStreamParserAdapter.m */; };
+		26841E5D2499C4A500DC50D3 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E452499C4A500DC50D3 /* SBJsonStreamWriterAccumulator.m */; };
+		26841E5E2499C4A500DC50D3 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E482499C4A500DC50D3 /* SBJsonStreamWriterState.m */; };
+		26841E5F2499C4A500DC50D3 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E492499C4A500DC50D3 /* SBJsonTokeniser.m */; };
+		26841E602499C4A500DC50D3 /* ToolKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E4C2499C4A500DC50D3 /* ToolKit.m */; };
+		26841E612499C4A500DC50D3 /* FixTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E4D2499C4A500DC50D3 /* FixTimeView.m */; };
+		26841E622499C4A500DC50D3 /* HeartCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E4E2499C4A500DC50D3 /* HeartCurveView.m */; };
+		26841E632499C4A500DC50D3 /* UserObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E4F2499C4A500DC50D3 /* UserObj.m */; };
+		26841E692499C4BE00DC50D3 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E652499C4BE00DC50D3 /* Tool.m */; };
+		26841E6A2499C4BE00DC50D3 /* FontColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E662499C4BE00DC50D3 /* FontColor.m */; };
+		26841E712499C54A00DC50D3 /* SLPUnderlineButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E6C2499C54A00DC50D3 /* SLPUnderlineButton.m */; };
+		26841E722499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26841E6E2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib */; };
+		26841E732499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E6F2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.m */; };
+		26841E7D2499C8AB00DC50D3 /* SimulateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E752499C8AA00DC50D3 /* SimulateData.m */; };
+		26841E7E2499C8AB00DC50D3 /* DealWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E772499C8AA00DC50D3 /* DealWithData.m */; };
+		26841E7F2499C8AB00DC50D3 /* SimulateData+ScoreDeduction.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E7B2499C8AA00DC50D3 /* SimulateData+ScoreDeduction.m */; };
+		26841E802499C8AB00DC50D3 /* UpgradeInfoObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 26841E7C2499C8AA00DC50D3 /* UpgradeInfoObj.m */; };
 		2684E90C2490C52E00ADF97E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684E90B2490C52E00ADF97E /* AppDelegate.swift */; };
 		2684E9132490C52E00ADF97E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2684E9112490C52E00ADF97E /* Main.storyboard */; };
 		2684E9152490C53200ADF97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2684E9142490C53200ADF97E /* Assets.xcassets */; };
@@ -28,6 +58,66 @@
 /* Begin PBXFileReference section */
 		268329502492428D0032F3F4 /* SLPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SLPCommon.framework; sourceTree = "<group>"; };
 		268329512492428D0032F3F4 /* SLPTCP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SLPTCP.framework; sourceTree = "<group>"; };
+		26841E222499C40500DC50D3 /* Swift_TWPSDKDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_TWPSDKDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		26841E232499C40600DC50D3 /* DataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataViewController.xib; sourceTree = "<group>"; };
+		26841E242499C40600DC50D3 /* DataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		26841E252499C40600DC50D3 /* DataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		26841E292499C4A500DC50D3 /* HeartCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartCurveView.h; sourceTree = "<group>"; };
+		26841E2A2499C4A500DC50D3 /* UserObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserObj.h; sourceTree = "<group>"; };
+		26841E2B2499C4A500DC50D3 /* FixTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixTimeView.h; sourceTree = "<group>"; };
+		26841E2C2499C4A500DC50D3 /* FixView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixView.h; sourceTree = "<group>"; };
+		26841E2D2499C4A500DC50D3 /* ToolKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKit.h; sourceTree = "<group>"; };
+		26841E2E2499C4A500DC50D3 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		26841E2F2499C4A500DC50D3 /* SleepView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepView.m; sourceTree = "<group>"; };
+		26841E302499C4A500DC50D3 /* FixView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixView.m; sourceTree = "<group>"; };
+		26841E322499C4A500DC50D3 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		26841E332499C4A500DC50D3 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		26841E342499C4A500DC50D3 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		26841E352499C4A500DC50D3 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		26841E362499C4A500DC50D3 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		26841E372499C4A500DC50D3 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		26841E382499C4A500DC50D3 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		26841E392499C4A500DC50D3 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		26841E3A2499C4A500DC50D3 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		26841E3B2499C4A500DC50D3 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		26841E3C2499C4A500DC50D3 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		26841E3D2499C4A500DC50D3 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		26841E3E2499C4A500DC50D3 /* SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson.m; sourceTree = "<group>"; };
+		26841E3F2499C4A500DC50D3 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		26841E402499C4A500DC50D3 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		26841E412499C4A500DC50D3 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		26841E422499C4A500DC50D3 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		26841E432499C4A500DC50D3 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		26841E442499C4A500DC50D3 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		26841E452499C4A500DC50D3 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		26841E462499C4A500DC50D3 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		26841E472499C4A500DC50D3 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		26841E482499C4A500DC50D3 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		26841E492499C4A500DC50D3 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		26841E4A2499C4A500DC50D3 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		26841E4B2499C4A500DC50D3 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		26841E4C2499C4A500DC50D3 /* ToolKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKit.m; sourceTree = "<group>"; };
+		26841E4D2499C4A500DC50D3 /* FixTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixTimeView.m; sourceTree = "<group>"; };
+		26841E4E2499C4A500DC50D3 /* HeartCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartCurveView.m; sourceTree = "<group>"; };
+		26841E4F2499C4A500DC50D3 /* UserObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserObj.m; sourceTree = "<group>"; };
+		26841E502499C4A500DC50D3 /* SleepView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepView.h; sourceTree = "<group>"; };
+		26841E652499C4BE00DC50D3 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		26841E662499C4BE00DC50D3 /* FontColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontColor.m; sourceTree = "<group>"; };
+		26841E672499C4BE00DC50D3 /* FontColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontColor.h; sourceTree = "<group>"; };
+		26841E682499C4BE00DC50D3 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		26841E6C2499C54A00DC50D3 /* SLPUnderlineButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLPUnderlineButton.m; sourceTree = "<group>"; };
+		26841E6D2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLPTitleValueArrowTableViewCell.h; sourceTree = "<group>"; };
+		26841E6E2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLPTitleValueArrowTableViewCell.xib; sourceTree = "<group>"; };
+		26841E6F2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLPTitleValueArrowTableViewCell.m; sourceTree = "<group>"; };
+		26841E702499C54A00DC50D3 /* SLPUnderlineButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLPUnderlineButton.h; sourceTree = "<group>"; };
+		26841E752499C8AA00DC50D3 /* SimulateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimulateData.m; sourceTree = "<group>"; };
+		26841E762499C8AA00DC50D3 /* SimulateData+ScoreDeduction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimulateData+ScoreDeduction.h"; sourceTree = "<group>"; };
+		26841E772499C8AA00DC50D3 /* DealWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealWithData.m; sourceTree = "<group>"; };
+		26841E782499C8AA00DC50D3 /* UpgradeInfoObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeInfoObj.h; sourceTree = "<group>"; };
+		26841E792499C8AA00DC50D3 /* SimulateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimulateData.h; sourceTree = "<group>"; };
+		26841E7A2499C8AA00DC50D3 /* DealWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealWithData.h; sourceTree = "<group>"; };
+		26841E7B2499C8AA00DC50D3 /* SimulateData+ScoreDeduction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SimulateData+ScoreDeduction.m"; sourceTree = "<group>"; };
+		26841E7C2499C8AA00DC50D3 /* UpgradeInfoObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeInfoObj.m; sourceTree = "<group>"; };
 		2684E9082490C52E00ADF97E /* Swift_TWPSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_TWPSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2684E90B2490C52E00ADF97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2684E9122490C52E00ADF97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +155,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26841E282499C4A500DC50D3 /* Curvive */ = {
+			isa = PBXGroup;
+			children = (
+				26841E2E2499C4A500DC50D3 /* Define.h */,
+				26841E2B2499C4A500DC50D3 /* FixTimeView.h */,
+				26841E4D2499C4A500DC50D3 /* FixTimeView.m */,
+				26841E2C2499C4A500DC50D3 /* FixView.h */,
+				26841E302499C4A500DC50D3 /* FixView.m */,
+				26841E292499C4A500DC50D3 /* HeartCurveView.h */,
+				26841E4E2499C4A500DC50D3 /* HeartCurveView.m */,
+				26841E312499C4A500DC50D3 /* SBJSON */,
+				26841E502499C4A500DC50D3 /* SleepView.h */,
+				26841E2F2499C4A500DC50D3 /* SleepView.m */,
+				26841E2D2499C4A500DC50D3 /* ToolKit.h */,
+				26841E4C2499C4A500DC50D3 /* ToolKit.m */,
+				26841E2A2499C4A500DC50D3 /* UserObj.h */,
+				26841E4F2499C4A500DC50D3 /* UserObj.m */,
+			);
+			path = Curvive;
+			sourceTree = "<group>";
+		};
+		26841E312499C4A500DC50D3 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				26841E322499C4A500DC50D3 /* NSObject+SBJson.m */,
+				26841E332499C4A500DC50D3 /* SBJsonStreamParserState.h */,
+				26841E342499C4A500DC50D3 /* SBJsonUTF8Stream.h */,
+				26841E352499C4A500DC50D3 /* SBJsonStreamWriterAccumulator.h */,
+				26841E362499C4A500DC50D3 /* SBJsonStreamParserAdapter.h */,
+				26841E372499C4A500DC50D3 /* SBJsonStreamWriter.h */,
+				26841E382499C4A500DC50D3 /* SBJsonWriter.h */,
+				26841E392499C4A500DC50D3 /* SBJsonStreamWriterState.h */,
+				26841E3A2499C4A500DC50D3 /* SBJsonTokeniser.h */,
+				26841E3B2499C4A500DC50D3 /* SBJsonStreamParser.m */,
+				26841E3C2499C4A500DC50D3 /* SBJsonParser.m */,
+				26841E3D2499C4A500DC50D3 /* SBJsonStreamParserAccumulator.m */,
+				26841E3E2499C4A500DC50D3 /* SBJson.m */,
+				26841E3F2499C4A500DC50D3 /* SBJsonUTF8Stream.m */,
+				26841E402499C4A500DC50D3 /* SBJsonStreamParserState.m */,
+				26841E412499C4A500DC50D3 /* NSObject+SBJson.h */,
+				26841E422499C4A500DC50D3 /* SBJsonWriter.m */,
+				26841E432499C4A500DC50D3 /* SBJsonStreamWriter.m */,
+				26841E442499C4A500DC50D3 /* SBJsonStreamParserAdapter.m */,
+				26841E452499C4A500DC50D3 /* SBJsonStreamWriterAccumulator.m */,
+				26841E462499C4A500DC50D3 /* SBJsonParser.h */,
+				26841E472499C4A500DC50D3 /* SBJsonStreamParser.h */,
+				26841E482499C4A500DC50D3 /* SBJsonStreamWriterState.m */,
+				26841E492499C4A500DC50D3 /* SBJsonTokeniser.m */,
+				26841E4A2499C4A500DC50D3 /* SBJson.h */,
+				26841E4B2499C4A500DC50D3 /* SBJsonStreamParserAccumulator.h */,
+			);
+			path = SBJSON;
+			sourceTree = "<group>";
+		};
+		26841E642499C4BE00DC50D3 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				26841E672499C4BE00DC50D3 /* FontColor.h */,
+				26841E662499C4BE00DC50D3 /* FontColor.m */,
+				26841E682499C4BE00DC50D3 /* Tool.h */,
+				26841E652499C4BE00DC50D3 /* Tool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		26841E6B2499C54A00DC50D3 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				26841E6D2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.h */,
+				26841E6F2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.m */,
+				26841E6E2499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib */,
+				26841E702499C54A00DC50D3 /* SLPUnderlineButton.h */,
+				26841E6C2499C54A00DC50D3 /* SLPUnderlineButton.m */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		26841E742499C8AA00DC50D3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				26841E7A2499C8AA00DC50D3 /* DealWithData.h */,
+				26841E772499C8AA00DC50D3 /* DealWithData.m */,
+				26841E792499C8AA00DC50D3 /* SimulateData.h */,
+				26841E752499C8AA00DC50D3 /* SimulateData.m */,
+				26841E762499C8AA00DC50D3 /* SimulateData+ScoreDeduction.h */,
+				26841E7B2499C8AA00DC50D3 /* SimulateData+ScoreDeduction.m */,
+				26841E782499C8AA00DC50D3 /* UpgradeInfoObj.h */,
+				26841E7C2499C8AA00DC50D3 /* UpgradeInfoObj.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		2684E8FF2490C52E00ADF97E = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +279,19 @@
 				269069AD249315D50043F67B /* DeviceViewController.xib */,
 				269069B0249315E40043F67B /* ReportViewController.swift */,
 				269069B1249315E40043F67B /* ReportViewController.xib */,
+				26841E242499C40600DC50D3 /* DataViewController.h */,
+				26841E252499C40600DC50D3 /* DataViewController.m */,
+				26841E232499C40600DC50D3 /* DataViewController.xib */,
+				26841E742499C8AA00DC50D3 /* Data */,
+				26841E6B2499C54A00DC50D3 /* CommonUI */,
+				26841E642499C4BE00DC50D3 /* Tool */,
+				26841E282499C4A500DC50D3 /* Curvive */,
 				2684E9112490C52E00ADF97E /* Main.storyboard */,
 				2684E9142490C53200ADF97E /* Assets.xcassets */,
 				2684E9162490C53200ADF97E /* LaunchScreen.storyboard */,
 				2684E9192490C53200ADF97E /* Info.plist */,
 				269069C224937F990043F67B /* Localizable.strings */,
+				26841E222499C40500DC50D3 /* Swift_TWPSDKDemo-Bridging-Header.h */,
 			);
 			path = Swift_TWPSDKDemo;
 			sourceTree = "<group>";
@@ -156,6 +346,7 @@
 				TargetAttributes = {
 					2684E9072490C52E00ADF97E = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -184,6 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				269069AF249315D50043F67B /* DeviceViewController.xib in Resources */,
+				26841E262499C40600DC50D3 /* DataViewController.xib in Resources */,
+				26841E722499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib in Resources */,
 				269069B3249315E40043F67B /* ReportViewController.xib in Resources */,
 				2684E9182490C53200ADF97E /* LaunchScreen.storyboard in Resources */,
 				269069AB249315A30043F67B /* MainViewController.xib in Resources */,
@@ -226,11 +419,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26841E512499C4A500DC50D3 /* SleepView.m in Sources */,
 				269069AE249315D50043F67B /* DeviceViewController.swift in Sources */,
+				26841E5F2499C4A500DC50D3 /* SBJsonTokeniser.m in Sources */,
+				26841E5D2499C4A500DC50D3 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				26841E562499C4A500DC50D3 /* SBJsonStreamParserAccumulator.m in Sources */,
+				26841E592499C4A500DC50D3 /* SBJsonStreamParserState.m in Sources */,
+				26841E602499C4A500DC50D3 /* ToolKit.m in Sources */,
+				26841E622499C4A500DC50D3 /* HeartCurveView.m in Sources */,
 				269069AA249315A30043F67B /* MainViewController.swift in Sources */,
+				26841E5A2499C4A500DC50D3 /* SBJsonWriter.m in Sources */,
+				26841E5B2499C4A500DC50D3 /* SBJsonStreamWriter.m in Sources */,
 				2684E90C2490C52E00ADF97E /* AppDelegate.swift in Sources */,
+				26841E5E2499C4A500DC50D3 /* SBJsonStreamWriterState.m in Sources */,
+				26841E692499C4BE00DC50D3 /* Tool.m in Sources */,
+				26841E552499C4A500DC50D3 /* SBJsonParser.m in Sources */,
 				269069B6249316400043F67B /* LoginViewController.swift in Sources */,
+				26841E572499C4A500DC50D3 /* SBJson.m in Sources */,
+				26841E612499C4A500DC50D3 /* FixTimeView.m in Sources */,
+				26841E732499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.m in Sources */,
+				26841E632499C4A500DC50D3 /* UserObj.m in Sources */,
+				26841E7E2499C8AB00DC50D3 /* DealWithData.m in Sources */,
+				26841E272499C40600DC50D3 /* DataViewController.m in Sources */,
+				26841E7D2499C8AB00DC50D3 /* SimulateData.m in Sources */,
+				26841E712499C54A00DC50D3 /* SLPUnderlineButton.m in Sources */,
+				26841E522499C4A500DC50D3 /* FixView.m in Sources */,
+				26841E802499C8AB00DC50D3 /* UpgradeInfoObj.m in Sources */,
+				26841E532499C4A500DC50D3 /* NSObject+SBJson.m in Sources */,
+				26841E582499C4A500DC50D3 /* SBJsonUTF8Stream.m in Sources */,
+				26841E6A2499C4BE00DC50D3 /* FontColor.m in Sources */,
+				26841E7F2499C8AB00DC50D3 /* SimulateData+ScoreDeduction.m in Sources */,
 				269069B2249315E40043F67B /* ReportViewController.swift in Sources */,
+				26841E542499C4A500DC50D3 /* SBJsonStreamParser.m in Sources */,
+				26841E5C2499C4A500DC50D3 /* SBJsonStreamParserAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +609,7 @@
 			baseConfigurationReference = 4A6685A45DCB1F94F3AF82F7 /* Pods-Swift_TWPSDKDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV3296URNT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -401,6 +623,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.Swift-TWPSDKDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_TWPSDKDemo/Swift_TWPSDKDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -411,6 +635,7 @@
 			baseConfigurationReference = 6E7E45729FDAB5A773D8B890 /* Pods-Swift_TWPSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV3296URNT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -424,6 +649,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.Swift-TWPSDKDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_TWPSDKDemo/Swift_TWPSDKDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

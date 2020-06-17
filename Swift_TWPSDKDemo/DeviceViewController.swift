@@ -44,25 +44,23 @@ class DeviceViewController: UIViewController {
     }
     
     func initUI() -> Void {
-        self.startRealtimeData.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.startRealtimeData.layer.cornerRadius = 2.0;
         self.startRealtimeData.layer.masksToBounds = true;
-        self.stopRealtimeData.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+        
         self.stopRealtimeData.layer.cornerRadius = 2.0;
         self.stopRealtimeData.layer.masksToBounds = true;
-        self.stopCollect.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+        
         self.stopCollect.layer.cornerRadius = 2.0;
         self.stopCollect.layer.masksToBounds = true;
-        self.checkEnviBT.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+        
         self.checkEnviBT.layer.cornerRadius = 2.0;
         self.checkEnviBT.layer.masksToBounds = true;
-        self.checkSleepStatusBT.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+        
         self.checkSleepStatusBT.layer.cornerRadius = 2.0;
         self.checkSleepStatusBT.layer.masksToBounds = true;
-        self.checkDeviceOnlineBT.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
+        
         self.checkDeviceOnlineBT.layer.cornerRadius = 2.0;
         self.checkDeviceOnlineBT.layer.masksToBounds = true;
-        
         
         self.startRealtimeData.setTitle(NSLocalizedString("startRealtimeData", comment: ""), for: UIControl.State.normal)
         self.stopRealtimeData.setTitle(NSLocalizedString("stopRealtimeData", comment: ""), for: UIControl.State.normal)
@@ -82,15 +80,15 @@ class DeviceViewController: UIViewController {
         
         let time = UInt32(NSDate().timeIntervalSince1970)
         //start collect
-//        SLPLTcpManager.sharedInstance()?.startCollection(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP2, userID: "363590", timeStamp: time, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?)  in
-//            if status == SLPDataTransferStatus.succeed
-//            {
-//                 print("start collect data succeed !")
-//            }
-//            else{
-//                print("start collect data failed !")
-//            }
-//        })
+        //        SLPLTcpManager.sharedInstance()?.startCollection(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP2, userID: "363590", timeStamp: time, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?)  in
+        //            if status == SLPDataTransferStatus.succeed
+        //            {
+        //                 print("start collect data succeed !")
+        //            }
+        //            else{
+        //                print("start collect data failed !")
+        //            }
+        //        })
         
         SLPLTcpManager.sharedInstance()?.startRealTimeData(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.TWP2, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
@@ -158,11 +156,12 @@ class DeviceViewController: UIViewController {
         SLPLTcpManager.sharedInstance()?.publicGetOnlineStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP2, timeout: 15.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
-                
                 print("check device oneline status succeed !")
                 let onlineInfo : SLPTCPOnlineStatus = data as! SLPTCPOnlineStatus
                 
-                self.deviceOnlineStatusLabel.text =  self.str5 + "\(onlineInfo.isOnline)"
+                let onlineStr = onlineInfo.isOnline ? NSLocalizedString("online", comment: "在线") : NSLocalizedString("offline", comment: "不在线")
+                
+                self.deviceOnlineStatusLabel.text =  self.str5 +  onlineStr
             }
             else
             {
@@ -173,19 +172,33 @@ class DeviceViewController: UIViewController {
     }
     
     @IBAction func checkMonitorStatus(_ sender: Any) {
-        SLPLTcpManager.sharedInstance()?.getCollectionState(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP2, timeout: 15.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        
+        SLPLTcpManager.sharedInstance()?.getSleepStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP2, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?)in
             if status == SLPDataTransferStatus.succeed
             {
                 print("check monitor succeed !")
-                let sleepInfo : SLPCollectStatus = data as! SLPCollectStatus
+                let sleepInfo : SLPSleepStatus = data as! SLPSleepStatus
                 
-                self.sleepStatus.text = self.str6 + "\(sleepInfo.isCollecting)"
+                let leftbedStr = sleepInfo.leftbedFlag == 1 ? NSLocalizedString("out_bed", comment: "离床") : NSLocalizedString("in_bed", comment: "在床")
+                var sleepStr: String = ""
+                switch sleepInfo.sleepStatus {
+                case 0x01:
+                    sleepStr = NSLocalizedString("wake_", comment: "清醒")
+                case 0x02:
+                    sleepStr = NSLocalizedString("light_", comment: "浅睡")
+                case 0x03:
+                    sleepStr = NSLocalizedString("mid_", comment: "中睡")
+                case 0x04:
+                    sleepStr = NSLocalizedString("deep_", comment: "深睡")
+                default: break
+                    
+                }
+                self.sleepStatus.text = self.str6 + leftbedStr + "&&" + sleepStr
             }
             else
             {
                 print("check monitor failed !")
             }
-            
         })
     }
     

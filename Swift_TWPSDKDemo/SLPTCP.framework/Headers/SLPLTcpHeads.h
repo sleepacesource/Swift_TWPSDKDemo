@@ -13,7 +13,7 @@
 #import "SLPEnvironmentInfo.h"
 #import "SLPTCPOnlineStatus.h"
 #import "SLPTCPPostRealtimeData.h"
-
-
+#import "SLPSleepStatus.h"
+#import "SLPLTcpUpgradeInfo.h"
 
 #endif /* SLPLTcpHeads_h */

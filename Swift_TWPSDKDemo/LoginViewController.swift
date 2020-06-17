@@ -29,10 +29,8 @@ class LoginViewController: UIViewController {
     }
     
     func initUI() -> Void {
-        self.connectBT.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.connectBT.layer.cornerRadius = 2.0;
         self.connectBT.layer.masksToBounds = true;
-        self.upgradeBT.backgroundColor = UIColor.init(red: 42/255.0, green: 151/255.0, blue: 254/255.0, alpha: 1.0)
         self.upgradeBT.layer.cornerRadius = 2.0;
         self.upgradeBT.layer.masksToBounds = true;
     }

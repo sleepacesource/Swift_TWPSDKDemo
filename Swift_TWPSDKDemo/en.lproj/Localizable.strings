@@ -61,6 +61,7 @@
 "wake"="Awake";
 "sleep"="Fall Asleep";
 "out_bed"="Left Bed";
+"in_bed" ="In bed";
 "sleep_analysis"="Sleep Analysis";
 "imitate_data"="Simulation Data";
 "start_collection"="Start Collecting";
@@ -228,3 +229,5 @@
 "get_working_status"="Get device working status: %@";
 "remark_1"="To ensure the accuracy of sleep analysis, set the length to 3 to 16 hours. And ensure that the connected device is saved.";
 "getting_real_time_data"="Getting real-time data";
+"online" = "Online";
+"offline" = "Offline";

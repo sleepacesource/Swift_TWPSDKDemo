@@ -83,6 +83,7 @@ typedef NS_ENUM(NSInteger,SLPLTCPMessagetUniqTypes) {
     SLPLTCPMessagetUniqType_Mattress_QueryServiceAddress,
     SLPLTCPMessagetUniqType_Mattress_QueryBatteryInfo,
     SLPLTCPMessagetUniqType_Mattress_QueryEnvInfo,
+    SLPLTCPMessagetUniqType_Mattress_QuerySleepStatus,
     SLPLTCPMessagetUniqType_Mattress_QueryWiFiStatus,
     SLPLTCPMessagetUniqType_Mattress_QueryWiFiList,
     SLPLTCPMessagetUniqType_Mattress_QueryDeviceInfo,

@@ -9,6 +9,7 @@
 #import <SLPTCP/SLPTCP.h>
 #import "SLPCollectStatus.h"
 #import "SLPEnvironmentInfo.h"
+#import "SLPSleepStatus.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,7 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: - Query
 
-- (void)getCollectionStateWithDeviceID:(NSString *)deviceID deviceType:(SLPDeviceTypes)deviceType timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
+- (void)getCollectionStatusWithDeviceID:(NSString *)deviceID deviceType:(SLPDeviceTypes)deviceType timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
+
+- (void)getSleepStatusWithDeviceID:(NSString *)deviceID deviceType:(SLPDeviceTypes)deviceType timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
 
 - (void)getEnvironmentInfoWithDeviceID:(NSString *)deviceID timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
 

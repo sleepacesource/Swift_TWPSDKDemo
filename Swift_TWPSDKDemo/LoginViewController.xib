@@ -49,7 +49,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leA-po-DU2">
-                    <rect key="frame" x="39" y="401" width="296" height="30"/>
+                    <rect key="frame" x="39" y="401" width="296" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="升级固件">
@@ -60,7 +60,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OJ-gk-nsF">
-                    <rect key="frame" x="39" y="225" width="296" height="30"/>
+                    <rect key="frame" x="39" y="225" width="296" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.46274509803921571" green="0.73725490196078436" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="连接设备">

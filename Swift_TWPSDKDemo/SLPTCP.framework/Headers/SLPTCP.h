@@ -10,7 +10,6 @@
 
 #import "GCDAsyncSocket.h"
 #import "GCDAsyncUdpSocket.h"
-#import "SLPTCPDelegate.h"
 #import "SLPLTcpManager.h"
 #import "SLPLTcpManager+Public.h"
 #import "SLPLTcpManager+TWP.h"

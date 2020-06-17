@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Swift_TWPSDKDemo
+
+  Created by San on 12/6/2020.
+  Copyright © 2020 medica. All rights reserved.
+*/
+"realtimeMonitorStatus" = "realtime monitor status:";
+"realtimeRate" ="realtime heartbeat breathe rate:";
+"realtimeEnvi" = "realtime temp hum:";
+"envi" = "temp and hum:";
+"deviceOnlineStatus" = "device online:" ;
+"monitorStatus" = "device monitor:";
+
+"startRealtimeData" = "Start get realtime data";
+"stopRealtimeData" = "Stop get realtime data";
+"stopMonitor" = "Stop monitor";
+"checkCurrentEnvi" ="Check temperature humidity";
+"checkDeviceOnlineStatus" ="Check device online status";
+"checkMonitorStatus" ="Check device monitor status";

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Swift_TWPSDKDemo
+
+  Created by San on 12/6/2020.
+  Copyright © 2020 medica. All rights reserved.
+*/
+"realtimeMonitorStatus" = "实时睡眠状态：";
+"realtimeRate" ="实时心率呼吸率：";
+"realtimeEnvi" = "实时温湿度：";
+"envi" = "当前温度湿度：";
+"deviceOnlineStatus" = "当前设备状态：" ;
+"monitorStatus" = "当前睡眠状态：";
+
+"startRealtimeData" = "开始获取实时数据";
+"stopRealtimeData" = "停止获取实时数据";
+"stopMonitor" = "手动结束监测";
+"checkCurrentEnvi" ="查询当前温湿度";
+"checkDeviceOnlineStatus" ="查询在线状态";
+"checkMonitorStatus" ="查询睡眠状态";
+
+
+

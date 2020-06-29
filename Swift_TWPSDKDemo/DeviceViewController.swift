@@ -167,8 +167,8 @@ class DeviceViewController: UIViewController {
             {
                 print("check device oneline status failed !")
             }
-            
         })
+        
     }
     
     @IBAction func checkMonitorStatus(_ sender: Any) {

@@ -101,6 +101,7 @@ typedef NS_ENUM(NSInteger,SLPLTCPMessagetUniqTypes) {
     SLPLTCPMessagetUniqType_EW202W_GetClockDormancyBean,
     SLPLTCPMessagetUniqType_EW202W_SetAidInfo,
     SLPLTCPMessagetUniqType_EW202W_ConfigSystem,
+    SLPLTCPMessagetUniqType_EW202W_GetSystem,
     SLPLTCPMessagetUniqType_EW202W_PostWorkMode,//EW202W主动发送的工作信息发生改变
     SLPlTCPMessagetUniqType_None,
 };
@@ -122,6 +123,7 @@ enum{
     SLP_LTcp_Error_RestonConnectFailed = 0x0d,//RestOn连接失败
     SLP_LTcp_Error_BluetoothBusy = 0x0e,//蓝牙主模块忙
     SLP_LTcp_Error_IsUpgrade = 0x0f,//正在升级
+    SLP_LTcp_Error_ConfigMode = 0x10,//配置模式
     
     SLP_LTcp_Error_UnKnown = 0xff,//未知错误
 };

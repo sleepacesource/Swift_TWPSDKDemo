@@ -10,9 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Swift_TWPSDKDemo" customModuleProvider="target">
             <connections>
+                <outlet property="bindBT" destination="unJ-B9-EME" id="Lqn-Fc-J1Z"/>
                 <outlet property="channelidTextfield" destination="sxS-XZ-Ets" id="MGm-vg-puK"/>
                 <outlet property="connectBT" destination="5OJ-gk-nsF" id="Gka-e3-EAv"/>
                 <outlet property="deviceIdTextfield" destination="sVD-p0-2yN" id="4IU-tG-QdB"/>
+                <outlet property="unbindBT" destination="ZZR-uc-ezO" id="o2J-7E-Gk5"/>
                 <outlet property="upgradeBT" destination="leA-po-DU2" id="aAp-DC-W8l"/>
                 <outlet property="urlTextfield" destination="ORF-w2-FYT" id="BOo-kI-A5I"/>
                 <outlet property="versionTextfield" destination="Pb1-rm-scj" id="YQM-lJ-SZX"/>
@@ -49,7 +51,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leA-po-DU2">
-                    <rect key="frame" x="39" y="401" width="296" height="40"/>
+                    <rect key="frame" x="39" y="380" width="296" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="升级固件">
@@ -68,6 +70,28 @@
                     </state>
                     <connections>
                         <action selector="connect:" destination="-1" eventType="touchUpInside" id="Z7N-Nc-hcR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unJ-B9-EME">
+                    <rect key="frame" x="39" y="437" width="296" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="绑定设备">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="bind:" destination="-1" eventType="touchUpInside" id="gDZ-h9-M1w"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZR-uc-ezO">
+                    <rect key="frame" x="39" y="495" width="296" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="解绑设备">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="unbind:" destination="-1" eventType="touchUpInside" id="Tor-Z3-LMS"/>
                     </connections>
                 </button>
             </subviews>

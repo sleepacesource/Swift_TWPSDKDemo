@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         self.initUI()
+        self.receiceData()
         
         self.urlTextfield.text = "http://172.14.0.111:8082"
         self.channelidTextfield.text = "13700"
@@ -40,6 +41,12 @@ class LoginViewController: UIViewController {
         self.unbindBT.layer.cornerRadius = 2.0;
         self.unbindBT.layer.masksToBounds = true;
     }
+    
+    func receiceData() -> Void {
+        //post realtime data
+        NotificationCenter.default.addObserver(self, selector: #selector(receive_notifaction(notify:)), name: Notification.Name(kNotificationNameTCPDeviceUpdateRateChanged), object: nil)
+    }
+    
     
     @IBAction func connect(_ sender: Any) {
         let dic = ["url":"http://172.14.0.111:8082","channelID" : "13700"]
@@ -129,6 +136,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @objc func receive_notifaction(notify: NSNotification) -> Void {
+        
+        let progress: SLPLTcpUpgradeInfo = notify.userInfo?[kNotificationPostData] as! SLPLTcpUpgradeInfo
+        
+        print("update progress \(progress.rate)%")
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resignTextfiled()

@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var urlTextfield: UITextField!
     @IBOutlet weak var channelidTextfield: UITextField!
+    @IBOutlet weak var tokeTextfield: UITextField!
     @IBOutlet weak var connectBT: UIButton!
     @IBOutlet weak var deviceIdTextfield: UITextField!
     @IBOutlet weak var versionTextfield: UITextField!
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
         
         self.urlTextfield.text = "http://172.14.0.111:8082"
         self.channelidTextfield.text = "13700"
+        self.tokeTextfield.text = "r8xfa7hdjcm6"
     }
     
     func initUI() -> Void {
@@ -49,15 +51,14 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func connect(_ sender: Any) {
-        let dic = ["url":"http://172.14.0.111:8082","channelID" : "13700"]
+        let dic = ["url": self.urlTextfield.text!,"channelID" : UInt(self.channelidTextfield.text!) ?? 0] as [String : Any]
         SLPHTTPManager.sharedInstance().initHttpServiceInfo(dic);
         
         //http authorize
-        SLPHTTPManager.sharedInstance().authorize("r8xfa7hdjcm6", timeout: 10) { (result: Bool, responseObject: Any, error: String?) in
+        SLPHTTPManager.sharedInstance().authorize(self.tokeTextfield.text!, timeout: 10) { (result: Bool, responseObject: Any, error: String?) in
             print("authorize result-->",result,responseObject)
             //              tcpDic = responseObject[@"data"][@"tcpServer"];
             //              userDic = responseObject[@"data"][@"user"];
-            
             if result {
                 //login device
                 SLPLTcpManager.sharedInstance()?.loginHost("ccc.sleepace.com", port: 9010, deviceID:"jfbkwowszdm6d", token: "sleepace_diXWK4YzweephfNAyGGx", completion: { (succeed: Bool) in
@@ -67,11 +68,10 @@ class LoginViewController: UIViewController {
                 })
             }
             else{
+                
                 print("authorize failed")
             }
         }
-        
-        
     }
     
     @IBAction func upgrade(_ sender: Any) {
@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func bind(_ sender:Any){
-        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: "EW22W20C00044", userID: "33124", timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
+        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: "EW22W20C00044", timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
             var bindStr = ""
             if result
             {
@@ -102,19 +102,14 @@ class LoginViewController: UIViewController {
                 bindStr = "bind failed"
             }
             
-            let alert = UIAlertController.init(title: "", message: bindStr, preferredStyle: .alert)
-            
-            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(cancel)
-            
-            self.present(alert, animated: true, completion: nil)
+             self.alertShow(message: bindStr as NSString)
         }
     }
     
     
     @IBAction func unbind(_ sneder:Any){
         
-        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: "EW22W20C00044", userID: "33124", timeOut: 10.0) { (result: Bool, error: String?) in
+        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: "EW22W20C00044", timeOut: 10.0) { (result: Bool, error: String?) in
             var unbindStr = ""
             if result
             {
@@ -127,12 +122,7 @@ class LoginViewController: UIViewController {
                 unbindStr = "unbind failed"
             }
             
-            let alert = UIAlertController.init(title: "", message: unbindStr, preferredStyle: .alert)
-            
-            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(cancel)
-            
-            self.present(alert, animated: true, completion: nil)
+            self.alertShow(message: unbindStr as NSString)
         }
     }
     
@@ -143,12 +133,20 @@ class LoginViewController: UIViewController {
         print("update progress \(progress.rate)%")
     }
     
+    
+    func alertShow(message: NSString ) -> Void {
+        let alert = UIAlertController.init(title: "", message: message as String, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resignTextfiled()
     }
     
     func resignTextfiled() -> Void {
-        
+        self.tokeTextfield.resignFirstResponder()
         self.urlTextfield.resignFirstResponder()
         self.channelidTextfield.resignFirstResponder()
         self.deviceIdTextfield.resignFirstResponder()

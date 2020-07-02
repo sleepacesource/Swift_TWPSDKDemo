@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         
         self.urlTextfield.text = "http://172.14.0.111:8082"
         self.channelidTextfield.text = "13700"
-        self.tokeTextfield.text = "r8xfa7hdjcm6"
+        self.tokeTextfield.text = "jaker123"
     }
     
     func initUI() -> Void {

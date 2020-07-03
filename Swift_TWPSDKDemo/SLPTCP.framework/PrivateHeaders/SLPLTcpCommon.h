@@ -58,6 +58,7 @@ typedef NS_ENUM(NSInteger,SLPLTCPMessagetUniqTypes) {
     SLPLTCPMessagetUniqType_NoxRequestRealtimeData,//请求实时数据
     SLPLTCPMessagetUniqType_PublicPostRealtimeData,//实时数据报送
     SLPLTCPMessagetUniqType_PublicPostOriginalData,//原始数据
+    SLPLTCPMessagetUniqType_PublicPostHistoryAnalysisData,//历史分析报告数据报送通知
     SLPLTCPMessagetUniqType_NoxNightLightData,  // 小夜灯
     SLPLTCPMessagetUniqType_NoxConfigureAlbum,
     SLPLTCPMessagetUniqType_NoxDeviceInfo,

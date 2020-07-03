@@ -49,5 +49,10 @@
  */
 #define kNotificationNameDeviceSleepStatusChanged @"kNotificationNameDeviceSleepStatusChanged"
 
+/**
+ 历史数据分析概要报送
+ */
+#define kNotificationNameDevicePostHistoryAnalysisData @"kNotificationNameDevicePostHistoryAnalysisData"
+
 
 #endif /* SLPLTcpDef_h */

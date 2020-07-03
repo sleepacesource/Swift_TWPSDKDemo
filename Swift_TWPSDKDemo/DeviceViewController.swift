@@ -100,7 +100,6 @@ class DeviceViewController: UIViewController {
                 print("start realtime data failed !")
             }
         })
-        
     }
     
     @IBAction func stopRealtimeData(_ sender: Any) {
@@ -115,6 +114,9 @@ class DeviceViewController: UIViewController {
                 print("stop realtime data failed !")
             }
             
+            self.realtimeSleepStatus.text = self.str1
+            self.realtimeDataLabel.text = self.str2
+            self.realtimeEnvironmentLabel.text = self.str3
         })
     }
     

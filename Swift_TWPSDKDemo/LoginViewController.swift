@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var upgradeBT: UIButton!
     @IBOutlet weak var bindBT: UIButton!
     @IBOutlet weak var unbindBT: UIButton!
+    @IBOutlet weak var progressLabel: UILabel!
+       
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,9 @@ class LoginViewController: UIViewController {
         self.urlTextfield.text = "http://172.14.0.111:8082"
         self.channelidTextfield.text = "13700"
         self.tokeTextfield.text = "jaker123"
+        
+        self.deviceIdTextfield.text = "jfbkwowszdm6d"
+        self.versionTextfield.text = "2.49"
     }
     
     func initUI() -> Void {
@@ -42,6 +47,8 @@ class LoginViewController: UIViewController {
         self.bindBT.layer.masksToBounds = true;
         self.unbindBT.layer.cornerRadius = 2.0;
         self.unbindBT.layer.masksToBounds = true;
+        
+        self.progressLabel.text = ""
     }
     
     func receiceData() -> Void {
@@ -51,45 +58,62 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func connect(_ sender: Any) {
-        let dic = ["url": self.urlTextfield.text!,"channelID" : UInt(self.channelidTextfield.text!) ?? 0] as [String : Any]
+            
+        let dic = ["url": self.urlTextfield.text!,"channelID" : self.channelidTextfield.text! ]
         SLPHTTPManager.sharedInstance().initHttpServiceInfo(dic);
         
+        var connectStr = ""
         //http authorize
-        SLPHTTPManager.sharedInstance().authorize(self.tokeTextfield.text!, timeout: 10) { (result: Bool, responseObject: Any, error: String?) in
+        SLPHTTPManager.sharedInstance().authorize(self.tokeTextfield.text!, timeout: 0) { (result: Bool, responseObject: Any, error: String?) in
             print("authorize result-->",result,responseObject)
             //              tcpDic = responseObject[@"data"][@"tcpServer"];
             //              userDic = responseObject[@"data"][@"user"];
             if result {
                 //login device
-                SLPLTcpManager.sharedInstance()?.loginHost("ccc.sleepace.com", port: 9010, deviceID:"jfbkwowszdm6d", token: "sleepace_diXWK4YzweephfNAyGGx", completion: { (succeed: Bool) in
+                SLPLTcpManager.sharedInstance()?.loginHost("120.24.169.204", port: 27010, deviceID:"jfbkwowszdm6d", token: "sleepace_uBgfjEirX5uo2CEW7AQB", completion: { (succeed: Bool) in
                     
                     print("login tcp result ---",succeed)
+                    if succeed
+                    {
+                        connectStr = "connected succeed"
+                    }
+                    else
+                    {
+                        connectStr = "connected failed"
+                    }
                     
+                    self.alertShow(message: connectStr as NSString)
                 })
             }
             else{
-                
                 print("authorize failed")
+                
+                self.alertShow(message: "Authorize failed")
             }
         }
     }
     
     @IBAction func upgrade(_ sender: Any) {
         
-        SLPLTcpManager.sharedInstance()?.publicUpdateOperation(withDeviceID: "EW22W20C00044", deviceType: SLPDeviceTypes.EW202W, firmwareType: 0, firmwareVersion: 0, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?) in
+        var upStr = ""
+        SLPLTcpManager.sharedInstance()?.publicUpdateOperation(withDeviceID: self.deviceIdTextfield.text!, deviceType: SLPDeviceTypes.TWP2, firmwareType: 2, firmwareVersion: self.versionTextfield.text!, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("notity update succeed")
+                upStr = "通知升级成功"
             }
             else
             {
                 print("notity update failed")
+                upStr = "通知升级失败"
             }
+            
+            self.alertShow(message: upStr as NSString)
         })
     }
     
     @IBAction func bind(_ sender:Any){
-        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: "EW22W20C00044", timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
+        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: self.deviceIdTextfield.text!, timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
             var bindStr = ""
             if result
             {
@@ -101,14 +125,11 @@ class LoginViewController: UIViewController {
                 print("bind failed")
                 bindStr = "bind failed"
             }
-            
              self.alertShow(message: bindStr as NSString)
         }
     }
-    
-    
+
     @IBAction func unbind(_ sneder:Any){
-        
         SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: "EW22W20C00044", timeOut: 10.0) { (result: Bool, error: String?) in
             var unbindStr = ""
             if result
@@ -129,6 +150,8 @@ class LoginViewController: UIViewController {
     @objc func receive_notifaction(notify: NSNotification) -> Void {
         
         let progress: SLPLTcpUpgradeInfo = notify.userInfo?[kNotificationPostData] as! SLPLTcpUpgradeInfo
+        
+        self.progressLabel.text = "\(progress.rate)%"
         
         print("update progress \(progress.rate)%")
     }

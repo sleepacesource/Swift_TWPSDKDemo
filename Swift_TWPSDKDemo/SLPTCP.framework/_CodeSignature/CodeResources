@@ -50,11 +50,11 @@
 		</data>
 		<key>Headers/SLPLTcpDef.h</key>
 		<data>
-		djUWQEYt83IDgdBWSMxLZIL5Yow=
+		OmfEJvsu+qNWhJcrnRLJORNkDOU=
 		</data>
 		<key>Headers/SLPLTcpHeads.h</key>
 		<data>
-		0a9uiuBFK7uACKq05uHlEV6qx1M=
+		OU0nkI8zTW0+Kk5HPlbl+azOh5U=
 		</data>
 		<key>Headers/SLPLTcpManager+EW202W.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/SLPLTcpManager+Public.h</key>
 		<data>
-		epsUosyXPOdplgpFjIoy2AlHmhE=
+		+ZhBuLAPNiU/a8oXUaJ0P6Zk1yw=
 		</data>
 		<key>Headers/SLPLTcpManager+TWP.h</key>
 		<data>
@@ -92,6 +92,10 @@
 		<data>
 		kzo3XUrwvYszCGiuBY8N9ectXB4=
 		</data>
+		<key>Headers/SLPTCPPostHistoryAnalysisData.h</key>
+		<data>
+		ShrYBw4hiZbYqbDWJOIrpcQJ0IA=
+		</data>
 		<key>Headers/SLPTCPPostRealtimeData.h</key>
 		<data>
 		WlVN+mtzsEc42vI32Dl6apv0Z3A=
@@ -114,7 +118,7 @@
 		</data>
 		<key>PrivateHeaders/SLPLTcpCommon.h</key>
 		<data>
-		v+1iBdcZko1BA2DVxP1otci4+nE=
+		8eDn6zIc7zGzH8UfTkAKBZziF9I=
 		</data>
 		<key>PrivateHeaders/SLPLTcpSendPacket.h</key>
 		<data>
@@ -252,22 +256,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			djUWQEYt83IDgdBWSMxLZIL5Yow=
+			OmfEJvsu+qNWhJcrnRLJORNkDOU=
 			</data>
 			<key>hash2</key>
 			<data>
-			S7izqwbnfO0UTzv+3vELzDKqV+rDNobO/NA98jc5Vxs=
+			fuzZ96F0yKD5zxW+SgjrmStaMHhB02/WZOTnOJhb9yI=
 			</data>
 		</dict>
 		<key>Headers/SLPLTcpHeads.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0a9uiuBFK7uACKq05uHlEV6qx1M=
+			OU0nkI8zTW0+Kk5HPlbl+azOh5U=
 			</data>
 			<key>hash2</key>
 			<data>
-			yaBQIGs8MTJQ4rbvhWq6mOzjec9iZYq9sFoeYDNHlwM=
+			OqqfUQYPKcGEX/61nYpaYYfenI1z5AECgzb6LRSdbBw=
 			</data>
 		</dict>
 		<key>Headers/SLPLTcpManager+EW202W.h</key>
@@ -285,11 +289,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			epsUosyXPOdplgpFjIoy2AlHmhE=
+			+ZhBuLAPNiU/a8oXUaJ0P6Zk1yw=
 			</data>
 			<key>hash2</key>
 			<data>
-			qH99mSjPoyGG5WgICillAUxPLUtzhkZs3dXDHWFPKvg=
+			q6KBnirijVcIxreryF2t43o5BUdgigaOXc0fsivDKh8=
 			</data>
 		</dict>
 		<key>Headers/SLPLTcpManager+TWP.h</key>
@@ -369,6 +373,17 @@
 			ZStwqVYo8joRS3mXJvsVTszLjpXYTAo5bm+ZVDmAG+I=
 			</data>
 		</dict>
+		<key>Headers/SLPTCPPostHistoryAnalysisData.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ShrYBw4hiZbYqbDWJOIrpcQJ0IA=
+			</data>
+			<key>hash2</key>
+			<data>
+			MUrI8vK4+jeqB5gmF6MR8wzzV/4H5y43Nd58HPLZKeE=
+			</data>
+		</dict>
 		<key>Headers/SLPTCPPostRealtimeData.h</key>
 		<dict>
 			<key>hash</key>
@@ -417,11 +432,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			v+1iBdcZko1BA2DVxP1otci4+nE=
+			8eDn6zIc7zGzH8UfTkAKBZziF9I=
 			</data>
 			<key>hash2</key>
 			<data>
-			P5XoiYaymMdQe16tJ1z++zANjz6k4JaHpXZCRTI7bcg=
+			J7EcjrCQotwiWxE1FGovnhp6GBbJCAmS5zbcZ5TDP8o=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SLPLTcpSendPacket.h</key>

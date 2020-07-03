@@ -15,5 +15,6 @@
 #import "SLPTCPPostRealtimeData.h"
 #import "SLPSleepStatus.h"
 #import "SLPLTcpUpgradeInfo.h"
+#import "SLPTCPPostHistoryAnalysisData.h"
 
 #endif /* SLPLTcpHeads_h */

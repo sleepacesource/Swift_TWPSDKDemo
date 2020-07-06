@@ -50,9 +50,14 @@
 #define kNotificationNameDeviceSleepStatusChanged @"kNotificationNameDeviceSleepStatusChanged"
 
 /**
- 历史数据分析概要报送
+ 历史数据分析生成概要报送
  */
-#define kNotificationNameDevicePostHistoryAnalysisData @"kNotificationNameDevicePostHistoryAnalysisData"
+//#define kNotificationNameDevicePostHistoryAnalysisData @"kNotificationNameDevicePostHistoryAnalysisData"
+
+/*
+ 历史数据上传完成通知
+ */
+#define kNotificationNameHistoryDataUploadFinished @"kNotificationNameHistoryDataUploadFinished"
 
 
 #endif /* SLPLTcpDef_h */

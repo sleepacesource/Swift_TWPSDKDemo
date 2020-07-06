@@ -24,8 +24,8 @@ class DeviceViewController: UIViewController {
     @IBOutlet weak var deviceOnlineStatusLabel: UILabel!
     @IBOutlet weak var checkSleepStatusBT: UIButton!
     @IBOutlet weak var sleepStatus: UILabel!
-    
-    let deviceID: String = "jfbkwowszdm6d"
+
+    var deviceID = ""
     
     let str1 = NSLocalizedString("realtimeMonitorStatus", comment: "")
     let str2 = NSLocalizedString("realtimeRate", comment: "")
@@ -69,11 +69,17 @@ class DeviceViewController: UIViewController {
         self.checkDeviceOnlineBT.setTitle(NSLocalizedString("checkDeviceOnlineStatus", comment: ""), for: UIControl.State.normal)
         self.checkSleepStatusBT.setTitle(NSLocalizedString("checkMonitorStatus", comment: ""), for: UIControl.State.normal)
         
+        self.deviceID =  UserDefaults.standard.string(forKey: "deviceID")!
+        
     }
     
     func receiceData() -> Void {
         //post realtime data
         NotificationCenter.default.addObserver(self, selector: #selector(receive_notifaction(notify:)), name: Notification.Name(kNotificationNameWiFiDeviceRealtimeData), object: nil)
+        
+        //历史数据上传完成
+         NotificationCenter.default.addObserver(self, selector: #selector(receive_historyUploadFinished(notify:)), name: Notification.Name(kNotificationNameHistoryDataUploadFinished), object: nil)
+        
     }
     
     @IBAction func startRealtimeData(_ sender: Any) {
@@ -216,5 +222,18 @@ class DeviceViewController: UIViewController {
         
         self.realtimeEnvironmentLabel.text = str3 + "hum =\(data.humidity) tem=\(data.temperature)"
     }
+    
+    @objc func receive_historyUploadFinished(notify: NSNotification) -> Void {
+        
+        self.alertShow(message: "history data upload finished")
+    }
+
+    func alertShow(message: NSString ) -> Void {
+        let alert = UIAlertController.init(title: "", message: message as String, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 

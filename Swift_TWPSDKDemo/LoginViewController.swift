@@ -8,6 +8,7 @@
 
 import UIKit
 import SLPTCP
+import Foundation
 
 class LoginViewController: UIViewController {
     
@@ -21,8 +22,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var bindBT: UIButton!
     @IBOutlet weak var unbindBT: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
-       
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,27 +52,37 @@ class LoginViewController: UIViewController {
         self.progressLabel.text = ""
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(self.deviceIdTextfield.text!, forKey: "deviceID")
+    }
+    
     func receiceData() -> Void {
         //post realtime data
         NotificationCenter.default.addObserver(self, selector: #selector(receive_notifaction(notify:)), name: Notification.Name(kNotificationNameTCPDeviceUpdateRateChanged), object: nil)
     }
     
-    
     @IBAction func connect(_ sender: Any) {
-            
+        
         let dic = ["url": self.urlTextfield.text!,"channelID" : self.channelidTextfield.text! ]
         SLPHTTPManager.sharedInstance().initHttpServiceInfo(dic);
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         var connectStr = ""
         //http authorize
         SLPHTTPManager.sharedInstance().authorize(self.tokeTextfield.text!, timeout: 0) { (result: Bool, responseObject: Any, error: String?) in
             print("authorize result-->",result,responseObject)
-            //              tcpDic = responseObject[@"data"][@"tcpServer"];
-            //              userDic = responseObject[@"data"][@"user"];
             if result {
+                let dic = responseObject as![String:Any]
+                let data = dic["data"] as! [String : Any]
+                let tcpServer = data["tcpServer"]  as! [String : Any]
+                let sid = data["sid"] as! String
+                let ip = tcpServer["ip"] as! String
+                let port = tcpServer["port"] as! String
+                
                 //login device
-                SLPLTcpManager.sharedInstance()?.loginHost("120.24.169.204", port: 27010, deviceID:"jfbkwowszdm6d", token: "sleepace_uBgfjEirX5uo2CEW7AQB", completion: { (succeed: Bool) in
-                    
+                SLPLTcpManager.sharedInstance()?.loginHost(ip, port: NSInteger(port)!, deviceID:self.deviceIdTextfield.text!, token: sid, completion: { (succeed: Bool) in
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     print("login tcp result ---",succeed)
                     if succeed
                     {
@@ -87,7 +98,7 @@ class LoginViewController: UIViewController {
             }
             else{
                 print("authorize failed")
-                
+                MBProgressHUD.hide(for: self.view, animated: true)
                 self.alertShow(message: "Authorize failed")
             }
         }
@@ -125,12 +136,12 @@ class LoginViewController: UIViewController {
                 print("bind failed")
                 bindStr = "bind failed"
             }
-             self.alertShow(message: bindStr as NSString)
+            self.alertShow(message: bindStr as NSString)
         }
     }
-
+    
     @IBAction func unbind(_ sneder:Any){
-        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: "EW22W20C00044", timeOut: 10.0) { (result: Bool, error: String?) in
+        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: self.deviceIdTextfield.text!, timeOut: 10.0) { (result: Bool, error: String?) in
             var unbindStr = ""
             if result
             {
@@ -159,9 +170,9 @@ class LoginViewController: UIViewController {
     
     func alertShow(message: NSString ) -> Void {
         let alert = UIAlertController.init(title: "", message: message as String, preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(cancel)
-            self.present(alert, animated: true, completion: nil)
+        let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -52,6 +52,9 @@
 		269069B6249316400043F67B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269069B4249316400043F67B /* LoginViewController.swift */; };
 		269069B7249316400043F67B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269069B5249316400043F67B /* LoginViewController.xib */; };
 		269069C024937F990043F67B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 269069C224937F990043F67B /* Localizable.strings */; };
+		26D4CF8C24B2B3B40001821B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D4CF8824B2B3B40001821B /* MBProgressHUD.m */; };
+		26D4CF8D24B2B3B40001821B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26D4CF8924B2B3B40001821B /* LICENSE */; };
+		26D4CF8E24B2B3B40001821B /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 26D4CF8B24B2B3B40001821B /* README.mdown */; };
 		933AFEC554604C943A2D19EA /* libPods-Swift_TWPSDKDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E31AF717090B68D496220151 /* libPods-Swift_TWPSDKDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +139,10 @@
 		269069BF24937F750043F67B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		269069C124937F990043F67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		269069C624937FD10043F67B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		26D4CF8824B2B3B40001821B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		26D4CF8924B2B3B40001821B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		26D4CF8A24B2B3B40001821B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		26D4CF8B24B2B3B40001821B /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		4A6685A45DCB1F94F3AF82F7 /* Pods-Swift_TWPSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_TWPSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-Swift_TWPSDKDemo/Pods-Swift_TWPSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6E7E45729FDAB5A773D8B890 /* Pods-Swift_TWPSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_TWPSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-Swift_TWPSDKDemo/Pods-Swift_TWPSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E31AF717090B68D496220151 /* libPods-Swift_TWPSDKDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swift_TWPSDKDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +275,7 @@
 		2684E90A2490C52E00ADF97E /* Swift_TWPSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				26D4CF8724B2B3B40001821B /* MBProgressHUD */,
 				268329502492428D0032F3F4 /* SLPCommon.framework */,
 				268329512492428D0032F3F4 /* SLPTCP.framework */,
 				2684E90B2490C52E00ADF97E /* AppDelegate.swift */,
@@ -294,6 +302,17 @@
 				26841E222499C40500DC50D3 /* Swift_TWPSDKDemo-Bridging-Header.h */,
 			);
 			path = Swift_TWPSDKDemo;
+			sourceTree = "<group>";
+		};
+		26D4CF8724B2B3B40001821B /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				26D4CF8824B2B3B40001821B /* MBProgressHUD.m */,
+				26D4CF8924B2B3B40001821B /* LICENSE */,
+				26D4CF8A24B2B3B40001821B /* MBProgressHUD.h */,
+				26D4CF8B24B2B3B40001821B /* README.mdown */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		49FBEA6B0BCA4FF888B9102D /* Frameworks */ = {
@@ -379,9 +398,11 @@
 				26841E722499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib in Resources */,
 				269069B3249315E40043F67B /* ReportViewController.xib in Resources */,
 				2684E9182490C53200ADF97E /* LaunchScreen.storyboard in Resources */,
+				26D4CF8D24B2B3B40001821B /* LICENSE in Resources */,
 				269069AB249315A30043F67B /* MainViewController.xib in Resources */,
 				2684E9152490C53200ADF97E /* Assets.xcassets in Resources */,
 				269069C024937F990043F67B /* Localizable.strings in Resources */,
+				26D4CF8E24B2B3B40001821B /* README.mdown in Resources */,
 				269069B7249316400043F67B /* LoginViewController.xib in Resources */,
 				2684E9132490C52E00ADF97E /* Main.storyboard in Resources */,
 			);
@@ -426,6 +447,7 @@
 				26841E562499C4A500DC50D3 /* SBJsonStreamParserAccumulator.m in Sources */,
 				26841E592499C4A500DC50D3 /* SBJsonStreamParserState.m in Sources */,
 				26841E602499C4A500DC50D3 /* ToolKit.m in Sources */,
+				26D4CF8C24B2B3B40001821B /* MBProgressHUD.m in Sources */,
 				26841E622499C4A500DC50D3 /* HeartCurveView.m in Sources */,
 				269069AA249315A30043F67B /* MainViewController.swift in Sources */,
 				26841E5A2499C4A500DC50D3 /* SBJsonWriter.m in Sources */,

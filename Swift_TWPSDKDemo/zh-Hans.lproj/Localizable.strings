@@ -230,3 +230,5 @@
 "getting_real_time_data"="正在获取实时数据...";
 "online" = "在线";
 "offline" = "不在线";
+"md_leave_bed_decrease_scale"="睡觉起夜";
+"md_sleep_time_increase_scale"= "实际睡眠时长过长";

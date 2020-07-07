@@ -150,7 +150,11 @@ NS_ASSUME_NONNULL_BEGIN
 */
 
 /**param字典格式
-   param = @{@"startTime":（Integer）开始时间戳,@"num":（Int）返回记录数目，@"order":(Int)返回数据顺序，0降序，1升序 }
+   param = @{
+ @"startTime":（Integer）开始时间戳,
+ @"num":（Int）返回记录数目，@"order":(Int)返回数据顺序，0降序，1升序，
+ @"deviceType: 设备类型"
+ }
 */
 - (void)getDailyReport:(NSDictionary *)param timeOut:(CGFloat)timeout completion:(void (^)(BOOL result,id responseObject, NSString *error))completion;
 
@@ -162,7 +166,11 @@ NS_ASSUME_NONNULL_BEGIN
 */
 
 /**param字典格式
-   param = @{@"startTime":（Integer）开始时间戳,@"endTime":（Integer）截止时间戳，@"dateFormate":(String)返回日期格式 }
+   param = @{
+ @"startTime":（Integer）开始时间戳,
+ @"endTime":（Integer）截止时间戳，@"dateFormate":(String)返回日期格式，
+ @"deviceType: 设备类型"
+ }
 */
 - (void)getReportScore:(NSDictionary *)param timeOut:(CGFloat)timeout completion:(void (^)(BOOL result,id responseObject, NSString *error))completion;
 

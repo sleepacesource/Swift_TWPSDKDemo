@@ -15,5 +15,6 @@
 
 + (UserObj *)simulateShortData;
 
++ (UserObj *)dealwithDataWithHistory:(NSDictionary *)history;
 
 @end

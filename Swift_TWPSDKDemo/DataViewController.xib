@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="buttonView" destination="Onq-aX-hbc" id="L77-lc-9uo"/>
                 <outlet property="cView" destination="QbV-V3-m3G" id="x1T-mC-dlF"/>
+                <outlet property="laestBT" destination="LhK-1Q-Qdz" id="D9q-zZ-AEE"/>
                 <outlet property="myDataTableview" destination="ATP-b6-247" id="dlE-nF-mFV"/>
                 <outlet property="myscorollview" destination="hzY-Vy-8GS" id="QHi-4h-sCA"/>
                 <outlet property="simulateDataLongBT" destination="kOJ-Cj-ZBY" id="q47-pU-j8j"/>
@@ -30,7 +31,7 @@
                     <rect key="frame" x="0.0" y="16" width="320" height="1750"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onq-aX-hbc">
-                            <rect key="frame" x="0.0" y="10" width="320" height="100"/>
+                            <rect key="frame" x="0.0" y="10" width="320" height="150"/>
                             <subviews>
                                 <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOJ-Cj-ZBY">
                                     <rect key="frame" x="15" y="50" width="290" height="40"/>
@@ -42,7 +43,7 @@
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="simulateLongData:" destination="-1" eventType="touchUpInside" id="Ypn-RI-XaP"/>
+                                        <action selector="simulateLongData:" destination="-1" eventType="touchUpInside" id="sGF-8C-q83"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJH-0m-Etp">
@@ -55,23 +56,37 @@
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="simulateShortData:" destination="-1" eventType="touchUpInside" id="MQd-Ue-mWH"/>
+                                        <action selector="simulateShortData:" destination="-1" eventType="touchUpInside" id="Lcv-dM-oEA"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-1Q-Qdz">
+                                    <rect key="frame" x="15" y="98" width="290" height="40"/>
+                                    <color key="backgroundColor" red="0.1647058824" green="0.59215686270000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="最新报告">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="getLaestReport:" destination="-1" eventType="touchUpInside" id="oNM-Os-FWl"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="BFP-JR-W15"/>
+                                <constraint firstAttribute="height" constant="150" id="BFP-JR-W15"/>
+                                <constraint firstItem="LhK-1Q-Qdz" firstAttribute="top" secondItem="kOJ-Cj-ZBY" secondAttribute="bottom" constant="8" id="FtO-6s-PEJ"/>
                                 <constraint firstItem="wJH-0m-Etp" firstAttribute="top" secondItem="Onq-aX-hbc" secondAttribute="top" constant="5" id="Fvv-Dy-JOI"/>
                                 <constraint firstAttribute="trailing" secondItem="kOJ-Cj-ZBY" secondAttribute="trailing" constant="15" id="Q6J-FV-Vs5"/>
+                                <constraint firstItem="LhK-1Q-Qdz" firstAttribute="leading" secondItem="Onq-aX-hbc" secondAttribute="leading" constant="15" id="QjP-cI-Oxb"/>
+                                <constraint firstAttribute="bottom" secondItem="LhK-1Q-Qdz" secondAttribute="bottom" constant="12" id="TPf-ZS-c9M"/>
                                 <constraint firstItem="kOJ-Cj-ZBY" firstAttribute="leading" secondItem="Onq-aX-hbc" secondAttribute="leading" constant="15" id="ZKe-wv-Vd6"/>
                                 <constraint firstItem="kOJ-Cj-ZBY" firstAttribute="top" secondItem="wJH-0m-Etp" secondAttribute="bottom" constant="5" id="Zxj-2U-L9N"/>
+                                <constraint firstAttribute="trailing" secondItem="LhK-1Q-Qdz" secondAttribute="trailing" constant="15" id="fik-OQ-ETj"/>
                                 <constraint firstAttribute="trailing" secondItem="wJH-0m-Etp" secondAttribute="trailing" constant="15" id="vgK-uh-v17"/>
                                 <constraint firstItem="wJH-0m-Etp" firstAttribute="leading" secondItem="Onq-aX-hbc" secondAttribute="leading" constant="15" id="x7H-Dp-duF"/>
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ATP-b6-247">
-                            <rect key="frame" x="0.0" y="120" width="320" height="1630"/>
+                            <rect key="frame" x="0.0" y="170" width="320" height="1580"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </tableView>
                     </subviews>

@@ -231,3 +231,5 @@
 "getting_real_time_data"="Getting real-time data";
 "online" = "Online";
 "offline" = "Offline";
+"md_leave_bed_decrease_scale"="Leave bed decrease";
+"md_sleep_time_increase_scale"= "Sleep time increase scale";

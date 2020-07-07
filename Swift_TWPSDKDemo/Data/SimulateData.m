@@ -11,6 +11,70 @@
 
 @implementation SimulateData
 
++ (NSArray *)backDeductionArrayyFromAnalysis:(NSArray*)scoreDeductionArray
+{
+    NSMutableArray * deductionNameArr=[[NSMutableArray alloc]initWithCapacity:0];
+    NSMutableArray * deductionValueArr=[[NSMutableArray alloc]initWithCapacity:0];
+    
+    for (int index=0; index<scoreDeductionArray.count; index++) {
+        int score = [scoreDeductionArray[index] intValue];
+        if (score > 0) {
+            switch (index) {
+                case 0:
+                    [deductionNameArr addObject:@"restless"];
+                    break;
+                case 1:
+                    [deductionNameArr addObject:@"deduction_breathe_fast"];
+                    break;
+                case 2:
+                    [deductionNameArr addObject:@"deduction_breathe_slow"];
+                    break;
+                case 3:
+                    [deductionNameArr addObject:@"respiration_pause"];
+                    break;
+                case 4:
+                    [deductionNameArr addObject:@"fall_asleep_hard"];
+                    break;
+                case 5:
+                    [deductionNameArr addObject:@"heartrate_too_fast"];
+                    break;
+                case 6:
+                    [deductionNameArr addObject:@"heartrate_too_low"];
+                    break;
+                case 7:
+                    [deductionNameArr addObject:@"heart_pause"];
+                    break;
+                case 8:
+                    [deductionNameArr addObject:@"md_leave_bed_decrease_scale"];
+                    break;
+                case 9:
+                    [deductionNameArr addObject:@"deep_sleep_time_too_short"];
+                    break;
+                case 10:
+                    [deductionNameArr addObject:@"benign_sleep"];
+                    break;
+                case 11:
+                    [deductionNameArr addObject:@"actual_sleep_short"];
+                    break;
+                case 12:
+                    [deductionNameArr addObject:@"md_sleep_time_increase_scale"];
+                    break;
+                case 13:
+                    [deductionNameArr addObject:@"start_sleep_time_too_latter"];
+                    break;
+                case 14:
+                    [deductionNameArr addObject:@"wake_times_too_much"];
+                    break;
+                default:
+                    break;
+            }
+            [deductionValueArr addObject:[NSString stringWithFormat:@"-%d",score]];
+        }
+    }
+    return @[deductionNameArr,deductionValueArr];
+}
+
+
 + (UserObj *)simulateLongData
 {
     UserObj *obj=[[UserObj alloc]init];
@@ -47,7 +111,7 @@
     obj.xtztsc=[NSNumber numberWithInteger:0];
     obj.lccs=[NSNumber numberWithInteger:1];
     obj.lcsc=[NSNumber numberWithInteger:417];
-   
+    
     obj.timeStep=[NSNumber numberWithInteger:60];
     obj.recordCount=[NSNumber numberWithInteger:714];
     obj.stopMode=[NSNumber numberWithInteger:0];
@@ -70,7 +134,7 @@
     obj.year=@"2017";
     obj.bedTimeStr=@"23:06";
     obj.wakeUpTimeStr=@"09：58";
-//    obj.source=[NSNumber numberWithInteger:6];
+    //    obj.source=[NSNumber numberWithInteger:6];
     obj.timezone=[NSNumber numberWithInteger:28800];
     obj.arithmeticVer=@"";
     
@@ -114,6 +178,100 @@
     
     return obj;
 }
+
+
++ (UserObj *)dealwithDataWithHistory:(NSDictionary *)history
+{
+    UserObj *obj=[[UserObj alloc]init];
+    obj.farmlyID=[NSNumber numberWithInteger:0];
+    obj.memID=[NSNumber numberWithInteger:0];
+    obj.timezone=[NSNumber numberWithInteger:[[NSTimeZone systemTimeZone] secondsFromGMT]];
+    
+    NSDictionary *summaryDic = [history objectForKey:@"summary"];
+    NSDictionary *analysisDic = [history objectForKey:@"analysis"];
+    NSDictionary *detailDic = [history objectForKey:@"detail"];
+    
+    NSDate *startDate= [NSDate dateWithTimeIntervalSince1970:[[summaryDic objectForKey:@"startTime"] integerValue]];
+    NSDateFormatter *sd = [[NSDateFormatter alloc] init];
+    [sd setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:obj.timezone.intValue]];
+    sd.dateFormat = @"yyyy-MM-dd";
+    obj.date= [sd stringFromDate:startDate];
+    
+    int flag = [[summaryDic objectForKey:@"recordCount"] integerValue] >= 180?1:2;
+    obj.reportFlag=[NSNumber numberWithInteger:flag];
+    
+    obj.breathRateString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"breathRate"] componentsJoinedByString:@","]];
+    obj.heartRateString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"heartRate"] componentsJoinedByString:@","]];
+    obj.statusString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"status"] componentsJoinedByString:@","]];
+    obj.statusValueString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"statusValue"] componentsJoinedByString:@","]];
+    obj.SleepCurveStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepCurveArray"] componentsJoinedByString:@","]];
+    obj.sleepCurveStatusStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepCurveStatusArray"] componentsJoinedByString:@","]];
+    obj.duration=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"duration"]integerValue]];
+    obj.startTime=[NSNumber numberWithInteger:[[summaryDic objectForKey:@"startTime"] integerValue]];
+    obj.score=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"sleepScore"]integerValue]];
+    obj.light=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"lightSleepAllTime"]integerValue]];
+    obj.rem=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"inSleepAllTime"]integerValue]];
+    obj.deep=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"deepSleepAllTime"]integerValue]];
+    obj.wake=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"wakeAllTime"]integerValue]];
+    obj.MdDeepSleepPerc=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"deepSleepPerc"]integerValue]];
+    obj.MdRemSleepPerc=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"inSleepPerc"]integerValue]];
+    obj.MdLightSleepPerc=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"lightSleepPerc"]integerValue]];
+    obj.MdWakeSleepPerc=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"wakeSleepPerc"]integerValue]];;
+    obj.MdWakeUpTime=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"wakeAndLeaveBedBeforeAllTime"]integerValue]];
+    obj.wake_times=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"wakeTimes"]integerValue]];
+    obj.tdcs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"bodyMovementTimes"]integerValue]];
+    obj.fscs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"trunOverTimes"]integerValue]];
+    obj.pjxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"averageHeartBeatRate"]integerValue]];
+    obj.pjhxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"averageBreathRate"]integerValue]];
+    obj.zgxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"maxHeartBeatRate"]integerValue]];
+    obj.zghxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"maxBreathRate"]integerValue]];
+    obj.zdxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"minHeartBeatRate"]integerValue]];
+    obj.zdhxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"minBreathRate"]integerValue]];
+    obj.hxghsc=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathRateSlowAllTime"]integerValue]];
+    obj.timeStep=[NSNumber numberWithInteger:60];
+    obj.stopMode=[NSNumber numberWithInteger:0];
+    obj.isupload=[NSNumber numberWithInteger:1];
+    obj.asleepTime=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"fallAlseepAllTime"]integerValue]];
+    obj.recordCount = [NSNumber numberWithInteger:[[summaryDic objectForKey:@"recordCount"] integerValue]];
+    obj.lccs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"leaveBedTimes"]integerValue]];
+    obj.arithmeticVer= [analysisDic objectForKey:@"breathRateSlowAllTime"];
+    
+    NSTimeInterval startTime = obj.startTime.integerValue;//上床时间
+    NSTimeInterval endTime = startTime + obj.recordCount.integerValue * 60;//起床时间
+    NSTimeInterval awakeTime = endTime - obj.MdWakeUpTime.integerValue * 60;//醒来时间
+    NSDate *asleepDate = [NSDate dateWithTimeIntervalSince1970:startTime];
+    NSDate *wakeupDate = [NSDate dateWithTimeIntervalSince1970:awakeTime];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:obj.timezone.intValue]];
+    df.dateFormat = @"HH:mm";
+    obj.bedTimeStr = [df stringFromDate:asleepDate];
+    obj.wakeUpTimeStr = [df stringFromDate:wakeupDate];
+    obj.breathPauseTimeString=[self backBreathPause:[analysisDic objectForKey:@"breathRateStatusAry"] user:obj];
+    
+    NSMutableArray *scoreList = [NSMutableArray array];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_body_move_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_breath_high_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_breath_low_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_breath_stop_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_fall_asleep_time_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_heart_high_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_heart_low_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_heart_stop_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_leave_bed_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_perc_deep_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_perc_effective_sleep_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_sleep_time_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_sleep_time_increase_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_start_time_decrease_scale"]intValue]]];
+    [scoreList addObject:[NSNumber numberWithInt:[[analysisDic objectForKey:@"md_wake_cnt_decrease_scale"]intValue]]];
+    
+    obj.deductionName=[self backDeductionArrayyFromAnalysis:scoreList][0];
+    obj.deductionValue=[self backDeductionArrayyFromAnalysis:scoreList][1];
+    
+    
+    return obj;
+}
+
 
 
 @end

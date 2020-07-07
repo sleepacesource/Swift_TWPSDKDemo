@@ -16,6 +16,8 @@
 #import "SLPTitleValueArrowTableViewCell.h"
 #import "DealWithData.h"
 #import "FontColor.h"
+#import <SLPCommon/SLPCommon.h>
+#import "MBProgressHUD.h"
 
 @interface DataViewController ()<UITableViewDelegate,UITableViewDataSource,SleepViewDelegate>
 {
@@ -35,6 +37,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *simulateDataShortBT;
 @property (weak, nonatomic) IBOutlet UIButton *simulateDataLongBT;
+@property (weak, nonatomic) IBOutlet UIButton *laestBT;
 @property (weak, nonatomic) IBOutlet UITableView *myDataTableview;
 @property (weak, nonatomic) IBOutlet UIScrollView *myscorollview;
 @property (weak, nonatomic) IBOutlet UIView *cView;
@@ -57,6 +60,7 @@
     [self.myscorollview addSubview:self.cView];
     [Tool configSomeKindOfButtonLikeNomal:self.simulateDataShortBT];
     [Tool configSomeKindOfButtonLikeNomal:self.simulateDataLongBT];
+     [Tool configSomeKindOfButtonLikeNomal:self.laestBT];
     
     self.myDataTableview.delegate=self;
     self.myDataTableview.dataSource=self;
@@ -148,6 +152,28 @@
 
 - (IBAction)simulateLongData:(id)sender {
     [self showReportwith:[SimulateData simulateLongData]];
+}
+
+
+- (IBAction)getLaestReport:(id)sender {
+    
+    NSInteger startTime = [[NSDate date] timeIntervalSince1970];
+    NSDictionary *dic = @{@"startTime":@(startTime) ,@"num": @(1) ,@"order": @(0),@"deviceType":@(SLPDeviceType_TWP2)};
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [SLPSharedHTTPManager getDailyReport:dic timeOut:10.0 completion:^(BOOL result, id  _Nonnull responseObject, NSString * _Nonnull error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (result) {
+            if ([responseObject objectForKey:@"data"]&&[[responseObject objectForKey:@"status"] intValue] == 0) {
+                NSArray *historyArr = [[responseObject objectForKey:@"data"] objectForKey:@"history"];
+                NSDictionary *hisDic = [historyArr firstObject];
+                [self showReportwith:[SimulateData dealwithDataWithHistory:hisDic]];
+            }
+        }
+        else
+        {
+            NSLog(@"get report failed");
+        }
+    }];
 }
 
 - (void)initTableviewTitle:(BOOL)longReport
@@ -328,5 +354,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

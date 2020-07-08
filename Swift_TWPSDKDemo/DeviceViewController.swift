@@ -188,20 +188,7 @@ class DeviceViewController: UIViewController {
                 let sleepInfo : SLPSleepStatus = data as! SLPSleepStatus
                 
                 let leftbedStr = sleepInfo.leftbedFlag == 1 ? NSLocalizedString("out_bed", comment: "离床") : NSLocalizedString("in_bed", comment: "在床")
-                var sleepStr: String = ""
-                switch sleepInfo.sleepStatus {
-                case 0x01:
-                    sleepStr = NSLocalizedString("wake_", comment: "清醒")
-                case 0x02:
-                    sleepStr = NSLocalizedString("light_", comment: "浅睡")
-                case 0x03:
-                    sleepStr = NSLocalizedString("mid_", comment: "中睡")
-                case 0x04:
-                    sleepStr = NSLocalizedString("deep_", comment: "深睡")
-                default: break
-                    
-                }
-                self.sleepStatus.text = self.str6 + leftbedStr + "&&" + sleepStr
+                self.sleepStatus.text = self.str6 + leftbedStr
             }
             else
             {

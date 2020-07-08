@@ -52,6 +52,12 @@
 		269069B6249316400043F67B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269069B4249316400043F67B /* LoginViewController.swift */; };
 		269069B7249316400043F67B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269069B5249316400043F67B /* LoginViewController.xib */; };
 		269069C024937F990043F67B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 269069C224937F990043F67B /* Localizable.strings */; };
+		26B0A7C924B575E500095301 /* control@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B0A7C324B575E400095301 /* control@2x.png */; };
+		26B0A7CA24B575E500095301 /* data@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B0A7C424B575E400095301 /* data@3x.png */; };
+		26B0A7CB24B575E500095301 /* control@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B0A7C524B575E500095301 /* control@3x.png */; };
+		26B0A7CC24B575E500095301 /* data@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B0A7C624B575E500095301 /* data@2x.png */; };
+		26B0A7CD24B575E500095301 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B0A7C724B575E500095301 /* home@2x.png */; };
+		26B0A7CE24B575E500095301 /* home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B0A7C824B575E500095301 /* home@3x.png */; };
 		26D4CF8C24B2B3B40001821B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D4CF8824B2B3B40001821B /* MBProgressHUD.m */; };
 		26D4CF8D24B2B3B40001821B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 26D4CF8924B2B3B40001821B /* LICENSE */; };
 		26D4CF8E24B2B3B40001821B /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 26D4CF8B24B2B3B40001821B /* README.mdown */; };
@@ -139,6 +145,12 @@
 		269069BF24937F750043F67B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		269069C124937F990043F67B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		269069C624937FD10043F67B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		26B0A7C324B575E400095301 /* control@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control@2x.png"; sourceTree = "<group>"; };
+		26B0A7C424B575E400095301 /* data@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "data@3x.png"; sourceTree = "<group>"; };
+		26B0A7C524B575E500095301 /* control@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "control@3x.png"; sourceTree = "<group>"; };
+		26B0A7C624B575E500095301 /* data@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "data@2x.png"; sourceTree = "<group>"; };
+		26B0A7C724B575E500095301 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		26B0A7C824B575E500095301 /* home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@3x.png"; sourceTree = "<group>"; };
 		26D4CF8824B2B3B40001821B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		26D4CF8924B2B3B40001821B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26D4CF8A24B2B3B40001821B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -299,6 +311,12 @@
 				2684E9162490C53200ADF97E /* LaunchScreen.storyboard */,
 				2684E9192490C53200ADF97E /* Info.plist */,
 				269069C224937F990043F67B /* Localizable.strings */,
+				26B0A7C324B575E400095301 /* control@2x.png */,
+				26B0A7C524B575E500095301 /* control@3x.png */,
+				26B0A7C624B575E500095301 /* data@2x.png */,
+				26B0A7C424B575E400095301 /* data@3x.png */,
+				26B0A7C724B575E500095301 /* home@2x.png */,
+				26B0A7C824B575E500095301 /* home@3x.png */,
 				26841E222499C40500DC50D3 /* Swift_TWPSDKDemo-Bridging-Header.h */,
 			);
 			path = Swift_TWPSDKDemo;
@@ -394,15 +412,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				269069AF249315D50043F67B /* DeviceViewController.xib in Resources */,
+				26B0A7C924B575E500095301 /* control@2x.png in Resources */,
+				26B0A7CE24B575E500095301 /* home@3x.png in Resources */,
+				26B0A7CC24B575E500095301 /* data@2x.png in Resources */,
 				26841E262499C40600DC50D3 /* DataViewController.xib in Resources */,
 				26841E722499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib in Resources */,
 				269069B3249315E40043F67B /* ReportViewController.xib in Resources */,
 				2684E9182490C53200ADF97E /* LaunchScreen.storyboard in Resources */,
 				26D4CF8D24B2B3B40001821B /* LICENSE in Resources */,
+				26B0A7CB24B575E500095301 /* control@3x.png in Resources */,
+				26B0A7CA24B575E500095301 /* data@3x.png in Resources */,
 				269069AB249315A30043F67B /* MainViewController.xib in Resources */,
 				2684E9152490C53200ADF97E /* Assets.xcassets in Resources */,
 				269069C024937F990043F67B /* Localizable.strings in Resources */,
 				26D4CF8E24B2B3B40001821B /* README.mdown in Resources */,
+				26B0A7CD24B575E500095301 /* home@2x.png in Resources */,
 				269069B7249316400043F67B /* LoginViewController.xib in Resources */,
 				2684E9132490C52E00ADF97E /* Main.storyboard in Resources */,
 			);

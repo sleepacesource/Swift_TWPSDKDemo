@@ -15,14 +15,15 @@ class MainViewController: UITabBarController {
         
         // Do any additional setup after loading the view.
         
-        self.addChildVC(childVC: LoginViewController(), title: "登录", index: 0)
-        self.addChildVC(childVC: DeviceViewController(), title: "设备", index: 1)
-        self.addChildVC(childVC: DataViewController(), title: "报告", index: 2)
+        self.addChildVC(childVC: LoginViewController(), title: "登录", index: 0 ,imagename: "home.png")
+        self.addChildVC(childVC: DeviceViewController(), title: "设备", index: 1 , imagename: "control.png" )
+        self.addChildVC(childVC: DataViewController(), title: "报告", index: 2 , imagename: "data.png")
     }
     
-    func addChildVC(childVC:UIViewController,title:String,index:Int) {
+    func addChildVC(childVC:UIViewController,title:String,index:Int ,imagename: String) {
         let navigation = UINavigationController(rootViewController: childVC)
         childVC.title = title
+        childVC.tabBarItem.image = UIImage.init(imageLiteralResourceName: imagename)
         childVC.tabBarItem.tag = index
         childVC.navigationController?.navigationBar.isHidden = true;
         self.addChild(navigation)

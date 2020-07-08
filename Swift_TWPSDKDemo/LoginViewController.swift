@@ -23,20 +23,53 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var unbindBT: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         self.initUI()
         self.receiceData()
+        self.initData()
+    }
+    
+    func initData() -> Void {
+        if  (UserDefaults.standard.string(forKey: "url") != nil) {
+            self.urlTextfield.text = UserDefaults.standard.string(forKey: "url")
+        }
+        else
+        {
+            self.urlTextfield.text = "http://172.14.0.111:8082"
+        }
         
-        self.urlTextfield.text = "http://172.14.0.111:8082"
-        self.channelidTextfield.text = "13700"
-        self.tokeTextfield.text = "jaker123"
-        
-        self.deviceIdTextfield.text = "jfbkwowszdm6d"
-        self.versionTextfield.text = "2.49"
+        if  (UserDefaults.standard.string(forKey: "channelID") != nil) {
+           self.channelidTextfield.text = UserDefaults.standard.string(forKey: "channelID")
+        }
+        else
+        {
+           self.channelidTextfield.text = "13700"
+        }
+        if  (UserDefaults.standard.string(forKey: "token") != nil) {
+           self.tokeTextfield.text = UserDefaults.standard.string(forKey: "token")
+        }
+        else
+        {
+            self.tokeTextfield.text = "jaker123"
+        }
+        if  (UserDefaults.standard.string(forKey: "deviceID") != nil) {
+            self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID")
+        }
+        else
+        {
+           self.deviceIdTextfield.text = "jfbkwowszdm6d"
+        }
+        if  (UserDefaults.standard.string(forKey: "version") != nil) {
+            self.versionTextfield.text = UserDefaults.standard.string(forKey: "version")
+        }
+        else
+        {
+            self.versionTextfield.text = "2.49"
+        }
     }
     
     func initUI() -> Void {
@@ -53,7 +86,12 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        
+        UserDefaults.standard.set(self.urlTextfield.text!, forKey: "url")
+        UserDefaults.standard.set(self.channelidTextfield.text!, forKey: "channelID")
+        UserDefaults.standard.set(self.channelidTextfield.text!, forKey: "token")
         UserDefaults.standard.set(self.deviceIdTextfield.text!, forKey: "deviceID")
+        UserDefaults.standard.set(self.versionTextfield.text!, forKey: "version")
     }
     
     func receiceData() -> Void {

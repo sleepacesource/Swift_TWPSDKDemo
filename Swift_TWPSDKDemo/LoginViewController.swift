@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
         
         UserDefaults.standard.set(self.urlTextfield.text!, forKey: "url")
         UserDefaults.standard.set(self.channelidTextfield.text!, forKey: "channelID")
-        UserDefaults.standard.set(self.channelidTextfield.text!, forKey: "token")
+        UserDefaults.standard.set(self.tokeTextfield.text!, forKey: "token")
         UserDefaults.standard.set(self.deviceIdTextfield.text!, forKey: "deviceID")
         UserDefaults.standard.set(self.versionTextfield.text!, forKey: "version")
     }

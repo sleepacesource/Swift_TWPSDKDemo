@@ -7,7 +7,7 @@
 */
 "realtimeMonitorStatus" = "实时睡眠状态：";
 "realtimeRate" ="实时心率呼吸率：";
-"realtimeEnvi" = "实时温湿度：";
+"realtimeEnvi" = "实时温度湿度：";
 "envi" = "当前温度湿度：";
 "deviceOnlineStatus" = "当前设备状态：" ;
 "monitorStatus" = "当前睡眠状态：";
@@ -16,8 +16,8 @@
 "stopRealtimeData" = "停止获取实时数据";
 "stopMonitor" = "手动结束监测";
 "checkCurrentEnvi" ="查询当前温湿度";
-"checkDeviceOnlineStatus" ="查询在线状态";
-"checkMonitorStatus" ="查询睡眠状态";
+"checkDeviceOnlineStatus" ="查询设备在线状态";
+"checkMonitorStatus" ="查询当前睡眠状态";
 
 "fireware_updateing"="%@固件更新中";
 "process"="执行过程";
@@ -140,7 +140,7 @@
 "firmware_download_complete"="固件下载完成";
 "firmware_to_device"="App正在发送固件给设备：%@";
 "sent_successfully"="发送成功";
-"upgrading_device"="正在升级设备：%@";
+"upgrading_device"="正在升级设备：";
 "update_completed"="升级完成";
 "disconnected_successfully"="断开连接成功";
 "disconnected"="已断开连接";
@@ -232,3 +232,41 @@
 "offline" = "不在线";
 "md_leave_bed_decrease_scale"="睡觉起夜";
 "md_sleep_time_increase_scale"= "实际睡眠时长过长";
+
+"login_in"="登录";
+"server_information1"="服务器信息";
+"server_http"="输入服务器地址（http或https）";
+"enter_id"="输入渠道ID";
+"enter_token"="输入token";
+"connect_server"="连接服务器";
+"connect_dev"="连接的设备";
+"id_cipher"="输入设备ID（密文）";
+"target_version"="输入目标固件版本";
+"dididi"="嘀嘀嘀";
+"music_box"="八音盒";
+"connection_succeeded"="连接成功";
+"Connection_failed"="连接失败";
+"network_timeout"="网络不畅通，检查后再试试吧";
+"nox_connection_fail_tips"="%@连接失败，确保网络连接畅通";
+"build_alarm"="内置闹钟";
+"close1"="关闭";
+"entered_light"="你已进入配置模式，请退出后，再使用App操作";
+"bind_account_success"="绑定成功";
+"bind_fail"="绑定失败";
+"unbind_success"="解绑成功";
+"unbind_failed"="解绑失败";
+"bind"="绑定设备";
+"unbind"="解绑设备";
+"EveryDay"="每天";
+"LatestReport" = "最新睡眠报告";
+"getRpeortFailed" = "获取报告失败";
+"succeed" = "成功";
+"server_error" = "服务器错误";
+"twp_not_login" = "TWP未登陆";
+"twp_not_bind" = "TWP未绑定用户";
+"twp_not_online" = "TWP不在线";
+"twp_connected_failed" = "TWP连接失败";
+"twp_upgrading" = "TWP正在升级";
+"unknow" = "未知错误";
+"upload_data_finish" = "上传数据成功，去获取报告";
+"authorize_failed" = "授权失败";

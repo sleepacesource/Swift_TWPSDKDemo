@@ -77,6 +77,7 @@
     historyArr=[[NSMutableArray alloc]initWithCapacity:0];
     [self.simulateDataLongBT setTitle:NSLocalizedString(@"imitate_data_long", nil) forState:UIControlStateNormal];
     [self.simulateDataShortBT setTitle:NSLocalizedString(@"imitate_data_short", nil) forState:UIControlStateNormal];
+    [self.laestBT setTitle:NSLocalizedString(@"LatestReport", nil) forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -172,6 +173,8 @@
         else
         {
             NSLog(@"get report failed");
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:NSLocalizedString(@"getRpeortFailed", nil)  delegate:self cancelButtonTitle:NSLocalizedString(@"confirm", nil) otherButtonTitles: nil];
+            [alert show];
         }
     }];
 }

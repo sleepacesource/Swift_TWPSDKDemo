@@ -8,6 +8,7 @@
 
 #import <SLPTCP/SLPTCP.h>
 #import "SLPTCPOnlineStatus.h"
+#import "SLPTCPBaseEntity.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

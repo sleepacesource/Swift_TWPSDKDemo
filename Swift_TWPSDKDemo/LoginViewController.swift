@@ -43,14 +43,14 @@ class LoginViewController: UIViewController {
         }
         
         if  (UserDefaults.standard.string(forKey: "channelID") != nil) {
-           self.channelidTextfield.text = UserDefaults.standard.string(forKey: "channelID")
+            self.channelidTextfield.text = UserDefaults.standard.string(forKey: "channelID")
         }
         else
         {
-           self.channelidTextfield.text = "13700"
+            self.channelidTextfield.text = "13700"
         }
         if  (UserDefaults.standard.string(forKey: "token") != nil) {
-           self.tokeTextfield.text = UserDefaults.standard.string(forKey: "token")
+            self.tokeTextfield.text = UserDefaults.standard.string(forKey: "token")
         }
         else
         {
@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
         }
         else
         {
-           self.deviceIdTextfield.text = "jfbkwowszdm6d"
+            self.deviceIdTextfield.text = "jfbkwowszdm6d"
         }
         if  (UserDefaults.standard.string(forKey: "version") != nil) {
             self.versionTextfield.text = UserDefaults.standard.string(forKey: "version")
@@ -81,8 +81,16 @@ class LoginViewController: UIViewController {
         self.bindBT.layer.masksToBounds = true;
         self.unbindBT.layer.cornerRadius = 2.0;
         self.unbindBT.layer.masksToBounds = true;
-        
-        self.progressLabel.text = ""
+        self.urlTextfield.placeholder = NSLocalizedString("server_http", comment: "")
+        self.tokeTextfield.placeholder = NSLocalizedString("enter_token", comment: "")
+        self.channelidTextfield.placeholder = NSLocalizedString("enter_id", comment: "")
+        self.deviceIdTextfield.placeholder = NSLocalizedString("id_cipher", comment: "")
+        self.versionTextfield.placeholder = NSLocalizedString("target_version", comment: "")
+        self.upgradeBT.setTitle(NSLocalizedString("fireware_update", comment: ""), for: .normal)
+        self.bindBT.setTitle(NSLocalizedString("bind", comment: ""), for: .normal)
+        self.unbindBT.setTitle(NSLocalizedString("unbind", comment: ""), for: .normal)
+        self.connectBT.setTitle(NSLocalizedString("connect_server", comment: ""), for: .normal)
+        self.progressLabel.text = NSLocalizedString("upgrading_device", comment: "")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -124,20 +132,19 @@ class LoginViewController: UIViewController {
                     print("login tcp result ---",succeed)
                     if succeed
                     {
-                        connectStr = "connected succeed"
+                        connectStr = NSLocalizedString("connection_succeeded", comment: "")
                     }
                     else
                     {
-                        connectStr = "connected failed"
+                        connectStr = NSLocalizedString("Connection_failed", comment: "")   
                     }
-                    
                     self.alertShow(message: connectStr as NSString)
                 })
             }
             else{
                 print("authorize failed")
                 MBProgressHUD.hide(for: self.view, animated: true)
-                self.alertShow(message: "Authorize failed")
+                self.alertShow(message: NSLocalizedString("authorize_failed", comment: "") as NSString)
             }
         }
     }
@@ -149,12 +156,20 @@ class LoginViewController: UIViewController {
             if status == SLPDataTransferStatus.succeed
             {
                 print("notity update succeed")
-                upStr = "通知升级成功"
+                upStr = NSLocalizedString("sent_successfully", comment: "") 
             }
             else
             {
                 print("notity update failed")
-                upStr = "通知升级失败"
+                if status == SLPDataTransferStatus.failed
+                {
+                    let entity = data as! SLPTCPBaseEntity;
+                    upStr = self.errorDes(errorCode: Int(entity.errorCode)) as String
+                }
+                else
+                {
+                    upStr = NSLocalizedString("failure", comment: "")
+                }
             }
             
             self.alertShow(message: upStr as NSString)
@@ -167,12 +182,12 @@ class LoginViewController: UIViewController {
             if result
             {
                 print("bind succeed")
-                bindStr = "bind succeed"
+                bindStr = NSLocalizedString("bind_account_success", comment: "")
             }
             else
             {
                 print("bind failed")
-                bindStr = "bind failed"
+                bindStr = NSLocalizedString("bind_fail", comment: "")
             }
             self.alertShow(message: bindStr as NSString)
         }
@@ -184,12 +199,12 @@ class LoginViewController: UIViewController {
             if result
             {
                 print("unbind succeed")
-                unbindStr = "unbind succeed"
+                unbindStr = NSLocalizedString("unbind_success", comment: "")
             }
             else
             {
                 print("unbind failed")
-                unbindStr = "unbind failed"
+                unbindStr = NSLocalizedString("unbind_failed", comment: "")
             }
             
             self.alertShow(message: unbindStr as NSString)
@@ -200,7 +215,7 @@ class LoginViewController: UIViewController {
         
         let progress: SLPLTcpUpgradeInfo = notify.userInfo?[kNotificationPostData] as! SLPLTcpUpgradeInfo
         
-        self.progressLabel.text = "\(progress.rate)%"
+        self.progressLabel.text = NSLocalizedString("upgrading_device", comment: "") + "\(progress.rate)%"
         
         print("update progress \(progress.rate)%")
     }
@@ -208,9 +223,34 @@ class LoginViewController: UIViewController {
     
     func alertShow(message: NSString ) -> Void {
         let alert = UIAlertController.init(title: "", message: message as String, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("confirm", comment: ""), style: .cancel, handler: nil)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func errorDes(errorCode: Int) -> NSString {
+        var error = ""
+        switch errorCode {
+        case 0x00:
+            error = NSLocalizedString("succeed", comment: "")
+        case 0x01:
+            error = NSLocalizedString("server_error", comment: "")
+        case 0x02:
+            error = NSLocalizedString("twp_not_login", comment: "")
+        case 0x04:
+            error = NSLocalizedString("twp_not_bind", comment: "")
+        case 0x08:
+            error = NSLocalizedString("twp_not_online", comment: "")
+        case 0x0d:
+            error = NSLocalizedString("twp_connected_failed", comment: "")
+        case 0x0f:
+            error = NSLocalizedString("twp_upgrading", comment: "")
+        case 0xff:
+            error = NSLocalizedString("unknow", comment: "")
+        default:
+            error = ""
+        }
+        return error as NSString
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

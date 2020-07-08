@@ -15,9 +15,9 @@ class MainViewController: UITabBarController {
         
         // Do any additional setup after loading the view.
         
-        self.addChildVC(childVC: LoginViewController(), title: "登录", index: 0 ,imagename: "home.png")
-        self.addChildVC(childVC: DeviceViewController(), title: "设备", index: 1 , imagename: "control.png" )
-        self.addChildVC(childVC: DataViewController(), title: "报告", index: 2 , imagename: "data.png")
+        self.addChildVC(childVC: LoginViewController(), title: NSLocalizedString("login_in", comment: ""), index: 0 ,imagename: "home.png")
+        self.addChildVC(childVC: DeviceViewController(), title: NSLocalizedString("device", comment: ""), index: 1 , imagename: "control.png" )
+        self.addChildVC(childVC: DataViewController(), title: NSLocalizedString("report_", comment: ""), index: 2 , imagename: "data.png")
     }
     
     func addChildVC(childVC:UIViewController,title:String,index:Int ,imagename: String) {

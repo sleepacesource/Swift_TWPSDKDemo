@@ -10,6 +10,7 @@
 #import "SLPCollectStatus.h"
 #import "SLPEnvironmentInfo.h"
 #import "SLPSleepStatus.h"
+#import "SLPTCPBaseEntity.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

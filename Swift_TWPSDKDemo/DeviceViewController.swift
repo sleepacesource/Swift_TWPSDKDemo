@@ -24,7 +24,6 @@ class DeviceViewController: UIViewController {
     @IBOutlet weak var deviceOnlineStatusLabel: UILabel!
     @IBOutlet weak var checkSleepStatusBT: UIButton!
     @IBOutlet weak var sleepStatus: UILabel!
-
     var deviceID = ""
     
     let str1 = NSLocalizedString("realtimeMonitorStatus", comment: "")
@@ -71,6 +70,12 @@ class DeviceViewController: UIViewController {
         
         self.deviceID =  UserDefaults.standard.string(forKey: "deviceID")!
         
+        self.realtimeSleepStatus.text = self.str1
+        self.realtimeDataLabel.text = self.str2
+        self.realtimeEnvironmentLabel.text = self.str3
+        self.checkEnviLabel.text = self.str4
+        self.deviceOnlineStatusLabel.text = self.str5
+        self.sleepStatus.text = self.str6
     }
     
     func receiceData() -> Void {
@@ -78,7 +83,7 @@ class DeviceViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(receive_notifaction(notify:)), name: Notification.Name(kNotificationNameWiFiDeviceRealtimeData), object: nil)
         
         //历史数据上传完成
-         NotificationCenter.default.addObserver(self, selector: #selector(receive_historyUploadFinished(notify:)), name: Notification.Name(kNotificationNameHistoryDataUploadFinished), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(receive_historyUploadFinished(notify:)), name: Notification.Name(kNotificationNameHistoryDataUploadFinished), object: nil)
         
     }
     
@@ -103,6 +108,17 @@ class DeviceViewController: UIViewController {
             }
             else
             {
+                var error = ""
+                if status == SLPDataTransferStatus.failed {
+                    let entity = data as! SLPTCPBaseEntity;
+                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
+                    
+                }
+                else
+                {
+                    error = NSLocalizedString("failure", comment: "")
+                }
+                self.alertShow(message: error as NSString)
                 print("start realtime data failed !")
             }
         })
@@ -117,6 +133,16 @@ class DeviceViewController: UIViewController {
             }
             else
             {
+                var error = ""
+                if status == SLPDataTransferStatus.failed{
+                    let entity = data as! SLPTCPBaseEntity;
+                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
+                }
+                else
+                {
+                    error = NSLocalizedString("failure", comment: "")
+                }
+                self.alertShow(message: error as NSString)
                 print("stop realtime data failed !")
             }
             
@@ -136,6 +162,18 @@ class DeviceViewController: UIViewController {
             }
             else
             {
+                var error = ""
+                if status == SLPDataTransferStatus.failed
+                {
+                    let entity = data as! SLPTCPBaseEntity;
+                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
+                    
+                }
+                else
+                {
+                    error = NSLocalizedString("failure", comment: "")
+                }
+                self.alertShow(message: error as NSString)
                 print("stop monitor  failed !")
             }
         })
@@ -154,6 +192,18 @@ class DeviceViewController: UIViewController {
             }
             else
             {
+                self.checkEnviLabel.text = self.str4
+                var error = ""
+                if status == SLPDataTransferStatus.failed
+                {
+                    let entity = data as! SLPEnvironmentInfo;
+                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
+                }
+                else
+                {
+                    error = NSLocalizedString("failure", comment: "")
+                }
+                self.alertShow(message: error as NSString)
                 print("check environment info  failed !")
             }
         })
@@ -168,19 +218,28 @@ class DeviceViewController: UIViewController {
                 let onlineInfo : SLPTCPOnlineStatus = data as! SLPTCPOnlineStatus
                 
                 let onlineStr = onlineInfo.isOnline ? NSLocalizedString("online", comment: "在线") : NSLocalizedString("offline", comment: "不在线")
-                
                 self.deviceOnlineStatusLabel.text =  self.str5 +  onlineStr
             }
             else
             {
+                self.deviceOnlineStatusLabel.text =  self.str5
+                var error = ""
+                if status == SLPDataTransferStatus.failed
+                {
+                    let entity = data as! SLPTCPOnlineStatus;
+                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
+                }
+                else
+                {
+                    error = NSLocalizedString("failure", comment: "")
+                }
+                self.alertShow(message: error as NSString)
                 print("check device oneline status failed !")
             }
         })
-        
     }
     
     @IBAction func checkMonitorStatus(_ sender: Any) {
-        
         SLPLTcpManager.sharedInstance()?.getSleepStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP2, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?)in
             if status == SLPDataTransferStatus.succeed
             {
@@ -192,6 +251,20 @@ class DeviceViewController: UIViewController {
             }
             else
             {
+                self.sleepStatus.text = self.str6
+                var error = ""
+                if status == SLPDataTransferStatus.failed
+                {
+                    let entity = data as! SLPSleepStatus;
+                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
+                    
+                }
+                else
+                {
+                    error = NSLocalizedString("failure", comment: "")
+                }
+                self.alertShow(message: error as NSString)
+                
                 print("check monitor failed !")
             }
         })
@@ -212,12 +285,37 @@ class DeviceViewController: UIViewController {
     
     @objc func receive_historyUploadFinished(notify: NSNotification) -> Void {
         
-        self.alertShow(message: "history data upload finished")
+        self.alertShow(message: NSLocalizedString("upload_data_finish", comment: "") as NSString)
     }
-
+    
+    func errorDes(errorCode: Int) -> NSString {
+        var error = ""
+        switch errorCode {
+        case 0x00:
+            error = NSLocalizedString("succeed", comment: "")
+        case 0x01:
+            error = NSLocalizedString("server_error", comment: "")
+        case 0x02:
+            error = NSLocalizedString("twp_not_login", comment: "")
+        case 0x04:
+            error = NSLocalizedString("twp_not_bind", comment: "")
+        case 0x08:
+            error = NSLocalizedString("twp_not_online", comment: "")
+        case 0x0d:
+            error = NSLocalizedString("twp_connected_failed", comment: "")
+        case 0x0f:
+            error = NSLocalizedString("twp_upgrading", comment: "")
+        case 0xff:
+            error = NSLocalizedString("unknow", comment: "")
+        default:
+            error = ""
+        }
+        return error as NSString
+    }
+    
     func alertShow(message: NSString ) -> Void {
         let alert = UIAlertController.init(title: "", message: message as String, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("confirm", comment: ""), style: .cancel, handler: nil)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
     }

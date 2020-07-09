@@ -77,7 +77,7 @@
     historyArr=[[NSMutableArray alloc]initWithCapacity:0];
     [self.simulateDataLongBT setTitle:NSLocalizedString(@"imitate_data_long", nil) forState:UIControlStateNormal];
     [self.simulateDataShortBT setTitle:NSLocalizedString(@"imitate_data_short", nil) forState:UIControlStateNormal];
-    [self.laestBT setTitle:NSLocalizedString(@"LatestReport", nil) forState:UIControlStateNormal];
+    [self.laestBT setTitle:NSLocalizedString(@"last_sleep_report", nil) forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -14,24 +14,32 @@ class DeviceViewController: UIViewController {
     @IBOutlet weak var startRealtimeData: UIButton!
     @IBOutlet weak var stopRealtimeData: UIButton!
     @IBOutlet weak var stopCollect: UIButton!
-    @IBOutlet weak var realtimeSleepStatus: UILabel!
-    @IBOutlet weak var realtimeDataLabel: UILabel!
-    @IBOutlet weak var realtimeEnvironmentLabel: UILabel!
-    
     @IBOutlet weak var checkEnviBT: UIButton!
     @IBOutlet weak var checkEnviLabel: UILabel!
     @IBOutlet weak var checkDeviceOnlineBT: UIButton!
-    @IBOutlet weak var deviceOnlineStatusLabel: UILabel!
     @IBOutlet weak var checkSleepStatusBT: UIButton!
-    @IBOutlet weak var sleepStatus: UILabel!
-    var deviceID = ""
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label7: UILabel!
+    @IBOutlet weak var label8: UILabel!
+    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label10: UILabel!
     
-    let str1 = NSLocalizedString("realtimeMonitorStatus", comment: "")
-    let str2 = NSLocalizedString("realtimeRate", comment: "")
-    let str3 = NSLocalizedString("realtimeEnvi", comment: "")
-    let str4 = NSLocalizedString("envi", comment: "")
-    let str5 = NSLocalizedString("deviceOnlineStatus", comment: "")
-    let str6 = NSLocalizedString("monitorStatus", comment: "")
+    var deviceID = ""
+    let str1 = NSLocalizedString("sleep_state", comment: "")
+    let str2 = NSLocalizedString("heartrate", comment: "")
+    let str3 = NSLocalizedString("breathrate", comment: "")
+    let str4 = NSLocalizedString("temp", comment: "")
+    let str5 = NSLocalizedString("humidity", comment: "")
+    let str6 = NSLocalizedString("cur_temp", comment: "")
+    let str7 = NSLocalizedString("cur_humidity", comment: "")
+    let str8 = NSLocalizedString("device_online_state", comment: "")
+    let str9 = NSLocalizedString("cur_sleep_state", comment: "")
+    let str10 = NSLocalizedString("Current_real_time_sleep", comment: "")
     
     override func viewDidLoad() {
         
@@ -61,21 +69,26 @@ class DeviceViewController: UIViewController {
         self.checkDeviceOnlineBT.layer.cornerRadius = 2.0;
         self.checkDeviceOnlineBT.layer.masksToBounds = true;
         
-        self.startRealtimeData.setTitle(NSLocalizedString("startRealtimeData", comment: ""), for: UIControl.State.normal)
-        self.stopRealtimeData.setTitle(NSLocalizedString("stopRealtimeData", comment: ""), for: UIControl.State.normal)
-        self.stopCollect.setTitle(NSLocalizedString("stopMonitor", comment: ""), for: UIControl.State.normal)
-        self.checkEnviBT.setTitle(NSLocalizedString("checkCurrentEnvi", comment: ""), for: UIControl.State.normal)
-        self.checkDeviceOnlineBT.setTitle(NSLocalizedString("checkDeviceOnlineStatus", comment: ""), for: UIControl.State.normal)
-        self.checkSleepStatusBT.setTitle(NSLocalizedString("checkMonitorStatus", comment: ""), for: UIControl.State.normal)
+        self.startRealtimeData.setTitle(NSLocalizedString("view_data", comment: ""), for: UIControl.State.normal)
+        self.stopRealtimeData.setTitle(NSLocalizedString("off_data", comment: ""), for: UIControl.State.normal)
+        self.stopCollect.setTitle(NSLocalizedString("off_collection", comment: ""), for: UIControl.State.normal)
+        self.checkEnviBT.setTitle(NSLocalizedString("query_envir_data", comment: ""), for: UIControl.State.normal)
+        self.checkDeviceOnlineBT.setTitle(NSLocalizedString("query_device_online_state", comment: ""), for: UIControl.State.normal)
+        self.checkSleepStatusBT.setTitle(NSLocalizedString("query_sleep_state", comment: ""), for: UIControl.State.normal)
         
         self.deviceID =  UserDefaults.standard.string(forKey: "deviceID")!
         
-        self.realtimeSleepStatus.text = self.str1
-        self.realtimeDataLabel.text = self.str2
-        self.realtimeEnvironmentLabel.text = self.str3
-        self.checkEnviLabel.text = self.str4
-        self.deviceOnlineStatusLabel.text = self.str5
-        self.sleepStatus.text = self.str6
+        self.label1.text = self.str1
+        self.label2.text = self.str2
+        self.label3.text = self.str3
+        self.label4.text = self.str4
+        self.label5.text = self.str5
+        self.label6.text = self.str6
+        self.label7.text = self.str7
+        self.label8.text = self.str8
+        self.label9.text = self.str9
+        self.label10.text = self.str10
+        
     }
     
     func receiceData() -> Void {
@@ -85,22 +98,12 @@ class DeviceViewController: UIViewController {
         //历史数据上传完成
         NotificationCenter.default.addObserver(self, selector: #selector(receive_historyUploadFinished(notify:)), name: Notification.Name(kNotificationNameHistoryDataUploadFinished), object: nil)
         
+        //睡眠状态发生改变
+        NotificationCenter.default.addObserver(self, selector: #selector(receive_sleepStatusChanged(notify:)), name: Notification.Name(kNotificationNameDeviceSleepStatusChanged), object: nil)
+        
     }
     
     @IBAction func startRealtimeData(_ sender: Any) {
-        
-        let time = UInt32(NSDate().timeIntervalSince1970)
-        //start collect
-        //        SLPLTcpManager.sharedInstance()?.startCollection(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP2, userID: "363590", timeStamp: time, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?)  in
-        //            if status == SLPDataTransferStatus.succeed
-        //            {
-        //                 print("start collect data succeed !")
-        //            }
-        //            else{
-        //                print("start collect data failed !")
-        //            }
-        //        })
-        
         SLPLTcpManager.sharedInstance()?.startRealTimeData(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.TWP2, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
@@ -146,9 +149,11 @@ class DeviceViewController: UIViewController {
                 print("stop realtime data failed !")
             }
             
-            self.realtimeSleepStatus.text = self.str1
-            self.realtimeDataLabel.text = self.str2
-            self.realtimeEnvironmentLabel.text = self.str3
+            self.label1.text = self.str1
+            self.label2.text = self.str2
+            self.label3.text = self.str3
+            self.label4.text = self.str4
+            self.label5.text = self.str5
         })
     }
     
@@ -188,11 +193,13 @@ class DeviceViewController: UIViewController {
                 
                 let enviInfo : SLPEnvironmentInfo = data as! SLPEnvironmentInfo;
                 
-                self.checkEnviLabel.text = self.str4 + "hum =\(enviInfo.humidity) tem=\(enviInfo.temperature)"
+                self.label6.text = self.str6 + ":" + "\(enviInfo.temperature)"
+                self.label7.text = self.str7 + ":" + "\(enviInfo.humidity)"
             }
             else
             {
-                self.checkEnviLabel.text = self.str4
+                self.label6.text = self.str6
+                self.label7.text = self.str7
                 var error = ""
                 if status == SLPDataTransferStatus.failed
                 {
@@ -218,11 +225,11 @@ class DeviceViewController: UIViewController {
                 let onlineInfo : SLPTCPOnlineStatus = data as! SLPTCPOnlineStatus
                 
                 let onlineStr = onlineInfo.isOnline ? NSLocalizedString("online", comment: "在线") : NSLocalizedString("offline", comment: "不在线")
-                self.deviceOnlineStatusLabel.text =  self.str5 +  onlineStr
+                self.label8.text =  self.str8 + ":" + onlineStr
             }
             else
             {
-                self.deviceOnlineStatusLabel.text =  self.str5
+                self.label8.text =  self.str8
                 var error = ""
                 if status == SLPDataTransferStatus.failed
                 {
@@ -246,18 +253,29 @@ class DeviceViewController: UIViewController {
                 print("check monitor succeed !")
                 let sleepInfo : SLPSleepStatus = data as! SLPSleepStatus
                 
-                let leftbedStr = sleepInfo.leftbedFlag == 1 ? NSLocalizedString("out_bed", comment: "离床") : NSLocalizedString("in_bed", comment: "在床")
-                self.sleepStatus.text = self.str6 + leftbedStr
+                var str : String = "--"
+                if sleepInfo.weakFlag == 1 {
+                    str = NSLocalizedString("wake", comment: "唤醒")
+                }
+                else if sleepInfo.sleepFlag == 1{
+                    str = NSLocalizedString("sleep", comment: "入睡")
+                }
+                else if sleepInfo.leftbedFlag == 0{
+                    str = NSLocalizedString("in_bed", comment: "在床")
+                }
+                else if sleepInfo.leftbedFlag == 1{
+                    str = NSLocalizedString("out_bed", comment: "离床")
+                }
+                self.label9.text =  self.str9 + ":" + str
             }
             else
             {
-                self.sleepStatus.text = self.str6
+                self.label9.text =  self.str9
                 var error = ""
                 if status == SLPDataTransferStatus.failed
                 {
                     let entity = data as! SLPSleepStatus;
                     error = self.errorDes(errorCode: Int(entity.errorCode)) as String
-                    
                 }
                 else
                 {
@@ -273,19 +291,38 @@ class DeviceViewController: UIViewController {
     @objc func receive_notifaction(notify: NSNotification) -> Void {
         
         let real: SLPTCPPostRealtimeData = notify.userInfo?[kNotificationPostData] as! SLPTCPPostRealtimeData
-        
         let data: SLPRealtimeDataBase  = real.dataList[0]
-        
-        self.realtimeSleepStatus.text = str1 + "\(data.brStatus)"
-        
-        self.realtimeDataLabel.text = str2 + "br=\(data.br) hr=\(data.hr)"
-        
-        self.realtimeEnvironmentLabel.text = str3 + "hum =\(data.humidity) tem=\(data.temperature)"
+        let statusStr: String = self.statusDes(statusCode: data.brStatus) as String
+        self.label1.text = str1 + ":" +  statusStr
+        self.label2.text = str2 + ":" +  "\(data.hr)"
+        self.label3.text = str3 + ":" +  "\(data.br)"
+        self.label4.text = str4 + ":" + "\(data.temperature)"
+        self.label5.text = str5 + ":" + "\(data.humidity)"
     }
     
     @objc func receive_historyUploadFinished(notify: NSNotification) -> Void {
         
         self.alertShow(message: NSLocalizedString("upload_data_finish", comment: "") as NSString)
+    }
+    
+    @objc func receive_sleepStatusChanged(notify: NSNotification) -> Void {
+        
+        let sleepInfo: SLPSleepStatus = notify.userInfo?[kNotificationPostData] as! SLPSleepStatus
+        
+        var str : String = "--"
+        if sleepInfo.weakFlag == 1 {
+            str = NSLocalizedString("wake", comment: "唤醒")
+        }
+        else if sleepInfo.sleepFlag == 1{
+            str = NSLocalizedString("sleep", comment: "入睡")
+        }
+        else if sleepInfo.leftbedFlag == 0{
+            str = NSLocalizedString("in_bed", comment: "在床")
+        }
+        else if sleepInfo.leftbedFlag == 1{
+            str = NSLocalizedString("out_bed", comment: "离床")
+        }
+        self.label10.text = self.str10 + ":" +  str
     }
     
     func errorDes(errorCode: Int) -> NSString {
@@ -311,6 +348,31 @@ class DeviceViewController: UIViewController {
             error = ""
         }
         return error as NSString
+    }
+    
+    func statusDes(statusCode: Int) -> NSString {
+        var des = ""
+        switch statusCode {
+        case 0x00:
+            des = NSLocalizedString("normal_status", comment: "")
+        case 0x01:
+            des = NSLocalizedString("Initializing", comment: "")
+        case 0x02:
+            des = NSLocalizedString("Apnea", comment: "")
+        case 0x03:
+            des = NSLocalizedString("Pause_heartbeat", comment: "")
+        case 0x04:
+            des = NSLocalizedString("Body_movement", comment: "")
+        case 0x05:
+            des = NSLocalizedString("Out_of_bed", comment: "")
+        case 0x06:
+            des = NSLocalizedString("Turn_over", comment: "")
+         case 0x07:
+            des = NSLocalizedString("Body_motion_range", comment: "")
+        default:
+            des = NSLocalizedString("invalid", comment: "")
+        }
+        return des as NSString
     }
     
     func alertShow(message: NSString ) -> Void {

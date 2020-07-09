@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         }
         else
         {
-            self.urlTextfield.text = "http://172.14.0.111:8082"
+            self.urlTextfield.text = "http://120.24.68.136:8091"
         }
         
         if  (UserDefaults.standard.string(forKey: "channelID") != nil) {
@@ -108,6 +108,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func connect(_ sender: Any) {
+        
+        
         
         let dic = ["url": self.urlTextfield.text!,"channelID" : self.channelidTextfield.text! ]
         SLPHTTPManager.sharedInstance().initHttpServiceInfo(dic);
@@ -252,6 +254,7 @@ class LoginViewController: UIViewController {
         }
         return error as NSString
     }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.resignTextfiled()

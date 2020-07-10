@@ -75,9 +75,7 @@ class DeviceViewController: UIViewController {
         self.checkEnviBT.setTitle(NSLocalizedString("query_envir_data", comment: ""), for: UIControl.State.normal)
         self.checkDeviceOnlineBT.setTitle(NSLocalizedString("query_device_online_state", comment: ""), for: UIControl.State.normal)
         self.checkSleepStatusBT.setTitle(NSLocalizedString("query_sleep_state", comment: ""), for: UIControl.State.normal)
-        
         self.deviceID =  UserDefaults.standard.string(forKey: "deviceID")!
-        
         self.label1.text = self.str1
         self.label2.text = self.str2
         self.label3.text = self.str3
@@ -88,7 +86,11 @@ class DeviceViewController: UIViewController {
         self.label8.text = self.str8
         self.label9.text = self.str9
         self.label10.text = self.str10
-        
+        if #available(iOS 13.0, *) {
+              self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
+          } else {
+              // Fallback on earlier versions
+          };
     }
     
     func receiceData() -> Void {

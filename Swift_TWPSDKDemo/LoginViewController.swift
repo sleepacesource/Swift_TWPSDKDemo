@@ -91,6 +91,13 @@ class LoginViewController: UIViewController {
         self.unbindBT.setTitle(NSLocalizedString("unbind", comment: ""), for: .normal)
         self.connectBT.setTitle(NSLocalizedString("connect_server", comment: ""), for: .normal)
         self.progressLabel.text = NSLocalizedString("upgrading_device", comment: "")
+        
+      
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
+        } else {
+            // Fallback on earlier versions
+        };
     }
     
     override func viewWillDisappear(_ animated: Bool) {

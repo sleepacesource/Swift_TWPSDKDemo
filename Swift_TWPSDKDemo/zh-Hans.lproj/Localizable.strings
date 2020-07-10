@@ -304,7 +304,7 @@
 "device_online_state"="当前设备在线状态";
 "query_sleep_state"="查询当前睡眠状态";
 "cur_sleep_state"="当前睡眠状态";
-"imitate_data_short"="短报告（时长&lt;3h）";
+"imitate_data_short"="短报告（时长<3h）";
 "imitate_data_long"="长报告（时长≥3h）";
 "wake"="清醒";
 "asleep"="入睡";
@@ -374,7 +374,6 @@
 "start_sleep_time_too_latter"="太晚睡";
 "wake_times_too_much"="睡觉易醒";
 "benign_sleep"="良性睡眠分布";
-"sequence"="第%1$s次";
 "unit_s"="秒";
 "nothing"="无";
 "unit_times"="次";
@@ -399,3 +398,4 @@
 "invalid"="无效";
 "Body_motion_range"="体动幅度";
 "Current_real_time_sleep"="当前实时睡眠状态";
+"inbed_time"="在床时间";

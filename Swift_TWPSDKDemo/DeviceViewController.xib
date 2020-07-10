@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeviceViewController" customModule="Swift_TWPSDKDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeviceViewController" customModule="Z400TWP_2_SDK" customModuleProvider="target">
             <connections>
                 <outlet property="checkDeviceOnlineBT" destination="oBm-9l-NZ6" id="0c0-lQ-iKg"/>
                 <outlet property="checkEnviBT" destination="qsc-QZ-8K1" id="ONx-iC-PWm"/>
@@ -35,10 +35,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5as-MM-UIW">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5as-MM-UIW">
                     <rect key="frame" x="37" y="31" width="296" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BHC-05-wU8"/>
+                    </constraints>
                     <state key="normal" title="开始获取实时数据">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -46,10 +48,12 @@
                         <action selector="startRealtimeData:" destination="-1" eventType="touchUpInside" id="JWV-7v-1py"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85y-hR-4Y5">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85y-hR-4Y5">
                     <rect key="frame" x="37" y="79" width="296" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="hKd-I2-F4O"/>
+                    </constraints>
                     <state key="normal" title="停止获取实时数据">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -57,26 +61,32 @@
                         <action selector="stopRealtimeData:" destination="-1" eventType="touchUpInside" id="J4N-ks-XJv"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实时睡眠状态：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FR3-8e-iAb">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实时睡眠状态：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FR3-8e-iAb">
                     <rect key="frame" x="37" y="176" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="GPF-zc-9ZL"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实时心率：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qG-AH-y87">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实时心率：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qG-AH-y87">
                     <rect key="frame" x="37" y="202" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="obQ-ah-mvJ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBm-9l-NZ6">
-                    <rect key="frame" x="37" y="407" width="299" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBm-9l-NZ6">
+                    <rect key="frame" x="37" y="407" width="296" height="40"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="GgQ-X7-8aC"/>
+                    </constraints>
                     <state key="normal" title="设备在线状态查询">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -84,34 +94,32 @@
                         <action selector="checkOnlineStatus:" destination="-1" eventType="touchUpInside" id="ZGx-fQ-cRk"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前温度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC1-qa-JvR">
-                    <rect key="frame" x="40" y="354" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前温度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC1-qa-JvR">
+                    <rect key="frame" x="37" y="354" width="296" height="21"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="lrK-KS-mwp"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前湿度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwn-nz-4VY">
-                    <rect key="frame" x="40" y="378" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前设备状态:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEJ-Ms-D2E">
+                    <rect key="frame" x="37" y="455" width="296" height="21"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="C2p-Tr-VV6"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前设备状态:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEJ-Ms-D2E">
-                    <rect key="frame" x="40" y="455" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hti-op-7mI">
-                    <rect key="frame" x="37" y="493" width="302" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hti-op-7mI">
+                    <rect key="frame" x="37" y="486" width="296" height="40"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="YXm-Ki-bnD"/>
+                    </constraints>
                     <state key="normal" title="查询当前睡眠状态">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -119,10 +127,12 @@
                         <action selector="checkMonitorStatus:" destination="-1" eventType="touchUpInside" id="yGg-zy-mjR"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyk-Zi-JK0">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyk-Zi-JK0">
                     <rect key="frame" x="37" y="127" width="296" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2bJ-69-ZR8"/>
+                    </constraints>
                     <state key="normal" title="手动结束监测">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -130,26 +140,29 @@
                         <action selector="stopMonitor:" destination="-1" eventType="touchUpInside" id="9DT-8A-y1Y"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前睡眠状态:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJl-xE-Lep">
-                    <rect key="frame" x="37" y="541" width="302" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前睡眠状态:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJl-xE-Lep">
+                    <rect key="frame" x="37" y="534" width="296" height="21"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="gdw-qy-6Qr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前实时睡眠状态：" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-We-0ED">
+                    <rect key="frame" x="37" y="562" width="296" height="20.5"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="睡眠状态改变:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-We-0ED">
-                    <rect key="frame" x="37" y="569" width="302" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsc-QZ-8K1">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsc-QZ-8K1">
                     <rect key="frame" x="37" y="307" width="296" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="fqg-bQ-BCF"/>
+                    </constraints>
                     <state key="normal" title="查询当前温湿度">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -157,32 +170,98 @@
                         <action selector="checkEnvironment:" destination="-1" eventType="touchUpInside" id="nKm-yR-xBh"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实时呼吸率：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-sc-MHz">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实时呼吸率：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-sc-MHz">
                     <rect key="frame" x="37" y="228" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="b9I-Ye-zn4"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实时温度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s2-Da-eXb">
-                    <rect key="frame" x="39" y="253" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实时温度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s2-Da-eXb">
+                    <rect key="frame" x="37" y="253" width="296" height="21"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="U3e-t1-DR9"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实时湿度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-Hn-hrp">
-                    <rect key="frame" x="39" y="278" width="296" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实时湿度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-Hn-hrp">
+                    <rect key="frame" x="37" y="278" width="296" height="21"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="qy3-cj-u8i"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前湿度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwn-nz-4VY">
+                    <rect key="frame" x="37" y="378" width="296" height="21"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Fgl-2j-RbF"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="wcn-sc-MHz" firstAttribute="top" secondItem="9qG-AH-y87" secondAttribute="bottom" constant="5" id="0Zp-KO-KyJ"/>
+                <constraint firstItem="fC1-qa-JvR" firstAttribute="leading" secondItem="gpM-Hn-hrp" secondAttribute="leading" id="0n5-ai-aJD"/>
+                <constraint firstItem="7s2-Da-eXb" firstAttribute="top" secondItem="wcn-sc-MHz" secondAttribute="bottom" constant="4" id="1z3-xk-X1n"/>
+                <constraint firstItem="oBm-9l-NZ6" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="2B7-Uf-YEq"/>
+                <constraint firstItem="oEJ-Ms-D2E" firstAttribute="top" secondItem="oBm-9l-NZ6" secondAttribute="bottom" constant="8" id="3pY-xz-ece"/>
+                <constraint firstItem="FR3-8e-iAb" firstAttribute="top" secondItem="hyk-Zi-JK0" secondAttribute="bottom" constant="9" id="4lX-yn-Zli"/>
+                <constraint firstItem="wcn-sc-MHz" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="5Bg-ct-b3Q"/>
+                <constraint firstItem="gpM-Hn-hrp" firstAttribute="top" secondItem="7s2-Da-eXb" secondAttribute="bottom" constant="4" id="6aq-aM-LpQ"/>
+                <constraint firstItem="fC1-qa-JvR" firstAttribute="trailing" secondItem="gpM-Hn-hrp" secondAttribute="trailing" id="8Vl-Za-Pd3"/>
+                <constraint firstItem="qsc-QZ-8K1" firstAttribute="top" secondItem="gpM-Hn-hrp" secondAttribute="bottom" constant="8" id="A9c-Xj-DGQ"/>
+                <constraint firstItem="hwn-nz-4VY" firstAttribute="top" secondItem="fC1-qa-JvR" secondAttribute="bottom" constant="3" id="ABf-qh-D0A"/>
+                <constraint firstItem="9qG-AH-y87" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="ACy-qH-T22"/>
+                <constraint firstItem="FR3-8e-iAb" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="Ara-lo-sJZ"/>
+                <constraint firstItem="Hti-op-7mI" firstAttribute="top" secondItem="oEJ-Ms-D2E" secondAttribute="bottom" constant="10" id="BUh-IY-Q5g"/>
+                <constraint firstItem="Uzr-We-0ED" firstAttribute="trailing" secondItem="gpM-Hn-hrp" secondAttribute="trailing" id="EOr-LE-vvZ"/>
+                <constraint firstItem="9qG-AH-y87" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="GA3-Yy-rqp"/>
+                <constraint firstItem="FR3-8e-iAb" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="Gza-SC-PkJ"/>
+                <constraint firstItem="Uzr-We-0ED" firstAttribute="top" secondItem="gJl-xE-Lep" secondAttribute="bottom" constant="7" id="IQO-ig-TqQ"/>
+                <constraint firstItem="gJl-xE-Lep" firstAttribute="top" secondItem="Hti-op-7mI" secondAttribute="bottom" constant="8" id="KF5-pd-vyt"/>
+                <constraint firstItem="oEJ-Ms-D2E" firstAttribute="leading" secondItem="gpM-Hn-hrp" secondAttribute="leading" id="LO5-TQ-dgd"/>
+                <constraint firstItem="9qG-AH-y87" firstAttribute="top" secondItem="FR3-8e-iAb" secondAttribute="bottom" constant="5" id="Nl5-47-i1l"/>
+                <constraint firstItem="gJl-xE-Lep" firstAttribute="trailing" secondItem="gpM-Hn-hrp" secondAttribute="trailing" id="Oxq-Na-1j0"/>
+                <constraint firstItem="fC1-qa-JvR" firstAttribute="top" secondItem="qsc-QZ-8K1" secondAttribute="bottom" constant="7" id="TfM-Sw-jpe"/>
+                <constraint firstItem="oEJ-Ms-D2E" firstAttribute="trailing" secondItem="gpM-Hn-hrp" secondAttribute="trailing" id="XQx-Z6-ncL"/>
+                <constraint firstItem="Hti-op-7mI" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="Xte-bx-SVN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" constant="42" id="dbY-YU-ns1"/>
+                <constraint firstItem="Hti-op-7mI" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="drt-0h-cxv"/>
+                <constraint firstItem="7s2-Da-eXb" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="gur-eX-X9a"/>
+                <constraint firstItem="gpM-Hn-hrp" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="hnc-gT-PVT"/>
+                <constraint firstItem="qsc-QZ-8K1" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="iBW-SY-0zp"/>
+                <constraint firstItem="oBm-9l-NZ6" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="ifZ-SH-AYW"/>
+                <constraint firstItem="gpM-Hn-hrp" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="iwJ-Rx-e9X"/>
+                <constraint firstItem="hwn-nz-4VY" firstAttribute="trailing" secondItem="gpM-Hn-hrp" secondAttribute="trailing" id="jJo-bn-xkN"/>
+                <constraint firstItem="hyk-Zi-JK0" firstAttribute="top" secondItem="85y-hR-4Y5" secondAttribute="bottom" constant="8" id="kAw-ut-pIJ"/>
+                <constraint firstItem="hyk-Zi-JK0" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" id="lqK-ta-nRe"/>
+                <constraint firstItem="gJl-xE-Lep" firstAttribute="leading" secondItem="gpM-Hn-hrp" secondAttribute="leading" id="m8T-Sr-a9t"/>
+                <constraint firstItem="hyk-Zi-JK0" firstAttribute="leading" secondItem="5as-MM-UIW" secondAttribute="leading" id="oZ6-Uw-w0E"/>
+                <constraint firstItem="wcn-sc-MHz" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="qVV-J2-wsc"/>
+                <constraint firstItem="85y-hR-4Y5" firstAttribute="top" secondItem="5as-MM-UIW" secondAttribute="bottom" constant="8" id="qgU-38-ngm"/>
+                <constraint firstItem="5as-MM-UIW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="37" id="rFy-A2-QJ5"/>
+                <constraint firstItem="7s2-Da-eXb" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="rdf-gd-wH4"/>
+                <constraint firstItem="85y-hR-4Y5" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" id="ty8-3f-sH9"/>
+                <constraint firstItem="85y-hR-4Y5" firstAttribute="leading" secondItem="5as-MM-UIW" secondAttribute="leading" id="w08-SM-XmC"/>
+                <constraint firstItem="oBm-9l-NZ6" firstAttribute="top" secondItem="hwn-nz-4VY" secondAttribute="bottom" constant="8" id="w5b-QA-CY3"/>
+                <constraint firstItem="hwn-nz-4VY" firstAttribute="leading" secondItem="gpM-Hn-hrp" secondAttribute="leading" id="xHt-Ft-45n"/>
+                <constraint firstItem="5as-MM-UIW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="31" id="xJk-vW-Olf"/>
+                <constraint firstItem="Uzr-We-0ED" firstAttribute="leading" secondItem="gpM-Hn-hrp" secondAttribute="leading" id="xz7-Bg-pg9"/>
+                <constraint firstItem="qsc-QZ-8K1" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="yM2-qu-Gbk"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="136.80000000000001" y="128.18590704647679"/>
         </view>

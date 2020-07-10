@@ -205,7 +205,7 @@
     {
         titleArray=@[NSLocalizedString(@"collection_date", nil),
                      NSLocalizedString(@"sleeping_time", nil),
-                     NSLocalizedString(@"sleep_duration", nil),
+                     NSLocalizedString(@"inbed_time", nil),
                      NSLocalizedString(@"heart_rate", nil),
                      NSLocalizedString(@"respiration_rate", nil)
                      ];

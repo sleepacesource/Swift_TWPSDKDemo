@@ -54,14 +54,14 @@ class LoginViewController: UIViewController {
         }
         else
         {
-            self.tokeTextfield.text = "jaker123"
+            self.tokeTextfield.text = "lisufang"
         }
         if  (UserDefaults.standard.string(forKey: "deviceID") != nil) {
             self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID")
         }
         else
         {
-            self.deviceIdTextfield.text = "jfbkwowszdm6d"
+            self.deviceIdTextfield.text = "81d3xeoievs6h"
         }
         if  (UserDefaults.standard.string(forKey: "version") != nil) {
             self.versionTextfield.text = UserDefaults.standard.string(forKey: "version")

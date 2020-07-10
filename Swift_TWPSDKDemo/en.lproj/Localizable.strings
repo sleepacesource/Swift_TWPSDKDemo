@@ -302,7 +302,7 @@
 "device_online_state"="Current device online status";
 "query_sleep_state"="Query the current sleep state";
 "cur_sleep_state"="Current sleep state";
-"imitate_data_short"="Short report (duration&lt;3h)";
+"imitate_data_short"="Short report (duration<3h)";
 "imitate_data_long"="Long report (duration ≥3h)";
 "wake"="wide awake";
 "asleep"="Fall asleep";
@@ -372,7 +372,6 @@
 "start_sleep_time_too_latter"="Sleep too late";
 "wake_times_too_much"="Wake up easily";
 "benign_sleep"="Benign sleep distribution";
-"sequence"="%1$s";
 "unit_s"="second";
 "nothing"="no";
 "unit_times"="Times";
@@ -397,3 +396,4 @@
 "invalid"="invalid";
 "Body_motion_range"="Body motion range";
 "Current_real_time_sleep"="Current real-time sleep state";
+"inbed_time"="In bed time";

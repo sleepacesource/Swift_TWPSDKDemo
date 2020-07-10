@@ -202,6 +202,21 @@
     int flag = [[summaryDic objectForKey:@"recordCount"] integerValue] >= 180?1:2;
     obj.reportFlag=[NSNumber numberWithInteger:flag];
     
+    //short report
+    if (flag == 2) {
+        obj.duration=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"duration"]integerValue]];
+        obj.startTime=[NSNumber numberWithInteger:[[summaryDic objectForKey:@"startTime"] integerValue]];
+        obj.pjxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"averageHeartBeatRate"]integerValue]];
+        obj.pjhxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"averageBreathRate"]integerValue]];
+        obj.tdcs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"bodyMovementTimes"]integerValue]];
+        obj.fscs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"trunOverTimes"]integerValue]];
+        obj.zgxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"maxHeartBeatRate"]integerValue]];
+        obj.zghxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"maxBreathRate"]integerValue]];
+        obj.recordCount= [NSNumber numberWithInteger:[[summaryDic objectForKey:@"recordCount"] integerValue]];
+        [NSNumber numberWithInteger:[[analysisDic objectForKey:@"fallAlseepAllTime"]integerValue]];
+        return obj;
+    }
+    
     obj.breathRateString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"breathRate"] componentsJoinedByString:@","]];
     obj.heartRateString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"heartRate"] componentsJoinedByString:@","]];
     obj.statusString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"status"] componentsJoinedByString:@","]];

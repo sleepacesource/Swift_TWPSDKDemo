@@ -18,6 +18,12 @@ class MainViewController: UITabBarController {
         self.addChildVC(childVC: LoginViewController(), title: NSLocalizedString("login_in", comment: ""), index: 0 ,imagename: "home.png")
         self.addChildVC(childVC: DeviceViewController(), title: NSLocalizedString("device", comment: ""), index: 1 , imagename: "control.png" )
         self.addChildVC(childVC: DataViewController(), title: NSLocalizedString("report_", comment: ""), index: 2 , imagename: "data.png")
+        
+        if #available(iOS 13.0, *) {
+                self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
+            } else {
+                // Fallback on earlier versions
+            };
     }
     
     func addChildVC(childVC:UIViewController,title:String,index:Int ,imagename: String) {
@@ -28,5 +34,4 @@ class MainViewController: UITabBarController {
         childVC.navigationController?.navigationBar.isHidden = true;
         self.addChild(navigation)
     }
-    
 }

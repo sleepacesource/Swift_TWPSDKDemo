@@ -78,6 +78,12 @@
     [self.simulateDataLongBT setTitle:NSLocalizedString(@"imitate_data_long", nil) forState:UIControlStateNormal];
     [self.simulateDataShortBT setTitle:NSLocalizedString(@"imitate_data_short", nil) forState:UIControlStateNormal];
     [self.laestBT setTitle:NSLocalizedString(@"last_sleep_report", nil) forState:UIControlStateNormal];
+    
+    if (@available(iOS 13.0, *)) {
+        self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -334,7 +340,7 @@
     valueArray=[DealWithData backDataArray:obj];
     [self initTableviewTitle:isLongData];
     CGRect rect=self.view.frame;
-    int  height=titleArray.count*55+rect.size.height+space;
+    int  height=titleArray.count*40+rect.size.height+space;
     rect.size.height=height;
     self.myscorollview.contentSize=rect.size;
     [self.myDataTableview reloadData];

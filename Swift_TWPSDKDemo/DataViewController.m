@@ -183,7 +183,19 @@
             [alert show];
         }
     }];
+    
+    
+//    NSDictionary *dic = @{
+//        @"startTime":@(1593573199),
+//        @"endTime": @(startTime),
+//        @"dateFormate": @"yyyy-MM-dd"
+//    };
+//    
+//    [SLPSharedHTTPManager getReportScore:dic timeOut:10.0 completion:^(BOOL result, id  _Nonnull responseObject, NSString * _Nonnull error) {
+//        NSLog(@"response--------%@",responseObject);
+//    }];
 }
+
 
 - (void)initTableviewTitle:(BOOL)longReport
 {

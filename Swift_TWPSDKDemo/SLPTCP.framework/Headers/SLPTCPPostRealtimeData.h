@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) UInt8 br;//呼吸率
 @property (nonatomic,assign) UInt8 hr;//心率
 @property (nonatomic,assign) NSInteger brStatus;//状态
-@property (nonatomic,assign) NSInteger brStatusValue;//状态值
+//@property (nonatomic,assign) NSInteger brStatusValue;//状态值(废弃)
 @property (nonatomic,readonly) BOOL isOffBed;//是否为离床
 @property (nonatomic,readonly) BOOL isInit;
 //时间戳    UINT32    4    单位：秒 时间戳，无符号整形

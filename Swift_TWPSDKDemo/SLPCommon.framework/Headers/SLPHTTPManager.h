@@ -159,7 +159,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getDailyReport:(NSDictionary *)param timeOut:(CGFloat)timeout completion:(void (^)(BOOL result,id responseObject, NSString *error))completion;
 
 /**
-*获取闹钟列表
+*获取日报告带分数
 *@param param 传入参数字典
 *@param timeout 超时时间（秒s）
 *@param completion 回调

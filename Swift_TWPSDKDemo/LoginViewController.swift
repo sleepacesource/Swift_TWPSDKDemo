@@ -136,7 +136,7 @@ class LoginViewController: UIViewController {
                 let port = tcpServer["port"] as! String
                 
                 //login device
-                SLPLTcpManager.sharedInstance()?.loginHost(ip, port: NSInteger(port)!, deviceID:self.deviceIdTextfield.text!, token: sid, completion: { (succeed: Bool) in
+                SLPLTcpManager.sharedInstance()?.loginHost(ip, port: NSInteger(port)!, token: sid, completion: { (succeed: Bool) in
                     MBProgressHUD.hide(for: self.view, animated: true)
                     print("login tcp result ---",succeed)
                     if succeed
@@ -145,7 +145,7 @@ class LoginViewController: UIViewController {
                     }
                     else
                     {
-                        connectStr = NSLocalizedString("Connection_failed", comment: "")   
+                        connectStr = NSLocalizedString("Connection_failed", comment: "")
                     }
                     self.alertShow(message: connectStr as NSString)
                 })

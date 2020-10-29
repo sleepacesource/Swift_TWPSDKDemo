@@ -10,8 +10,8 @@
 #import "SLPLTcpManager.h"
 #import "SLPLTcpManager+Public.h"
 #import "SLPLTcpManager+TWP.h"
-#import "SLPLTcpManager+EW202W.h"
 #import "SLPLTcpManager+SA1001.h"
 #import "SLPLTcpDef.h"
 #import "SLPLTcpHeads.h"
 
+#define SLPTCPVersion  @"3.0.0"

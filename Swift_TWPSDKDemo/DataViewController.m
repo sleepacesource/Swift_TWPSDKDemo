@@ -165,7 +165,7 @@
 - (IBAction)getLaestReport:(id)sender {
     
     NSInteger startTime = [[NSDate date] timeIntervalSince1970];
-    NSDictionary *dic = @{@"startTime":@(startTime) ,@"num": @(1) ,@"order": @(0),@"deviceType":@(SLPDeviceType_TWP2)};
+    NSDictionary *dic = @{@"startTime":@(startTime) ,@"num": @(1) ,@"order": @(0),@"deviceType":@(SLPDeviceType_TWP3)};
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [SLPSharedHTTPManager getDailyReport:dic timeOut:10.0 completion:^(BOOL result, id  _Nonnull responseObject, NSString * _Nonnull error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];

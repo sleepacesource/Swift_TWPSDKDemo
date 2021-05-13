@@ -139,7 +139,7 @@
 		26841E7A2499C8AA00DC50D3 /* DealWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealWithData.h; sourceTree = "<group>"; };
 		26841E7B2499C8AA00DC50D3 /* SimulateData+ScoreDeduction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SimulateData+ScoreDeduction.m"; sourceTree = "<group>"; };
 		26841E7C2499C8AA00DC50D3 /* UpgradeInfoObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeInfoObj.m; sourceTree = "<group>"; };
-		2684E9082490C52E00ADF97E /* Z400TWP_2_SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Z400TWP_2_SDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2684E9082490C52E00ADF97E /* Z400TWP_3_SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Z400TWP_3_SDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2684E90B2490C52E00ADF97E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2684E9122490C52E00ADF97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2684E9142490C53200ADF97E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 		2684E9092490C52E00ADF97E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2684E9082490C52E00ADF97E /* Z400TWP_2_SDK.app */,
+				2684E9082490C52E00ADF97E /* Z400TWP_3_SDK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 			);
 			name = Swift_TWPSDKDemo;
 			productName = Swift_TWPSDKDemo;
-			productReference = 2684E9082490C52E00ADF97E /* Z400TWP_2_SDK.app */;
+			productReference = 2684E9082490C52E00ADF97E /* Z400TWP_3_SDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -725,8 +725,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.Swift-TWPSDKDemo";
-				PRODUCT_NAME = Z400TWP_2_SDK;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.Swift-TWP3SDKDemo";
+				PRODUCT_NAME = Z400TWP_3_SDK;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift_TWPSDKDemo/Swift_TWPSDKDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -751,8 +751,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.Swift-TWPSDKDemo";
-				PRODUCT_NAME = Z400TWP_2_SDK;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.medicatech.Swift-TWP3SDKDemo";
+				PRODUCT_NAME = Z400TWP_3_SDK;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift_TWPSDKDemo/Swift_TWPSDKDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

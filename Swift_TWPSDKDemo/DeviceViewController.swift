@@ -76,16 +76,16 @@ class DeviceViewController: UIViewController {
         self.checkDeviceOnlineBT.setTitle(NSLocalizedString("query_device_online_state", comment: ""), for: UIControl.State.normal)
         self.checkSleepStatusBT.setTitle(NSLocalizedString("query_sleep_state", comment: ""), for: UIControl.State.normal)
         self.deviceID =  UserDefaults.standard.string(forKey: "deviceID")!
-        self.label1.text = self.str1
-        self.label2.text = self.str2
-        self.label3.text = self.str3
-        self.label4.text = self.str4
-        self.label5.text = self.str5
-        self.label6.text = self.str6
-        self.label7.text = self.str7
-        self.label8.text = self.str8
-        self.label9.text = self.str9
-        self.label10.text = self.str10
+        self.label1.text = self.str1 + ":"
+        self.label2.text = self.str2 + ":"
+        self.label3.text = self.str3 + ":"
+        self.label4.text = self.str4 + ":"
+        self.label5.text = self.str5 + ":"
+        self.label6.text = self.str6 + ":"
+        self.label7.text = self.str7 + ":"
+        self.label8.text = self.str8 + ":"
+        self.label9.text = self.str9 + ":"
+        self.label10.text = self.str10 + ":"
         if #available(iOS 13.0, *) {
               self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
           } else {
@@ -166,6 +166,8 @@ class DeviceViewController: UIViewController {
             if status == SLPDataTransferStatus.succeed
             {
                 print("stop monitor succeed !")
+//                self.alertShow(message: "数据上传成功")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "JUMPREPORT"), object: nil)
             }
             else
             {
@@ -296,8 +298,18 @@ class DeviceViewController: UIViewController {
         let data: SLPRealtimeDataBase  = real.dataList[0]
         let statusStr: String = self.statusDes(statusCode: data.brStatus) as String
         self.label1.text = str1 + ":" +  statusStr
-        self.label2.text = str2 + ":" +  "\(data.hr)"
-        self.label3.text = str3 + ":" +  "\(data.br)"
+        
+        var hr = String(format: "%d", data.hr)
+        if data.hr == 255 {
+            hr = "--"
+        }
+        
+        var br = String(format: "%d", data.br)
+        if data.br == 255 {
+            br = "--"
+        }
+        self.label2.text = str2 + ":" +  "\(hr)"
+        self.label3.text = str3 + ":" +  "\(br)"
         self.label4.text = str4 + ":" + "\(data.temperature)"
         self.label5.text = str5 + ":" + "\(data.humidity)"
     }

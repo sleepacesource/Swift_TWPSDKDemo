@@ -84,6 +84,8 @@
     } else {
         // Fallback on earlier versions
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshReport) name:@"JUMPREPORT" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -161,12 +163,10 @@
     [self showReportwith:[SimulateData simulateLongData]];
 }
 
-
-- (IBAction)getLaestReport:(id)sender {
-    
+- (void)refreshReport {
     NSInteger startTime = [[NSDate date] timeIntervalSince1970];
     NSDictionary *dic = @{@"startTime":@(startTime) ,@"num": @(1) ,@"order": @(0),@"deviceType":@(SLPDeviceType_TWP3)};
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [SLPSharedHTTPManager getDailyReport:dic timeOut:10.0 completion:^(BOOL result, id  _Nonnull responseObject, NSString * _Nonnull error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (result) {
@@ -183,6 +183,11 @@
             [alert show];
         }
     }];
+}
+
+- (IBAction)getLaestReport:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self refreshReport];
     
 //    NSDictionary *dic = @{
 //        @"startTime":@(1593573199),
@@ -215,7 +220,9 @@
                      NSLocalizedString(@"wake_times", nil),
                      NSLocalizedString(@"turn_times", nil),
                      NSLocalizedString(@"body_times", nil),
-                     NSLocalizedString(@"out_times", nil)
+                     NSLocalizedString(@"out_times", nil),
+                     @"温度",
+                     @"湿度",
                      ];
     }
     else
@@ -224,7 +231,9 @@
                      NSLocalizedString(@"sleeping_time", nil),
                      NSLocalizedString(@"inbed_time", nil),
                      NSLocalizedString(@"heart_rate", nil),
-                     NSLocalizedString(@"respiration_rate", nil)
+                     NSLocalizedString(@"respiration_rate", nil),
+                     @"温度",
+                     @"湿度",
                      ];
         
     }

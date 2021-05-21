@@ -397,3 +397,5 @@
 "Body_motion_range"="Body motion range";
 "Current_real_time_sleep"="Current real-time sleep state";
 "inbed_time"="In bed time";
+"temperature"="temperature";
+"humidity"="humidity";

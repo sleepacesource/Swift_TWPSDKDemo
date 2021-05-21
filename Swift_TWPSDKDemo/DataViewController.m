@@ -221,8 +221,8 @@
                      NSLocalizedString(@"turn_times", nil),
                      NSLocalizedString(@"body_times", nil),
                      NSLocalizedString(@"out_times", nil),
-                     @"温度",
-                     @"湿度",
+                     NSLocalizedString(@"temperature", nil),
+                     NSLocalizedString(@"humidity", nil),
                      ];
     }
     else
@@ -232,8 +232,8 @@
                      NSLocalizedString(@"inbed_time", nil),
                      NSLocalizedString(@"heart_rate", nil),
                      NSLocalizedString(@"respiration_rate", nil),
-                     @"温度",
-                     @"湿度",
+                     NSLocalizedString(@"temperature", nil),
+                     NSLocalizedString(@"humidity", nil),
                      ];
         
     }

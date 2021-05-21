@@ -103,7 +103,6 @@
 "turn_times"="Turn Over";
 "unit_s"="s";
 "unit_times"="Times";
-"unit_heart"="Beats/Min";
 "unit_respiration"="Times/Min";
 "sequence"="No. %@";
 "reconnect_device"="Device is not connected, go to \"Home> Search Device\" to reconnect the device";

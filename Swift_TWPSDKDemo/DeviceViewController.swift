@@ -17,17 +17,12 @@ class DeviceViewController: UIViewController {
     @IBOutlet weak var checkEnviBT: UIButton!
     @IBOutlet weak var checkEnviLabel: UILabel!
     @IBOutlet weak var checkDeviceOnlineBT: UIButton!
-    @IBOutlet weak var checkSleepStatusBT: UIButton!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
-    @IBOutlet weak var label5: UILabel!
     @IBOutlet weak var label6: UILabel!
     @IBOutlet weak var label7: UILabel!
     @IBOutlet weak var label8: UILabel!
-    @IBOutlet weak var label9: UILabel!
-    @IBOutlet weak var label10: UILabel!
     
     var deviceID = ""
     let str1 = NSLocalizedString("sleep_state", comment: "")
@@ -63,8 +58,6 @@ class DeviceViewController: UIViewController {
         self.checkEnviBT.layer.cornerRadius = 2.0;
         self.checkEnviBT.layer.masksToBounds = true;
         
-        self.checkSleepStatusBT.layer.cornerRadius = 2.0;
-        self.checkSleepStatusBT.layer.masksToBounds = true;
         
         self.checkDeviceOnlineBT.layer.cornerRadius = 2.0;
         self.checkDeviceOnlineBT.layer.masksToBounds = true;
@@ -74,18 +67,13 @@ class DeviceViewController: UIViewController {
         self.stopCollect.setTitle(NSLocalizedString("off_collection", comment: ""), for: UIControl.State.normal)
         self.checkEnviBT.setTitle(NSLocalizedString("query_envir_data", comment: ""), for: UIControl.State.normal)
         self.checkDeviceOnlineBT.setTitle(NSLocalizedString("query_device_online_state", comment: ""), for: UIControl.State.normal)
-        self.checkSleepStatusBT.setTitle(NSLocalizedString("query_sleep_state", comment: ""), for: UIControl.State.normal)
         self.deviceID =  UserDefaults.standard.string(forKey: "deviceID")!
         self.label1.text = self.str1 + ":"
         self.label2.text = self.str2 + ":"
         self.label3.text = self.str3 + ":"
-        self.label4.text = self.str4 + ":"
-        self.label5.text = self.str5 + ":"
         self.label6.text = self.str6 + ":"
         self.label7.text = self.str7 + ":"
         self.label8.text = self.str8 + ":"
-        self.label9.text = self.str9 + ":"
-        self.label10.text = self.str10 + ":"
         if #available(iOS 13.0, *) {
               self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
           } else {
@@ -151,11 +139,9 @@ class DeviceViewController: UIViewController {
                 print("stop realtime data failed !")
             }
             
-            self.label1.text = self.str1
-            self.label2.text = self.str2
-            self.label3.text = self.str3
-            self.label4.text = self.str4
-            self.label5.text = self.str5
+            self.label1.text = self.str1 + ":"
+            self.label2.text = self.str2 + ":"
+            self.label3.text = self.str3 + ":"
         })
     }
     
@@ -166,8 +152,8 @@ class DeviceViewController: UIViewController {
             if status == SLPDataTransferStatus.succeed
             {
                 print("stop monitor succeed !")
-//                self.alertShow(message: "数据上传成功")
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "JUMPREPORT"), object: nil)
+                self.alertShow(message: NSLocalizedString("close_acquisition_success", comment: "") as NSString)
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "JUMPREPORT"), object: nil)
             }
             else
             {
@@ -197,8 +183,8 @@ class DeviceViewController: UIViewController {
                 
                 let enviInfo : SLPEnvironmentInfo = data as! SLPEnvironmentInfo;
                 
-                self.label6.text = self.str6 + ":" + "\(enviInfo.temperature)"
-                self.label7.text = self.str7 + ":" + "\(enviInfo.humidity)"
+                self.label6.text = self.str6 + ":" + "\(enviInfo.temperature)" + "℃"
+                self.label7.text = self.str7 + ":" + "\(enviInfo.humidity)"  + "%"
             }
             else
             {
@@ -270,11 +256,9 @@ class DeviceViewController: UIViewController {
                 else if sleepInfo.leftbedFlag == 1{
                     str = NSLocalizedString("out_bed", comment: "离床")
                 }
-                self.label9.text =  self.str9 + ":" + str
             }
             else
             {
-                self.label9.text =  self.str9
                 var error = ""
                 if status == SLPDataTransferStatus.failed
                 {
@@ -308,10 +292,8 @@ class DeviceViewController: UIViewController {
         if data.br == 255 {
             br = "--"
         }
-        self.label2.text = str2 + ":" +  "\(hr)"
-        self.label3.text = str3 + ":" +  "\(br)"
-        self.label4.text = str4 + ":" + "\(data.temperature)"
-        self.label5.text = str5 + ":" + "\(data.humidity)"
+        self.label2.text = str2 + ":" +  "\(hr)" + NSLocalizedString("unit_heart", comment: "")
+        self.label3.text = str3 + ":" +  "\(br)" + NSLocalizedString("unit_heart", comment: "")
     }
     
     @objc func receive_historyUploadFinished(notify: NSNotification) -> Void {
@@ -336,7 +318,6 @@ class DeviceViewController: UIViewController {
         else if sleepInfo.leftbedFlag == 1{
             str = NSLocalizedString("out_bed", comment: "离床")
         }
-        self.label10.text = self.str10 + ":" +  str
     }
     
     func errorDes(errorCode: Int) -> NSString {

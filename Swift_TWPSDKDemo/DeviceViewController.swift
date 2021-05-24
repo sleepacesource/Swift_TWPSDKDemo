@@ -147,31 +147,59 @@ class DeviceViewController: UIViewController {
     
     @IBAction func stopMonitor(_ sender: Any) {
         let time = UInt32(NSDate().timeIntervalSince1970)
-        SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP3, userID: "363590", timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
-            
-            if status == SLPDataTransferStatus.succeed
-            {
-                print("stop monitor succeed !")
-                self.alertShow(message: NSLocalizedString("close_acquisition_success", comment: "") as NSString)
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "JUMPREPORT"), object: nil)
-            }
-            else
-            {
-                var error = ""
-                if status == SLPDataTransferStatus.failed
-                {
-                    let entity = data as! SLPTCPBaseEntity;
-                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
-                    
+        
+        
+        SLPLTcpManager.sharedInstance()?.getCollectionStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 0, callback: { [self] (status: SLPDataTransferStatus, data: Any?) in
+            let dID = deviceID
+            if status == SLPDataTransferStatus.succeed {
+                let collectStatus = data as! SLPCollectStatus
+                let startTime = collectStatus.startTime
+                if startTime == 0 {
+                    self.alertShow(message: NSLocalizedString("reston_no_report", comment: "") as NSString)
+                    return
                 }
-                else
-                {
-                    error = NSLocalizedString("failure", comment: "")
+                
+                var  dat:Date = Date.init(timeIntervalSinceNow: 0)
+                var  a:TimeInterval = dat.timeIntervalSince1970;
+                var timep = UInt32(a)
+                
+                let time = timep - startTime
+                if time < 10 * 60 {
+                    self.alertShow(message: NSLocalizedString("reston_no_report", comment: "") as NSString)
+                    return
                 }
-                self.alertShow(message: error as NSString)
-                print("stop monitor  failed !")
+                
+                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.TWP3, userID: "363590", timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
+
+                    if status == SLPDataTransferStatus.succeed
+                    {
+                        print("stop monitor succeed !")
+                        self.alertShow(message: NSLocalizedString("close_acquisition_success", comment: "") as NSString)
+        //                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "JUMPREPORT"), object: nil)
+                    }
+                    else
+                    {
+                        var error = ""
+                        if status == SLPDataTransferStatus.failed
+                        {
+                            let entity = data as! SLPTCPBaseEntity;
+                            error = self.errorDes(errorCode: Int(entity.errorCode)) as String
+
+                        }
+                        else
+                        {
+                            error = NSLocalizedString("failure", comment: "")
+                        }
+                        self.alertShow(message: error as NSString)
+                        print("stop monitor  failed !")
+                    }
+                })
+            } else {
+                
             }
         })
+        
+        
     }
     
     @IBAction func checkEnvironment(_ sender: Any) {

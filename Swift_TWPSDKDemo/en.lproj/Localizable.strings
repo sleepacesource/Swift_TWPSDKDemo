@@ -168,8 +168,8 @@
 "get_success"="Get successfully";
 "data_analyzed"="Analysing sleep data...";
 "generate_sleep_report"="Sleep report is ready (Algorithm version：%@)";
-"dot_no_report"="Unable to analyze sleep less than 10 minutes";
-"reston_no_report"="Unable to analyze sleep less than 3 hours";
+"dot_no_report"="Unable to analyze sleep less than 3 hours";
+"reston_no_report"="Unable to analyze sleep less than 10 minutes";
 "get_heart_rates"="Get Real-time Heart Rate";
 "get_breathing_rates"="Get Real-time Breath Rate";
 "loaded_list"="Searching BLE devices…";

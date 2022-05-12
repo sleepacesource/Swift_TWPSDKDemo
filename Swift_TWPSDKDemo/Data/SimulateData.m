@@ -139,6 +139,8 @@
     //    obj.source=[NSNumber numberWithInteger:6];
     obj.timezone=[NSNumber numberWithInteger:28800];
     obj.arithmeticVer=@"";
+    obj.eHumidityArray = [NSMutableArray arrayWithObjects:@(21), @(24), @(25), @(30), @(26), @(29), nil];
+    obj.eTempArray = [NSMutableArray arrayWithObjects:@(46), @(63), @(49), @(55), @(66), @(57), nil];
     
     return obj;
 }
@@ -177,7 +179,8 @@
     obj.asleepTime=[NSNumber numberWithInteger:24];
     obj.reportFlag=[NSNumber numberWithInteger:2];
     obj.arithmeticVer=@"";
-    
+    obj.eHumidityArray = [NSMutableArray arrayWithObjects:@(22), @(19), @(27), @(30), @(24), @(28), nil];
+    obj.eTempArray = [NSMutableArray arrayWithObjects:@(51), @(62), @(48), @(57), @(65), @(59), nil];
     return obj;
 }
 
@@ -204,6 +207,8 @@
     
     //short report
     if (flag == 2) {
+        obj.eHumidityArray = [detailDic objectForKey:@"eHumidity"];
+        obj.eTempArray = [detailDic objectForKey:@"eTemp"];
         obj.duration=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"duration"]integerValue]];
         obj.startTime=[NSNumber numberWithInteger:[[summaryDic objectForKey:@"startTime"] integerValue]];
         obj.pjxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"averageHeartBeatRate"]integerValue]];
@@ -217,6 +222,8 @@
         return obj;
     }
     
+    obj.eHumidityArray = [detailDic objectForKey:@"eHumidity"];
+    obj.eTempArray = [detailDic objectForKey:@"eTemp"];
     obj.breathRateString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"breathRate"] componentsJoinedByString:@","]];
     obj.heartRateString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"heartRate"] componentsJoinedByString:@","]];
     obj.statusString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"status"] componentsJoinedByString:@","]];

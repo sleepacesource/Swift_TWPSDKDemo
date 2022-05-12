@@ -103,7 +103,6 @@
 "turn_times"="Turn Over";
 "unit_s"="s";
 "unit_times"="Times";
-"unit_heart"="Beats/Min";
 "unit_respiration"="Times/Min";
 "sequence"="No. %@";
 "reconnect_device"="Device is not connected, go to \"Home> Search Device\" to reconnect the device";
@@ -169,8 +168,8 @@
 "get_success"="Get successfully";
 "data_analyzed"="Analysing sleep data...";
 "generate_sleep_report"="Sleep report is ready (Algorithm version：%@)";
-"dot_no_report"="Unable to analyze sleep less than 10 minutes";
-"reston_no_report"="Unable to analyze sleep less than 3 hours";
+"dot_no_report"="Unable to analyze sleep less than 3 hours";
+"reston_no_report"="Unable to analyze sleep less than 10 minutes";
 "get_heart_rates"="Get Real-time Heart Rate";
 "get_breathing_rates"="Get Real-time Breath Rate";
 "loaded_list"="Searching BLE devices…";
@@ -397,3 +396,5 @@
 "Body_motion_range"="Body motion range";
 "Current_real_time_sleep"="Current real-time sleep state";
 "inbed_time"="In bed time";
+"temperature"="temperature";
+"humidity"="humidity";

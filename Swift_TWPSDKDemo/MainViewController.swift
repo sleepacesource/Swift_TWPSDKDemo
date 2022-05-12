@@ -24,6 +24,15 @@ class MainViewController: UITabBarController {
             } else {
                 // Fallback on earlier versions
             };
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(jumpReportPage), name: NSNotification.Name(rawValue: "JUMPREPORT"), object: nil)
+    }
+    
+    @objc func jumpReportPage() {
+        self.selectedIndex = 2
+        let navController = self.children[2] as! UINavigationController
+        let rootVc = navController.topViewController as! DataViewController
+        rootVc.refreshReport()
     }
     
     func addChildVC(childVC:UIViewController,title:String,index:Int ,imagename: String) {

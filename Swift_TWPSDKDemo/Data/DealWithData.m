@@ -23,22 +23,60 @@
 + (NSArray *)backShortDataArray:(UserObj *)obj
 {
     NSString *date=[NSString stringWithFormat:@"%@",obj.date];
-    NSString *duration=[NSString stringWithFormat:@"%02d%@%02d%@",[obj.duration integerValue]/60,NSLocalizedString(@"unit_h", nil),[obj.duration integerValue]%60,NSLocalizedString(@"unit_m", nil)];
+    NSString *duration=[NSString stringWithFormat:@"%02d%@%02d%@",[obj.recordCount integerValue]/60,NSLocalizedString(@"unit_h", nil),[obj.recordCount integerValue]%60,NSLocalizedString(@"unit_m", nil)];
+    
     NSString *averageHeartRate=[NSString stringWithFormat:@"%@ %@",obj.pjxl,NSLocalizedString(@"unit_heart", nil)];
     NSString *averageBreathRate=[NSString stringWithFormat:@"%@ %@",obj.pjhxl,NSLocalizedString(@"unit_respiration", nil)];
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
-    formatter.timeZone=[NSTimeZone localTimeZone];
+//    formatter.timeZone=[NSTimeZone localTimeZone];
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[obj.startTime integerValue]];
     NSString *startTime = [formatter stringFromDate:confromTimesp];
     NSInteger startTimeNum=[[[startTime componentsSeparatedByString:@":"] objectAtIndex:0] integerValue]*60+[[[startTime componentsSeparatedByString:@":"] objectAtIndex:1] integerValue];
-    NSInteger startSleepTime=[obj.asleepTime integerValue]+startTimeNum;
-    NSInteger endSleepTime=[obj.duration integerValue]+[obj.asleepTime integerValue]+startTimeNum;
-    NSString *startTimeStr=[NSString stringWithFormat:@"%02d:%02d",startSleepTime/60>=24?startSleepTime/60-24:startSleepTime/60,startSleepTime%60];
+//    NSInteger startSleepTime=[obj.asleepTime integerValue]+startTimeNum;
+    NSInteger endSleepTime=[obj.recordCount integerValue]+startTimeNum;
+    NSString *startTimeStr=startTime;
     NSString *endTimeStr =[NSString stringWithFormat:@"%02d:%02d",endSleepTime/60>=24?endSleepTime/60-24:endSleepTime/60,endSleepTime%60];
      NSString *sleepTime=[NSString stringWithFormat:@"%@(%@)~%@(%@)",startTimeStr,NSLocalizedString(@"starting_point", nil),endTimeStr,NSLocalizedString(@"end_point", nil)];
     
-    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate];
+    NSString *tempRangeStr = [self rangeString:obj.eTempArray];
+    tempRangeStr = [NSString stringWithFormat:@"%@℃", tempRangeStr];
+    
+    NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
+    humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
+    
+    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate, tempRangeStr, humRangeStr];
+}
+
++ (NSString *)rangeString:(NSArray *)arr {
+    
+    NSMutableArray *tempArr = [NSMutableArray array];
+    for (int i  = 0; i < arr.count; i++) {
+        int value = [[arr objectAtIndex:i] intValue];
+        if (value != 255) {
+            [tempArr addObject:@(value)];
+        }
+    }
+    
+    int max = 0, min = 0;
+    if (tempArr && tempArr.count > 0) {
+        max = [[tempArr objectAtIndex:0] intValue];
+        min = [[tempArr objectAtIndex:0] intValue];
+        for (int i = 1; i < tempArr.count; i++) {
+            int value = [[tempArr objectAtIndex:i] intValue];
+            if (value > max) {
+                max = value;
+            }
+            
+            if (value < min) {
+                min = value;
+            }
+        }
+    }
+    
+    NSString *str = [NSString stringWithFormat:@"%d-%d", min, max];
+    
+    return  str;
 }
 
 +(NSArray *)backLongDataArray:(UserObj *)obj
@@ -75,7 +113,13 @@
     NSString *wakePre=[NSString stringWithFormat:@"%d%%",[obj.MdWakeSleepPerc integerValue]];
     NSString *breathPauseStr=[NSString stringWithFormat:@"%@",obj.breathPauseTimeString.length?obj.breathPauseTimeString:NSLocalizedString(@"nothing", nil)];
     
-    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed];
+    NSString *tempRangeStr = [self rangeString:obj.eTempArray];
+    tempRangeStr = [NSString stringWithFormat:@"%@℃", tempRangeStr];
+    
+    NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
+    humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
+    
+    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
 }
 
 

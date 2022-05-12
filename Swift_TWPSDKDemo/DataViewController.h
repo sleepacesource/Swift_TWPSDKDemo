@@ -10,4 +10,6 @@
 
 @interface DataViewController : UIViewController
 
+- (void)refreshReport;
+
 @end

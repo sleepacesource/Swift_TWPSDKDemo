@@ -57,16 +57,16 @@ class LoginViewController: UIViewController {
 //            self.tokeTextfield.text = "lisufang"
 //        }
         if  (UserDefaults.standard.string(forKey: "deviceID") != nil) {
-            self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID")
+            self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID") 
         }
 //        else
 //        {
 //            self.deviceIdTextfield.text = "81d3xeoievs6h"
 //        }
         
-        self.urlTextfield.text = "http://120.24.68.136:8091"
-        self.channelidTextfield.text = "53500"
-        self.tokeTextfield.text = "test"
+//        self.urlTextfield.text = "http://120.24.68.136:8091"
+//        self.channelidTextfield.text = "53500"
+//        self.tokeTextfield.text = "test"
         
         if  (UserDefaults.standard.string(forKey: "version") != nil) {
             self.versionTextfield.text = UserDefaults.standard.string(forKey: "version")

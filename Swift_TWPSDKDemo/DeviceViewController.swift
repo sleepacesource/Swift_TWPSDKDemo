@@ -23,6 +23,8 @@ class DeviceViewController: UIViewController {
     @IBOutlet weak var label6: UILabel!
     @IBOutlet weak var label7: UILabel!
     @IBOutlet weak var label8: UILabel!
+    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label10: UILabel!
     
     var deviceID = ""
     let str1 = NSLocalizedString("sleep_state", comment: "")
@@ -43,6 +45,7 @@ class DeviceViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.initUI()
         self.receiceData()
+        self.checkWiFiSignal()
     }
     
     func initUI() -> Void {
@@ -90,6 +93,8 @@ class DeviceViewController: UIViewController {
         
         //睡眠状态发生改变
         NotificationCenter.default.addObserver(self, selector: #selector(receive_sleepStatusChanged(notify:)), name: Notification.Name(kNotificationNameDeviceSleepStatusChanged), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receive_wifiSignalChanged(notify:)), name: Notification.Name(kNotificationNameRequestDeviceWiFiSignalChanged), object: nil)
         
     }
     
@@ -348,6 +353,15 @@ class DeviceViewController: UIViewController {
         }
     }
     
+    @objc func receive_wifiSignalChanged(notify: NSNotification) -> Void {
+        
+        print("wifi signal--->",notify)
+        
+        let wifi: SLPTCPWiFiInfo = notify.userInfo?[kNotificationPostData] as! SLPTCPWiFiInfo
+        self.label10.text = String(wifi.signalStrength)
+        
+    }
+
     func errorDes(errorCode: Int) -> NSString {
         var error = ""
         switch errorCode {
@@ -405,5 +419,16 @@ class DeviceViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+   func checkWiFiSignal() {
+        SLPLTcpManager.sharedInstance()?.publicGetWiFiSignal(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 10.0    , callback: {
+            (status: SLPDataTransferStatus, data: Any?)in
+            if status == SLPDataTransferStatus.succeed
+            {
+                let wifi : SLPTCPWiFiInfo = data as! SLPTCPWiFiInfo
+              
+                self.label10.text = String(wifi.signalStrength)
+            }
+        })
+    }
 }
 

@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
 //        {
 //            self.urlTextfield.text = "http://120.24.68.136:8091"
 //        }
-        
+     
         if  (UserDefaults.standard.string(forKey: "channelID") != nil) {
             self.channelidTextfield.text = UserDefaults.standard.string(forKey: "channelID")
         }
@@ -63,6 +63,11 @@ class LoginViewController: UIViewController {
 //        {
 //            self.deviceIdTextfield.text = "81d3xeoievs6h"
 //        }
+        
+        self.urlTextfield.text = "http://120.24.68.136:8091"
+        self.channelidTextfield.text = "53500"
+        self.tokeTextfield.text = "test"
+        
         if  (UserDefaults.standard.string(forKey: "version") != nil) {
             self.versionTextfield.text = UserDefaults.standard.string(forKey: "version")
         }

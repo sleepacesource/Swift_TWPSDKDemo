@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,11 +15,13 @@
                 <outlet property="checkEnviBT" destination="qsc-QZ-8K1" id="ONx-iC-PWm"/>
                 <outlet property="checkEnviLabel" destination="fC1-qa-JvR" id="WSz-gS-smf"/>
                 <outlet property="label1" destination="FR3-8e-iAb" id="DeG-Co-PDB"/>
+                <outlet property="label10" destination="9dd-fT-5WO" id="Pox-fK-pdY"/>
                 <outlet property="label2" destination="9qG-AH-y87" id="ZIB-Bt-gco"/>
                 <outlet property="label3" destination="wcn-sc-MHz" id="I6H-sj-BdJ"/>
                 <outlet property="label6" destination="fC1-qa-JvR" id="K3P-Xb-1OD"/>
                 <outlet property="label7" destination="hwn-nz-4VY" id="7o8-C5-bD3"/>
                 <outlet property="label8" destination="oEJ-Ms-D2E" id="UbR-bi-vzO"/>
+                <outlet property="label9" destination="bvo-bC-1sl" id="RFs-Z5-a4I"/>
                 <outlet property="startRealtimeData" destination="5as-MM-UIW" id="ijq-gs-2gS"/>
                 <outlet property="stopCollect" destination="hyk-Zi-JK0" id="ffZ-V5-RZQ"/>
                 <outlet property="stopRealtimeData" destination="85y-hR-4Y5" id="bw0-f2-21W"/>
@@ -156,6 +158,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WiFi信号强度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvo-bC-1sl">
+                    <rect key="frame" x="37" y="450" width="120" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dd-fT-5WO">
+                    <rect key="frame" x="158" y="449" width="42" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="V6Y-91-uMt"/>
+                        <constraint firstAttribute="height" constant="25" id="qwG-XZ-Pmh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -165,6 +183,7 @@
                 <constraint firstItem="oEJ-Ms-D2E" firstAttribute="top" secondItem="oBm-9l-NZ6" secondAttribute="bottom" constant="8" id="3pY-xz-ece"/>
                 <constraint firstItem="FR3-8e-iAb" firstAttribute="top" secondItem="hyk-Zi-JK0" secondAttribute="bottom" constant="9" id="4lX-yn-Zli"/>
                 <constraint firstItem="wcn-sc-MHz" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="5Bg-ct-b3Q"/>
+                <constraint firstItem="9dd-fT-5WO" firstAttribute="leading" secondItem="bvo-bC-1sl" secondAttribute="trailing" constant="1" id="6hS-mf-dCs"/>
                 <constraint firstItem="fC1-qa-JvR" firstAttribute="trailing" secondItem="qsc-QZ-8K1" secondAttribute="trailing" id="6ks-UJ-OBu"/>
                 <constraint firstItem="oEJ-Ms-D2E" firstAttribute="leading" secondItem="oBm-9l-NZ6" secondAttribute="leading" id="9I8-Xr-Mnq"/>
                 <constraint firstItem="hwn-nz-4VY" firstAttribute="top" secondItem="fC1-qa-JvR" secondAttribute="bottom" constant="3" id="ABf-qh-D0A"/>
@@ -175,6 +194,9 @@
                 <constraint firstItem="FR3-8e-iAb" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="Gza-SC-PkJ"/>
                 <constraint firstItem="9qG-AH-y87" firstAttribute="top" secondItem="FR3-8e-iAb" secondAttribute="bottom" constant="5" id="Nl5-47-i1l"/>
                 <constraint firstItem="fC1-qa-JvR" firstAttribute="top" secondItem="qsc-QZ-8K1" secondAttribute="bottom" constant="7" id="TfM-Sw-jpe"/>
+                <constraint firstItem="9dd-fT-5WO" firstAttribute="leading" secondItem="bvo-bC-1sl" secondAttribute="trailing" constant="1" id="UhE-O2-EAq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9dd-fT-5WO" secondAttribute="trailing" constant="175" id="VhL-Vr-ppb"/>
+                <constraint firstItem="9dd-fT-5WO" firstAttribute="top" secondItem="oEJ-Ms-D2E" secondAttribute="bottom" constant="11" id="X8T-bV-Lhs"/>
                 <constraint firstItem="fC1-qa-JvR" firstAttribute="leading" secondItem="qsc-QZ-8K1" secondAttribute="leading" id="Xmj-AZ-292"/>
                 <constraint firstItem="qsc-QZ-8K1" firstAttribute="top" secondItem="wcn-sc-MHz" secondAttribute="bottom" constant="10" id="ZDr-iX-bEQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" constant="42" id="dbY-YU-ns1"/>
@@ -187,10 +209,12 @@
                 <constraint firstItem="wcn-sc-MHz" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="qVV-J2-wsc"/>
                 <constraint firstItem="85y-hR-4Y5" firstAttribute="top" secondItem="5as-MM-UIW" secondAttribute="bottom" constant="9" id="qgU-38-ngm"/>
                 <constraint firstItem="5as-MM-UIW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="37" id="rFy-A2-QJ5"/>
+                <constraint firstItem="bvo-bC-1sl" firstAttribute="top" secondItem="oEJ-Ms-D2E" secondAttribute="bottom" constant="12" id="sDJ-aW-k5j"/>
                 <constraint firstItem="85y-hR-4Y5" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" id="ty8-3f-sH9"/>
                 <constraint firstItem="85y-hR-4Y5" firstAttribute="leading" secondItem="5as-MM-UIW" secondAttribute="leading" id="w08-SM-XmC"/>
                 <constraint firstItem="oBm-9l-NZ6" firstAttribute="top" secondItem="hwn-nz-4VY" secondAttribute="bottom" constant="8" id="w5b-QA-CY3"/>
                 <constraint firstItem="5as-MM-UIW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="xJk-vW-Olf"/>
+                <constraint firstItem="bvo-bC-1sl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="37" id="xxx-Oh-AXH"/>
                 <constraint firstItem="hwn-nz-4VY" firstAttribute="trailing" secondItem="fC1-qa-JvR" secondAttribute="trailing" id="y8c-Ug-2MQ"/>
                 <constraint firstItem="qsc-QZ-8K1" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="yM2-qu-Gbk"/>
             </constraints>

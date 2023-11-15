@@ -263,11 +263,11 @@
 "getRpeortFailed" = "Get report failed";
 "succeed" = "Succeed";
 "server_error" = "Server error";
-"twp_not_login" = "TWP not login";
-"twp_not_bind" = "TWP not bind";
-"twp_not_online" = "TWP not online";
-"twp_connected_failed" = "TWP connected failed";
-"twp_upgrading" = "TWP upgrading";
+"twp_not_login" = "Device not login";
+"twp_not_bind" = "Device not bind";
+"twp_not_online" = "Device not online";
+"twp_connected_failed" = "Device connected failed";
+"twp_upgrading" = "Device upgrading";
 "unknow" = "Unknow error";
 "upload_data_finish" = "Upload data finished , go to get latest report";
 "authorize_failed" = "Authorize failed";
@@ -398,3 +398,6 @@
 "inbed_time"="In bed time";
 "temperature"="temperature";
 "humidity"="humidity";
+"left" = "Left Side(Single）";
+"right" = "Right Side";
+"select_side" = "Select bind side";

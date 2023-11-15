@@ -57,6 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *绑定设备
  *@param deviceId 设备id
+ *@param side 位置左边，右边
  *@param timeoutInterval 超时时间（秒s）
  *@param completion 回调
  */
@@ -64,13 +65,20 @@ NS_ASSUME_NONNULL_BEGIN
                                 timeOut:(CGFloat)timeoutInterval
                              completion:(void (^)(BOOL result, NSDictionary *dict,NSString *error))completion;
 
+- (void)bindDeviceWithDeviceId:(NSString *)deviceId
+                     leftRight:(int)side
+                       timeOut:(CGFloat)timeoutInterval
+                    completion:(void (^)(BOOL result, NSDictionary *dict,NSString *error))completion;
+
 /**
  *解绑设备
  *@param deviceId 设备id
+ **@param side 位置左边，右边
  *@param timeoutInterval 超时时间（秒s）
  *@param completion 回调
  */
 - (void)unBindDeviceWithDeviceId:(NSString *)deviceId
+                       leftRight:(int)side
                                timeOut:(CGFloat)timeoutInterval
                             completion:(void (^)(BOOL result, NSString *error))completion;
 
@@ -135,16 +143,6 @@ NS_ASSUME_NONNULL_BEGIN
  *闹钟配置
  *@param parameters 传入参数字典，具体包含key见文档
  *@param deviceID 设备名
- *@param deviceType 设备类型
- *@param timeout 超时时间（秒s）
- *@param completion 回调
- */
-- (void)configAlarmInfoWithParameters:(NSDictionary *)parameters deviceInfo:(NSString *)deviceID deviceType:(SLPDeviceTypes)deviceType  timeout:(CGFloat)timeout completion:(void (^)(BOOL result,id responseObject, NSString *error))completion;
-
-/**
- *闹钟配置
- *@param parameters 传入参数字典，具体包含key见文档
- *@param deviceID 设备ID
  *@param deviceType 设备类型
  *@param timeout 超时时间（秒s）
  *@param completion 回调

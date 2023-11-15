@@ -99,7 +99,7 @@ class DeviceViewController: UIViewController {
     }
     
     @IBAction func startRealtimeData(_ sender: Any) {
-        SLPLTcpManager.sharedInstance()?.startRealTimeData(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.startRealTimeData(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("start realtime data succeed !")
@@ -124,7 +124,7 @@ class DeviceViewController: UIViewController {
     
     @IBAction func stopRealtimeData(_ sender: Any) {
         
-        SLPLTcpManager.sharedInstance()?.stopRealTimeData(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.stopRealTimeData(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("stop realtime data succeed !")
@@ -154,7 +154,7 @@ class DeviceViewController: UIViewController {
         let time = UInt32(NSDate().timeIntervalSince1970)
         
         
-        SLPLTcpManager.sharedInstance()?.getCollectionStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 0, callback: { [self] (status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.getCollectionStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800, timeout: 0, callback: { [self] (status: SLPDataTransferStatus, data: Any?) in
             let dID = deviceID
             if status == SLPDataTransferStatus.succeed {
                 let collectStatus = data as! SLPCollectStatus
@@ -174,7 +174,7 @@ class DeviceViewController: UIViewController {
                     return
                 }
                 
-                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.TWP3, userID: "363590", timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.M800, userID: "363590", timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
 
                     if status == SLPDataTransferStatus.succeed
                     {
@@ -241,7 +241,7 @@ class DeviceViewController: UIViewController {
     
     @IBAction func checkOnlineStatus(_ sender: Any) {
         
-        SLPLTcpManager.sharedInstance()?.publicGetOnlineStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 15.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.publicGetOnlineStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800, timeout: 15.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("check device oneline status succeed !")
@@ -270,7 +270,7 @@ class DeviceViewController: UIViewController {
     }
     
     @IBAction func checkMonitorStatus(_ sender: Any) {
-        SLPLTcpManager.sharedInstance()?.getSleepStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?)in
+        SLPLTcpManager.sharedInstance()?.getSleepStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?)in
             if status == SLPDataTransferStatus.succeed
             {
                 print("check monitor succeed !")
@@ -420,7 +420,7 @@ class DeviceViewController: UIViewController {
     }
     
    func checkWiFiSignal() {
-        SLPLTcpManager.sharedInstance()?.publicGetWiFiSignal(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.TWP3, timeout: 10.0    , callback: {
+        SLPLTcpManager.sharedInstance()?.publicGetWiFiSignal(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10.0    , callback: {
             (status: SLPDataTransferStatus, data: Any?)in
             if status == SLPDataTransferStatus.succeed
             {

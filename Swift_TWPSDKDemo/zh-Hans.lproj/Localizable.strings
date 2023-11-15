@@ -266,11 +266,11 @@
 "getRpeortFailed" = "获取报告失败";
 "succeed" = "成功";
 "server_error" = "服务器错误";
-"twp_not_login" = "TWP未登陆";
-"twp_not_bind" = "TWP未绑定用户";
-"twp_not_online" = "TWP不在线";
-"twp_connected_failed" = "TWP连接失败";
-"twp_upgrading" = "TWP正在升级";
+"twp_not_login" = "设备未登陆";
+"twp_not_bind" = "设备未绑定用户";
+"twp_not_online" = "设备不在线";
+"twp_connected_failed" = "设备连接失败";
+"twp_upgrading" = "设备正在升级";
 "unknow" = "未知错误";
 "upload_data_finish" = "上传数据成功，去获取报告";
 "authorize_failed" = "授权失败";
@@ -401,3 +401,7 @@
 "inbed_time"="在床时间";
 "temperature"="温度";
 "humidity"="湿度";
+"left" = "左侧（单人）";
+"right" = "右侧";
+"select_side" = "选择绑定位置";
+

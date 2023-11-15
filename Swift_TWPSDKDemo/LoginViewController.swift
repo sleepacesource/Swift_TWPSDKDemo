@@ -22,6 +22,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var bindBT: UIButton!
     @IBOutlet weak var unbindBT: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var leftrightLabel: UILabel!
+    @IBOutlet weak var leftBT: UIButton!
+    @IBOutlet weak var rightBT: UIButton!
+    
+    var selectLeftRight = 0
     
     
     override func viewDidLoad() {
@@ -97,12 +102,24 @@ class LoginViewController: UIViewController {
         self.connectBT.setTitle(NSLocalizedString("connect_server", comment: ""), for: .normal)
         self.progressLabel.text = NSLocalizedString("upgrading_device", comment: "")
         
-      
-        if #available(iOS 13.0, *) {
-            self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
-        } else {
-            // Fallback on earlier versions
-        };
+        self.leftBT.setTitle(NSLocalizedString("left", comment: ""), for: .normal)
+        self.rightBT.setTitle(NSLocalizedString("right", comment: ""), for: .normal)
+        self.leftrightLabel.text = NSLocalizedString("select_side", comment: "")
+        self.leftBT.setTitleColor(UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0), for: UIControl.State.normal)
+        self.leftBT.layer.borderColor = UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0).cgColor
+        self.leftBT.layer.borderWidth = 1.0
+        self.leftBT.backgroundColor = UIColor.white
+        self.leftBT.setTitleColor(UIColor.white, for: UIControl.State.selected)
+        self.rightBT.setTitleColor(UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0), for: UIControl.State.normal)
+        self.rightBT.layer.borderColor = UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0).cgColor
+        self.rightBT.layer.borderWidth = 1.0
+        self.rightBT.backgroundColor = UIColor.white
+        self.rightBT.setTitleColor(UIColor.white, for: UIControl.State.selected)
+        
+        if(selectLeftRight == 0){
+            self.leftBT.isSelected = true
+            self.leftBT.backgroundColor = UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -119,9 +136,23 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(receive_notifaction(notify:)), name: Notification.Name(kNotificationNameTCPDeviceUpdateRateChanged), object: nil)
     }
     
+    @IBAction func selectLeft(_ sender: Any) {
+        self.leftBT.isSelected = true
+        self.rightBT.isSelected = false
+        self.rightBT.backgroundColor = UIColor.white
+        self.leftBT.backgroundColor = UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0)
+        selectLeftRight = 0
+    }
+    
+    @IBAction func selectRight(_ sender: Any) {
+        self.leftBT.isSelected = false
+        self.rightBT.isSelected = true
+        self.rightBT.backgroundColor = UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0)
+        self.leftBT.backgroundColor = UIColor.white
+        selectLeftRight = 1
+    }
+    
     @IBAction func connect(_ sender: Any) {
-        
-        
         
         let dic = ["url": self.urlTextfield.text!,"channelID" : self.channelidTextfield.text! ]
         SLPHTTPManager.sharedInstance().initHttpServiceInfo(dic);
@@ -166,7 +197,7 @@ class LoginViewController: UIViewController {
     @IBAction func upgrade(_ sender: Any) {
         
         var upStr = ""
-        SLPLTcpManager.sharedInstance()?.publicUpdateOperation(withDeviceID: self.deviceIdTextfield.text!, deviceType: SLPDeviceTypes.TWP3, firmwareType: 2, firmwareVersion: self.versionTextfield.text!, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.publicUpdateOperation(withDeviceID: self.deviceIdTextfield.text!, deviceType: SLPDeviceTypes.M800, firmwareType: 2, firmwareVersion: self.versionTextfield.text!, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("notity update succeed")
@@ -191,7 +222,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func bind(_ sender:Any){
-        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: self.deviceIdTextfield.text!, timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
+        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: self.deviceIdTextfield.text!,leftRight: Int32(selectLeftRight), timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
             var bindStr = ""
             if result
             {
@@ -208,7 +239,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func unbind(_ sneder:Any){
-        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: self.deviceIdTextfield.text!, timeOut: 10.0) { (result: Bool, error: String?) in
+        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: self.deviceIdTextfield.text!,leftRight: Int32(selectLeftRight),  timeOut: 10.0) { (result: Bool, error: String?) in
             var unbindStr = ""
             if result
             {

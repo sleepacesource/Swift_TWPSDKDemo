@@ -45,7 +45,6 @@ class DeviceViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.initUI()
         self.receiceData()
-        self.checkWiFiSignal()
     }
     
     func initUI() -> Void {
@@ -93,8 +92,6 @@ class DeviceViewController: UIViewController {
         
         //睡眠状态发生改变
         NotificationCenter.default.addObserver(self, selector: #selector(receive_sleepStatusChanged(notify:)), name: Notification.Name(kNotificationNameDeviceSleepStatusChanged), object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(receive_wifiSignalChanged(notify:)), name: Notification.Name(kNotificationNameRequestDeviceWiFiSignalChanged), object: nil)
         
     }
     
@@ -352,15 +349,6 @@ class DeviceViewController: UIViewController {
             str = NSLocalizedString("out_bed", comment: "离床")
         }
     }
-    
-    @objc func receive_wifiSignalChanged(notify: NSNotification) -> Void {
-        
-        print("wifi signal--->",notify)
-        
-        let wifi: SLPTCPWiFiInfo = notify.userInfo?[kNotificationPostData] as! SLPTCPWiFiInfo
-        self.label10.text = String(wifi.signalStrength)
-        
-    }
 
     func errorDes(errorCode: Int) -> NSString {
         var error = ""
@@ -417,18 +405,6 @@ class DeviceViewController: UIViewController {
         let cancel = UIAlertAction(title: NSLocalizedString("confirm", comment: ""), style: .cancel, handler: nil)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
-    }
-    
-   func checkWiFiSignal() {
-        SLPLTcpManager.sharedInstance()?.publicGetWiFiSignal(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10.0    , callback: {
-            (status: SLPDataTransferStatus, data: Any?)in
-            if status == SLPDataTransferStatus.succeed
-            {
-                let wifi : SLPTCPWiFiInfo = data as! SLPTCPWiFiInfo
-              
-                self.label10.text = String(wifi.signalStrength)
-            }
-        })
     }
 }
 

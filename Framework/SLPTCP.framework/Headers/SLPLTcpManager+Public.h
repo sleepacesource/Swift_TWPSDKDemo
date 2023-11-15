@@ -34,7 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)publicGetOnlineStatusWithDeviceID:(NSString *)deviceID deviceType:(SLPDeviceTypes)deviceType timeout:(CGFloat)timeout callback:(SLPTransforCallback)handle;
 
 
-/*查询设备WiFi信号强度(EW202W,TWP-3支持)
+/*查询设备WiFi信号强度(仅支持EW202W,TWP-3/ Only support EW202W,TWP-3)
+ 
  deviceID           :设备ID   UTF-8 带结束符( 例: "P1-1503000000")
  deviceType         :设备类型
  */

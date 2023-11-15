@@ -57,14 +57,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *绑定设备
  *@param deviceId 设备id
- *@param side 位置左边，右边
+ *@param side 位置左边left(0)，右边right(1) ,默认default0
  *@param timeoutInterval 超时时间（秒s）
  *@param completion 回调
  */
-- (void)bindDeviceWithDeviceId:(NSString *)deviceId
-                                timeOut:(CGFloat)timeoutInterval
-                             completion:(void (^)(BOOL result, NSDictionary *dict,NSString *error))completion;
-
 - (void)bindDeviceWithDeviceId:(NSString *)deviceId
                      leftRight:(int)side
                        timeOut:(CGFloat)timeoutInterval
@@ -73,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *解绑设备
  *@param deviceId 设备id
- **@param side 位置左边，右边
+ **@param side 位置左边left(0)，右边right(1) ,默认default0
  *@param timeoutInterval 超时时间（秒s）
  *@param completion 回调
  */

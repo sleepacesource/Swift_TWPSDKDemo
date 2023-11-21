@@ -259,6 +259,19 @@
     obj.recordCount = [NSNumber numberWithInteger:[[summaryDic objectForKey:@"recordCount"] integerValue]];
     obj.lccs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"leaveBedTimes"]integerValue]];
     obj.arithmeticVer= [analysisDic objectForKey:@"breathRateSlowAllTime"];
+//    new add pararms
+    
+//    obj.breathPauseTimeString=[self backBreathPause:[analysisDic objectForKey:@"breathRateStatusAry"] user:obj];
+    obj.ahIndex = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"ahIndex"]integerValue]];
+    obj.ahiArrayStr = [self backBreathPauseTimes:[analysisDic objectForKey:@"ahiArrayStr"]];
+    obj.breathPauseAllTime = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathPauseAllTime"]integerValue]];
+    obj.breathPauseTimes = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathPauseTimes"]integerValue]];
+    obj.csaDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaDur"]integerValue]];
+    obj.csaCnt = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaCnt"]integerValue]];
+    obj.csaMaxDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaMaxDur"]integerValue]];
+    obj.osaDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaDur"]integerValue]];
+    obj.osaCnt = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaCnt"]integerValue]];
+    obj.osaMaxDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaMaxDur"]integerValue]];
     
     NSTimeInterval startTime = obj.startTime.integerValue;//上床时间
     NSTimeInterval endTime = startTime + obj.recordCount.integerValue * 60;//起床时间

@@ -111,7 +111,7 @@
     NSString *remPre=[NSString stringWithFormat:@"%d%%",[obj.MdRemSleepPerc integerValue]];
     NSString *lightPre=[NSString stringWithFormat:@"%d%%",[obj.MdLightSleepPerc integerValue]];
     NSString *wakePre=[NSString stringWithFormat:@"%d%%",[obj.MdWakeSleepPerc integerValue]];
-    NSString *breathPauseStr=[NSString stringWithFormat:@"%@",obj.breathPauseTimeString.length?obj.breathPauseTimeString:NSLocalizedString(@"nothing", nil)];
+//    NSString *breathPauseStr=[NSString stringWithFormat:@"%@",obj.breathPauseTimeString.length?obj.breathPauseTimeString:NSLocalizedString(@"nothing", nil)];
     
     NSString *tempRangeStr = [self rangeString:obj.eTempArray];
     tempRangeStr = [NSString stringWithFormat:@"%@℃", tempRangeStr];
@@ -119,7 +119,19 @@
     NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
     humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
     
-    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
+    //ahi
+    NSString *ahIndex = obj.ahIndex ? [NSString stringWithFormat:@"%@",obj.ahIndex] : NSLocalizedString(@"nothing", nil);
+    NSString *ahiArrayStr = obj.ahiArrayStr ? [NSString stringWithFormat:@"%@",obj.ahiArrayStr] : NSLocalizedString(@"nothing", nil);
+    NSString *breathPauseAllTime = obj.breathPauseAllTime ? [NSString stringWithFormat:@"%@ %@",obj.breathPauseAllTime,NSLocalizedString(@"unit_s", nil)]: NSLocalizedString(@"nothing", nil);
+    NSString *breathPauseTimes =obj.breathPauseTimes ? [NSString stringWithFormat:@"%@ %@",obj.breathPauseTimes,NSLocalizedString(@"unit_times", nil)]: NSLocalizedString(@"nothing", nil);
+    NSString *csaDur = obj.csaDur ? [NSString stringWithFormat:@"%@ %@",obj.csaDur,NSLocalizedString(@"unit_s", nil)]: NSLocalizedString(@"nothing", nil);
+    NSString *csaCnt = obj.csaCnt ? [NSString stringWithFormat:@"%@ %@",obj.csaCnt,NSLocalizedString(@"unit_times", nil)]: NSLocalizedString(@"nothing", nil);
+    NSString *csaMaxDur = obj.csaMaxDur ? [NSString stringWithFormat:@"%@ %@",obj.csaMaxDur,NSLocalizedString(@"unit_s", nil)]: NSLocalizedString(@"nothing", nil);
+    NSString *osaDur = obj.osaDur ? [NSString stringWithFormat:@"%@ %@",obj.osaDur,NSLocalizedString(@"unit_s", nil)]: NSLocalizedString(@"nothing", nil);
+    NSString *osaCnt = obj.osaCnt ? [NSString stringWithFormat:@"%@ %@",obj.osaCnt,NSLocalizedString(@"unit_times", nil)]: NSLocalizedString(@"nothing", nil);
+    NSString *osaMaxDur = obj.osaMaxDur ? [NSString stringWithFormat:@"%@ %@",obj.osaMaxDur,NSLocalizedString(@"unit_s", nil)]: NSLocalizedString(@"nothing", nil);
+    
+    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
 }
 
 

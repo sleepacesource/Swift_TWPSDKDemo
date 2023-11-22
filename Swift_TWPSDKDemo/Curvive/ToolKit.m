@@ -21,8 +21,10 @@
         timeZone /= 3600;
     }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:timeZone]];
     [dateFormatter setDateFormat:format];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:timeZone]];
+    //24小时制
+    dateFormatter.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"en_US_POSIX"];
     NSString *string = [dateFormatter stringFromDate:date];
     
     return string;

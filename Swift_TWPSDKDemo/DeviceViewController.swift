@@ -171,7 +171,8 @@ class DeviceViewController: UIViewController {
                     return
                 }
                 
-                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.M800, userID: "363590", timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                let userid =   UserDefaults.standard.string(forKey: "userId")
+                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.M800, userID: userid!, timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
 
                     if status == SLPDataTransferStatus.succeed
                     {

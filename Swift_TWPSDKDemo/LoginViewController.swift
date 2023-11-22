@@ -50,24 +50,24 @@ class LoginViewController: UIViewController {
         if  (UserDefaults.standard.string(forKey: "channelID") != nil) {
             self.channelidTextfield.text = UserDefaults.standard.string(forKey: "channelID")
         }
-        else
-        {
-            self.channelidTextfield.text = "10000"
-        }
+//        else
+//        {
+//            self.channelidTextfield.text = "10000"
+//        }
         if  (UserDefaults.standard.string(forKey: "token") != nil) {
             self.tokeTextfield.text = UserDefaults.standard.string(forKey: "token")
         }
-        else
-        {
-            self.tokeTextfield.text = "test"
-        }
+//        else
+//        {
+//            self.tokeTextfield.text = "test"
+//        }
         if  (UserDefaults.standard.string(forKey: "deviceID") != nil) {
             self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID") 
         }
-        else
-        {
-            self.deviceIdTextfield.text = "kyyppdclowrw9"
-        }
+//        else
+//        {
+//            self.deviceIdTextfield.text = "ebv50fwmk2v1m"
+//        }
         
 //        self.urlTextfield.text = "http://120.24.68.136:8091"
 //        self.channelidTextfield.text = "53500"
@@ -76,10 +76,10 @@ class LoginViewController: UIViewController {
         if  (UserDefaults.standard.string(forKey: "version") != nil) {
             self.versionTextfield.text = UserDefaults.standard.string(forKey: "version")
         }
-        else
-        {
-            self.versionTextfield.text = "2.49"
-        }
+//        else
+//        {
+//            self.versionTextfield.text = "2.49"
+//        }
     }
     
     func initUI() -> Void {
@@ -158,7 +158,6 @@ class LoginViewController: UIViewController {
         SLPHTTPManager.sharedInstance().initHttpServiceInfo(dic);
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        
         var connectStr = ""
         //http authorize
         SLPHTTPManager.sharedInstance().authorize(self.tokeTextfield.text!, timeout: 0) { (result: Bool, responseObject: Any, error: String?) in
@@ -171,6 +170,10 @@ class LoginViewController: UIViewController {
                 let ip = tcpServer["ip"] as! String
                 let port = tcpServer["port"] as! String
                 
+                let user = data["user"]  as! [String : Any]
+                let userid = user["userId"] as! UInt
+                UserDefaults.standard.set(userid, forKey: "userId")
+            
                 //login device
                 SLPLTcpManager.sharedInstance()?.loginHost(ip, port: NSInteger(port)!, token: sid, completion: { (succeed: Bool) in
                     MBProgressHUD.hide(for: self.view, animated: true)

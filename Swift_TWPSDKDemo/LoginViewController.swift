@@ -129,6 +129,10 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(self.tokeTextfield.text!, forKey: "token")
         UserDefaults.standard.set(self.deviceIdTextfield.text!, forKey: "deviceID")
         UserDefaults.standard.set(self.versionTextfield.text!, forKey: "version")
+        UserDefaults.standard.set(selectLeftRight, forKey: "leftRight")
+        
+
+        print("leftRight-->",UserDefaults.standard.string(forKey: "leftRight"))
     }
     
     func receiceData() -> Void {

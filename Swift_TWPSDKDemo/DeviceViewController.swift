@@ -96,7 +96,7 @@ class DeviceViewController: UIViewController {
     }
     
     @IBAction func startRealtimeData(_ sender: Any) {
-        SLPLTcpManager.sharedInstance()?.startRealTimeData(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.startRealTimeData(withDeviceID: self.deviceID, deviceType: SLPDeviceTypes.M800, leftRight:Int32(UserDefaults.standard.string(forKey: "leftRight")!)!, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("start realtime data succeed !")
@@ -121,7 +121,7 @@ class DeviceViewController: UIViewController {
     
     @IBAction func stopRealtimeData(_ sender: Any) {
         
-        SLPLTcpManager.sharedInstance()?.stopRealTimeData(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.stopRealTimeData(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800,leftRight: Int32(UserDefaults.standard.string(forKey: "leftRight")!)!, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("stop realtime data succeed !")
@@ -149,9 +149,7 @@ class DeviceViewController: UIViewController {
     
     @IBAction func stopMonitor(_ sender: Any) {
         let time = UInt32(NSDate().timeIntervalSince1970)
-        
-        
-        SLPLTcpManager.sharedInstance()?.getCollectionStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800, timeout: 0, callback: { [self] (status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.getCollectionStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800,leftRight:Int32(UserDefaults.standard.string(forKey: "leftRight")!)!, timeout: 0, callback: { [self] (status: SLPDataTransferStatus, data: Any?) in
             let dID = deviceID
             if status == SLPDataTransferStatus.succeed {
                 let collectStatus = data as! SLPCollectStatus
@@ -172,7 +170,7 @@ class DeviceViewController: UIViewController {
                 }
                 
                 let userid =   UserDefaults.standard.string(forKey: "userId")
-                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.M800, userID: userid!, timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
+                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.M800,leftRight:Int32(UserDefaults.standard.string(forKey: "leftRight")!)!, userID: userid!, timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
 
                     if status == SLPDataTransferStatus.succeed
                     {
@@ -268,7 +266,7 @@ class DeviceViewController: UIViewController {
     }
     
     @IBAction func checkMonitorStatus(_ sender: Any) {
-        SLPLTcpManager.sharedInstance()?.getSleepStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?)in
+        SLPLTcpManager.sharedInstance()?.getSleepStatus(withDeviceID: deviceID, deviceType: SLPDeviceTypes.M800,leftRight: Int32(UserDefaults.standard.string(forKey: "leftRight")!)!, timeout: 10.0, callback: { (status: SLPDataTransferStatus, data: Any?)in
             if status == SLPDataTransferStatus.succeed
             {
                 print("check monitor succeed !")

@@ -173,9 +173,8 @@ class DeviceViewController: UIViewController {
                     self.alertShow(message: NSLocalizedString("reston_no_report", comment: "") as NSString)
                     return
                 }
-                
-                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.TWP3, userID: "363590", timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
-
+                let userid =   UserDefaults.standard.string(forKey: "userId")
+                SLPLTcpManager.sharedInstance()?.stopCollection(withDeviceID: dID, deviceType: SLPDeviceTypes.TWP3, userID: userid!, timeStamp:time, timeout: 10, callback: { (status: SLPDataTransferStatus, data: Any?) in
                     if status == SLPDataTransferStatus.succeed
                     {
                         print("stop monitor succeed !")

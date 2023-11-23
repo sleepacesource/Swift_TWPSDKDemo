@@ -24,7 +24,7 @@
     [dateFormatter setDateFormat:format];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:timeZone]];
     //24小时制
-    dateFormatter.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"en_US_POSIX"];
+//    dateFormatter.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"en_US_POSIX"];
     NSString *string = [dateFormatter stringFromDate:date];
     
     return string;

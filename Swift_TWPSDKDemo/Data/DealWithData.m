@@ -46,7 +46,9 @@
     NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
     humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
     
-    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate, tempRangeStr, humRangeStr];
+    NSString * arithmeticVer = [NSString stringWithFormat:@"%@",obj.arithmeticVer];
+    
+    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate, tempRangeStr, humRangeStr,arithmeticVer];
 }
 
 + (NSString *)rangeString:(NSArray *)arr {
@@ -82,6 +84,7 @@
 
 +(NSArray *)backLongDataArray:(UserObj *)obj
 {
+    NSString * arithmeticVer = [NSString stringWithFormat:@"%@",obj.arithmeticVer];
     NSString *date=[NSString stringWithFormat:@"%@",obj.date];
     NSString *score=[NSString stringWithFormat:@"%@",obj.score];
     NSString *duration=[NSString stringWithFormat:@"%02d%@%02d%@",[obj.duration integerValue]/60,NSLocalizedString(@"unit_h", nil),[obj.duration integerValue]%60,NSLocalizedString(@"unit_m", nil)];
@@ -90,8 +93,9 @@
     NSString *averageHeartRate=[NSString stringWithFormat:@"%@ %@",obj.pjxl,NSLocalizedString(@"unit_heart", nil)];
     NSString *averageBreathRate=[NSString stringWithFormat:@"%@ %@",obj.pjhxl,NSLocalizedString(@"unit_respiration", nil)];
     NSString *wakes=[NSString stringWithFormat:@"%@ %@",obj.wake_times,NSLocalizedString(@"unit_times", nil)];
+    
     NSString *turnOver=[NSString stringWithFormat:@"%@ %@",
-                        obj.fscs,NSLocalizedString(@"unit_times", nil)];
+                        obj.fscs,NSLocalizedString(@"unit_times", nil)];//ahi翻身不起作用
     NSString *bodyMovement=[NSString stringWithFormat:@"%@ %@",obj.tdcs,NSLocalizedString(@"unit_times", nil)];
     NSString *leaveBed=[NSString stringWithFormat:@"%@ %@",obj.lccs,
                         NSLocalizedString(@"unit_times", nil)];
@@ -133,7 +137,14 @@
     NSString *osaCnt = obj.osaCnt ? [NSString stringWithFormat:@"%@ %@",obj.osaCnt,NSLocalizedString(@"unit_times", nil)]: NSLocalizedString(@"nothing", nil);
     NSString *osaMaxDur = obj.osaMaxDur ? [NSString stringWithFormat:@"%@ %@",obj.osaMaxDur,NSLocalizedString(@"unit_s", nil)]: NSLocalizedString(@"nothing", nil);
     
-    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
+    
+    if(obj.ahiFlag.boolValue){
+        return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,bodyMovement,leaveBed, tempRangeStr, humRangeStr,arithmeticVer];
+        
+    }
+    else{
+        return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr,arithmeticVer];
+    }
 }
 
 

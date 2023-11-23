@@ -412,3 +412,4 @@
 "events_of_osa"= "阻塞性暂停/低通气次数";
 "max_osa_duration"= "最长阻塞性暂停/低通气持续的时长";
 "unit_ahi"="次/时";
+"algorithm_version"="算法版本";

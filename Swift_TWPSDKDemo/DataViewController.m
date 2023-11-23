@@ -23,7 +23,7 @@
 {
     NSArray *simulateLongTimeTitle;
     NSArray *simulateShortTimetitle;
-    NSArray *titleArray;
+    NSMutableArray *titleArray;
     NSArray *valueArray;
     
     UIView *myView;
@@ -201,10 +201,11 @@
 }
 
 
-- (void)initTableviewTitle:(BOOL)longReport
+- (void)initTableviewTitle:(BOOL)longReport Obj:(UserObj*)obj
 {
+    titleArray = [[NSMutableArray alloc]initWithCapacity:0];
     if (longReport) {
-        titleArray=@[NSLocalizedString(@"collection_date", nil),
+        NSArray *array1=@[NSLocalizedString(@"collection_date", nil),
                      NSLocalizedString(@"sleep_scores", nil),
                      NSLocalizedString(@"deduction_points", nil),
                      NSLocalizedString(@"sleeping_time", nil),
@@ -226,25 +227,41 @@
                      NSLocalizedString(@"medium_sleep_proportion", nil),
                      NSLocalizedString(@"light_sleep_proportion", nil),
                      NSLocalizedString(@"sober_proportion", nil),
-                     NSLocalizedString(@"wake_times", nil),
-                     NSLocalizedString(@"turn_times", nil),
-                     NSLocalizedString(@"body_times", nil),
-                     NSLocalizedString(@"out_times", nil),
-                     NSLocalizedString(@"temperature", nil),
-                     NSLocalizedString(@"humidity", nil),
+                     NSLocalizedString(@"wake_times", nil)
                      ];
+        
+        [titleArray addObjectsFromArray:array1];
+        
+        if(obj.ahiFlag.boolValue){
+            [titleArray addObjectsFromArray:@[NSLocalizedString(@"body_times", nil),
+                                    NSLocalizedString(@"out_times", nil),
+                                    NSLocalizedString(@"temperature", nil),
+                                              NSLocalizedString(@"humidity", nil),
+                                              NSLocalizedString(@"algorithm_version", nil)]];
+       
+
+        }
+        else{
+            [titleArray addObjectsFromArray:@[NSLocalizedString(@"turn_times", nil),
+                                                        NSLocalizedString(@"body_times", nil),
+                                                        NSLocalizedString(@"out_times", nil),
+                                                        NSLocalizedString(@"temperature", nil),
+                                                        NSLocalizedString(@"humidity", nil),
+                                              NSLocalizedString(@"algorithm_version", nil)]];
+        }
     }
     else
     {
-        titleArray=@[NSLocalizedString(@"collection_date", nil),
+        NSArray *array1=@[NSLocalizedString(@"collection_date", nil),
                      NSLocalizedString(@"sleeping_time", nil),
                      NSLocalizedString(@"inbed_time", nil),
                      NSLocalizedString(@"heart_rate", nil),
                      NSLocalizedString(@"respiration_rate", nil),
                      NSLocalizedString(@"temperature", nil),
                      NSLocalizedString(@"humidity", nil),
+                          NSLocalizedString(@"algorithm_version", nil)
                      ];
-        
+        [titleArray addObjectsFromArray:array1];
     }
 }
 
@@ -367,7 +384,7 @@
         [self initData:obj];
     }
     valueArray=[DealWithData backDataArray:obj];
-    [self initTableviewTitle:isLongData];
+    [self initTableviewTitle:isLongData Obj:obj];
     CGRect rect=self.view.frame;
     int  height=titleArray.count*40+rect.size.height+space;
     rect.size.height=height;

@@ -409,3 +409,4 @@
 "events_of_osa"= "Events of OSA";
 "max_osa_duration"= "Max OSA Duration";
 "unit_ahi"="events/h";
+"algorithm_version"="Algorithm version";

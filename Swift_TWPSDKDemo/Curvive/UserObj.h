@@ -152,6 +152,8 @@ typedef NS_ENUM(NSInteger,SLPSleepBodyMovementGrades) {
 @property (nonatomic,readonly)SLPSleepBodyMovementGrades bodymovementGrades;
 
 //new add
+
+@property (nonatomic,strong)NSNumber *ahiFlag;//是否支持ahi算法版本
 @property (nonatomic,strong)NSNumber *ahIndex;//AHI值
 @property (nonatomic,strong)NSString *ahiArrayStr;//呼吸暂停次数分布
 @property (nonatomic,strong)NSNumber *breathPauseAllTime;//呼级事件总持续时长

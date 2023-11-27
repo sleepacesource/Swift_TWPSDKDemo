@@ -46,10 +46,17 @@
             int wake_hour = ([ahiArray[1] intValue] >> 8) & 0xff;
             int wake_min =[ahiArray[1] intValue] & 0xff;
             int duration = [ahiArray[2] intValue];//持续时长N小时
+            
+            int startMins = start_hour*60 + start_min ;
+            int endMIns = start_hour*60 + start_min + 60 - start_min;
+            
             for (int i=0 ; i<duration; i++) {
-                NSString *start_time = [self minutesToTimeStr:start_hour*60 + start_min + i*60];
-                NSString *end_time = [self minutesToTimeStr:start_hour*60 + start_min + 60 + i*60];
-                if(i==duration-1 && ( (start_hour*60 + start_min + 60 + i*60)  >(wake_hour*60+wake_min))){//最后一个小时结束时间是否比实际清醒时间大，如果大，选择实际清醒时间
+                NSString *start_time = [self minutesToTimeStr:startMins];
+                NSString *end_time = [self minutesToTimeStr:endMIns];
+                startMins = endMIns;
+                endMIns = startMins + 60;
+                
+                if(i==duration-1 && ( endMIns >(wake_hour*60+wake_min))){//最后一个小时结束时间是否比实际清醒时间大，如果大，选择实际清醒时间
                     end_time = [self minutesToTimeStr:wake_hour*60+wake_min];
                     NSLog(@"实际清醒时间:%@",end_time);
                 }

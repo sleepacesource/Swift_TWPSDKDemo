@@ -138,7 +138,7 @@
     obj.wakeUpTimeStr=@"09:15";
     //    obj.source=[NSNumber numberWithInteger:6];
     obj.timezone=[NSNumber numberWithInteger:28800];
-    obj.arithmeticVer=@"02.01.04";
+    obj.arithmeticVer=@"";
     obj.eHumidityArray = [NSMutableArray arrayWithObjects:@(44), @(48), nil];
     obj.eTempArray = [NSMutableArray arrayWithObjects:@(25), @(27), nil];
     

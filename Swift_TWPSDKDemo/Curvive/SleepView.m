@@ -437,11 +437,15 @@
                 }
                 if (even & GET_UP)//起床前的清醒点
                 {
+                    
                     if (!awakeArr_.count)
                     {
                         p.y = kSleepViewGridHeight;
                         thisPoint = [NSValue valueWithCGPoint:p];
                         [awakeArr_ addObject:thisPoint];
+                    }
+                    else{
+                        [awakeArr_ replaceObjectAtIndex:0 withObject:thisPoint];
                     }
                 }
                 

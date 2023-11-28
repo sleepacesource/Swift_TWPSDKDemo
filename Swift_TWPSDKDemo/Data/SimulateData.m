@@ -232,7 +232,7 @@
     obj.statusString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"status"] componentsJoinedByString:@","]];
     obj.statusValueString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"statusValue"] componentsJoinedByString:@","]];
     obj.SleepCurveStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepCurveArray"] componentsJoinedByString:@","]];
-    obj.sleepCurveStatusStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepCurveStatusArray"] componentsJoinedByString:@","]];
+    obj.sleepCurveStatusStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepEventArray"] componentsJoinedByString:@","]];
     obj.duration=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"duration"]integerValue]];
     obj.startTime=[NSNumber numberWithInteger:[[summaryDic objectForKey:@"startTime"] integerValue]];
     obj.score=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"sleepScore"]integerValue]];

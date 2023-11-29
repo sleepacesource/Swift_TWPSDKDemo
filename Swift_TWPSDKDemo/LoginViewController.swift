@@ -37,32 +37,32 @@ class LoginViewController: UIViewController {
         if  (UserDefaults.standard.string(forKey: "url") != nil) {
             self.urlTextfield.text = UserDefaults.standard.string(forKey: "url")
         }
-        else
-        {
-            self.urlTextfield.text = "http://120.24.68.136:8091"
-        }
+//        else
+//        {
+//            self.urlTextfield.text = "http://120.24.68.136:8091"
+//        }
      
         if  (UserDefaults.standard.string(forKey: "channelID") != nil) {
             self.channelidTextfield.text = UserDefaults.standard.string(forKey: "channelID")
         }
-        else
-        {
-            self.channelidTextfield.text = "10000"
-        }
+//        else
+//        {
+//            self.channelidTextfield.text = "10000"
+//        }
         if  (UserDefaults.standard.string(forKey: "token") != nil) {
             self.tokeTextfield.text = UserDefaults.standard.string(forKey: "token")
         }
-        else
-        {
-            self.tokeTextfield.text = "z400twp3"
-        }
+//        else
+//        {
+//            self.tokeTextfield.text = "z400twp3"
+//        }
         if  (UserDefaults.standard.string(forKey: "deviceID") != nil) {
             self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID") 
         }
-        else
-        {
-            self.deviceIdTextfield.text = "9klrzu9i9o9lo"
-        }
+//        else
+//        {
+//            self.deviceIdTextfield.text = "9klrzu9i9o9lo"
+//        }
         
 //        self.urlTextfield.text = "http://120.24.68.136:8091"
 //        self.channelidTextfield.text = "53500"

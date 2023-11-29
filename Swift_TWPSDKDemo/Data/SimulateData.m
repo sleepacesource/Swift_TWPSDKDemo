@@ -153,9 +153,6 @@
     obj.osaCnt = [NSNumber numberWithInteger:165];
     obj.osaMaxDur = [NSNumber numberWithInteger:56];
     
-    
-    
-    
     return obj;
 }
 

@@ -151,6 +151,19 @@ typedef NS_ENUM(NSInteger,SLPSleepBodyMovementGrades) {
 @property (nonatomic,readonly)SLPSleepScoreGrades sleepScoreGrades;
 @property (nonatomic,readonly)SLPSleepBodyMovementGrades bodymovementGrades;
 
+//new add ahi
+@property (nonatomic,strong)NSNumber *ahiFlag;//是否支持ahi算法版本
+@property (nonatomic,strong)NSNumber *ahIndex;//AHI值
+@property (nonatomic,strong)NSString *ahiArrayStr;//呼吸暂停次数分布
+@property (nonatomic,strong)NSNumber *breathPauseAllTime;//呼级事件总持续时长
+@property (nonatomic,strong)NSNumber *breathPauseTimes;//呼吸事件总次数
+@property (nonatomic,strong)NSNumber *csaDur;//中枢性呼级暂停持续时长
+@property (nonatomic,strong)NSNumber *csaCnt;//中枢性呼吸暂停次数
+@property (nonatomic,strong)NSNumber *csaMaxDur;//最长中枢性呼吸暂停持续的时长
+@property (nonatomic,strong)NSNumber *osaDur;//阳宰性暂停/低通气持续时长
+@property (nonatomic,strong)NSNumber *osaCnt;//咀塞任晢停/低通气次数
+@property (nonatomic,strong)NSNumber *osaMaxDur;//最长阻窰性暂停/低通气持续的时长
+
 -(id )init;
 
 /**

@@ -30,6 +30,7 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
 //    formatter.timeZone=[NSTimeZone localTimeZone];
+    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[obj.startTime integerValue]];
     NSString *startTime = [formatter stringFromDate:confromTimesp];
     NSInteger startTimeNum=[[[startTime componentsSeparatedByString:@":"] objectAtIndex:0] integerValue]*60+[[[startTime componentsSeparatedByString:@":"] objectAtIndex:1] integerValue];
@@ -99,6 +100,7 @@
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
     formatter.timeZone=[NSTimeZone localTimeZone];
+    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[obj.startTime integerValue]];
     NSString *startTime = [formatter stringFromDate:confromTimesp];
     NSInteger startTimeNum=[[[startTime componentsSeparatedByString:@":"] objectAtIndex:0] integerValue]*60+[[[startTime componentsSeparatedByString:@":"] objectAtIndex:1] integerValue];

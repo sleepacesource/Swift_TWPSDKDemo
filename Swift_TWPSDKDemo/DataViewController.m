@@ -165,7 +165,7 @@
 
 - (void)refreshReport {
     NSInteger startTime = [[NSDate date] timeIntervalSince1970];
-    NSDictionary *dic = @{@"startTime":@(startTime) ,@"num": @(1) ,@"order": @(0),@"deviceType":@(SLPDeviceType_M800)};
+    NSDictionary *dic = @{@"startTime":@(startTime) ,@"num": @(1) ,@"order": @(0),@"deviceType":@(SLPDeviceType_M8701W)};
     
     [SLPSharedHTTPManager getDailyReport:dic timeOut:10.0 completion:^(BOOL result, id  _Nonnull responseObject, NSString * _Nonnull error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];

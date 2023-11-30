@@ -443,6 +443,9 @@
                         thisPoint = [NSValue valueWithCGPoint:p];
                         [awakeArr_ addObject:thisPoint];
                     }
+                    else{
+                        [awakeArr_ replaceObjectAtIndex:0 withObject:thisPoint];
+                    }
                 }
                 
                 [allCurvePoints addObject:thisPoint];

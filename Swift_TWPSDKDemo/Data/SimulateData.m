@@ -213,6 +213,8 @@
     
     int flag = [[summaryDic objectForKey:@"recordCount"] integerValue] >= 180?1:2;
     obj.reportFlag=[NSNumber numberWithInteger:flag];
+    obj.ahiFlag = [NSNumber numberWithInteger:[[summaryDic objectForKey:@"ahiFlag"] integerValue]];
+    obj.arithmeticVer= [NSString stringWithFormat:@"%@",[summaryDic objectForKey:@"arithmeticVer"]];
     
     //short report
     if (flag == 2) {
@@ -238,7 +240,7 @@
     obj.statusString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"status"] componentsJoinedByString:@","]];
     obj.statusValueString=[NSString stringWithFormat:@"[%@]",[[detailDic objectForKey:@"statusValue"] componentsJoinedByString:@","]];
     obj.SleepCurveStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepCurveArray"] componentsJoinedByString:@","]];
-    obj.sleepCurveStatusStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepCurveStatusArray"] componentsJoinedByString:@","]];
+    obj.sleepCurveStatusStr=[NSString stringWithFormat:@"[%@]",[[analysisDic objectForKey:@"sleepEventArray"] componentsJoinedByString:@","]];
     obj.duration=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"duration"]integerValue]];
     obj.startTime=[NSNumber numberWithInteger:[[summaryDic objectForKey:@"startTime"] integerValue]];
     obj.score=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"sleepScore"]integerValue]];
@@ -254,6 +256,10 @@
     obj.wake_times=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"wakeTimes"]integerValue]];
     obj.tdcs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"bodyMovementTimes"]integerValue]];
     obj.fscs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"trunOverTimes"]integerValue]];
+    //新AHI体动，翻身合并为一个参数,废弃翻身
+    if(obj.ahiFlag.boolValue){
+        obj.tdcs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"bmCnt"]integerValue]];
+    }
     obj.pjxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"averageHeartBeatRate"]integerValue]];
     obj.pjhxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"averageBreathRate"]integerValue]];
     obj.zgxl=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"maxHeartBeatRate"]integerValue]];
@@ -267,7 +273,17 @@
     obj.asleepTime=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"fallAlseepAllTime"]integerValue]];
     obj.recordCount = [NSNumber numberWithInteger:[[summaryDic objectForKey:@"recordCount"] integerValue]];
     obj.lccs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"leaveBedTimes"]integerValue]];
-    obj.arithmeticVer= [analysisDic objectForKey:@"breathRateSlowAllTime"];
+  
+    obj.ahIndex = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"ahIndex"]integerValue]];
+    obj.ahiArrayStr = [self backBreathPauseTimes:[analysisDic objectForKey:@"ahiArrayStr"]];
+    obj.breathPauseAllTime = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathPauseAllTime"]integerValue]];
+    obj.breathPauseTimes = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathPauseTimes"]integerValue]];
+    obj.csaDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaDur"]integerValue]];
+    obj.csaCnt = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaCnt"]integerValue]];
+    obj.csaMaxDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaMaxDur"]integerValue]];
+    obj.osaDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaDur"]integerValue]];
+    obj.osaCnt = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaCnt"]integerValue]];
+    obj.osaMaxDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaMaxDur"]integerValue]];
     
     NSTimeInterval startTime = obj.startTime.integerValue;//上床时间
     NSTimeInterval endTime = startTime + obj.recordCount.integerValue * 60;//起床时间

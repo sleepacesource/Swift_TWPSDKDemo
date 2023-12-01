@@ -22,6 +22,7 @@
 
 + (NSArray *)backShortDataArray:(UserObj *)obj
 {
+    NSString * arithmeticVer = [NSString stringWithFormat:@"%@",obj.arithmeticVer];
     NSString *date=[NSString stringWithFormat:@"%@",obj.date];
     NSString *duration=[NSString stringWithFormat:@"%02d%@%02d%@",[obj.recordCount integerValue]/60,NSLocalizedString(@"unit_h", nil),[obj.recordCount integerValue]%60,NSLocalizedString(@"unit_m", nil)];
     
@@ -40,13 +41,13 @@
     NSString *endTimeStr =[NSString stringWithFormat:@"%02d:%02d",endSleepTime/60>=24?endSleepTime/60-24:endSleepTime/60,endSleepTime%60];
      NSString *sleepTime=[NSString stringWithFormat:@"%@(%@)~%@(%@)",startTimeStr,NSLocalizedString(@"starting_point", nil),endTimeStr,NSLocalizedString(@"end_point", nil)];
     
-    NSString *tempRangeStr = [self rangeString:obj.eTempArray];
-    tempRangeStr = [NSString stringWithFormat:@"%@℃", tempRangeStr];
+//    NSString *tempRangeStr = [self rangeString:obj.eTempArray];
+//    tempRangeStr = [NSString stringWithFormat:@"%@℃", tempRangeStr];
+//
+//    NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
+//    humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
     
-    NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
-    humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
-    
-    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate, tempRangeStr, humRangeStr];
+    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate,arithmeticVer];
 }
 
 + (NSString *)rangeString:(NSArray *)arr {
@@ -116,11 +117,11 @@
     NSString *wakePre=[NSString stringWithFormat:@"%d%%",[obj.MdWakeSleepPerc integerValue]];
 //    NSString *breathPauseStr=[NSString stringWithFormat:@"%@",obj.breathPauseTimeString.length?obj.breathPauseTimeString:NSLocalizedString(@"nothing", nil)];
     
-    NSString *tempRangeStr = [self rangeString:obj.eTempArray];
-    tempRangeStr = [NSString stringWithFormat:@"%@℃", tempRangeStr];
-    
-    NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
-    humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
+//    NSString *tempRangeStr = [self rangeString:obj.eTempArray];
+//    tempRangeStr = [NSString stringWithFormat:@"%@℃", tempRangeStr];
+//
+//    NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
+//    humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
     
     //ahi
     NSString *ahIndex = obj.ahIndex ? [NSString stringWithFormat:@"%@",obj.ahIndex] : NSLocalizedString(@"nothing", nil);
@@ -135,11 +136,11 @@
     NSString *osaMaxDur = obj.osaMaxDur ? [NSString stringWithFormat:@"%@ %@",obj.osaMaxDur,NSLocalizedString(@"unit_s", nil)]: NSLocalizedString(@"nothing", nil);
     
     if(obj.ahiFlag.boolValue){
-        return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,bodyMovement,leaveBed, tempRangeStr, humRangeStr,arithmeticVer];
+        return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,bodyMovement,leaveBed,arithmeticVer];
         
     }
     else{
-        return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr,arithmeticVer];
+        return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed,arithmeticVer];
     }
 }
 

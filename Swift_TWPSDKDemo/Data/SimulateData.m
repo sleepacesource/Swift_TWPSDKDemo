@@ -273,11 +273,12 @@
     obj.asleepTime=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"fallAlseepAllTime"]integerValue]];
     obj.recordCount = [NSNumber numberWithInteger:[[summaryDic objectForKey:@"recordCount"] integerValue]];
     obj.lccs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"leaveBedTimes"]integerValue]];
-  
-    obj.ahIndex = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"ahIndex"]integerValue]];
-    obj.ahiArrayStr = [self backBreathPauseTimes:[analysisDic objectForKey:@"ahiArrayStr"]];
     obj.breathPauseAllTime = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathPauseAllTime"]integerValue]];
     obj.breathPauseTimes = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathPauseTimes"]integerValue]];
+    
+//  ahi
+    obj.ahIndex = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"ahIndex"]integerValue]];
+    obj.ahiArrayStr = [self backBreathPauseTimes:[analysisDic objectForKey:@"ahiArrayStr"]];
     obj.csaDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaDur"]integerValue]];
     obj.csaCnt = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaCnt"]integerValue]];
     obj.csaMaxDur = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaMaxDur"]integerValue]];

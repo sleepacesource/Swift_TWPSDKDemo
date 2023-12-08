@@ -16,8 +16,9 @@ class MainViewController: UITabBarController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.white
         self.addChildVC(childVC: LoginViewController(), title: NSLocalizedString("login_in", comment: ""), index: 0 ,imagename: "home.png")
-        self.addChildVC(childVC: DeviceViewController(), title: NSLocalizedString("device", comment: ""), index: 1 , imagename: "control.png" )
-        self.addChildVC(childVC: DataViewController(), title: NSLocalizedString("report_", comment: ""), index: 2 , imagename: "data.png")
+        self.addChildVC(childVC: ControlViewController(), title: NSLocalizedString("control", comment: ""), index: 1 , imagename: "control.png" )
+        self.addChildVC(childVC: DeviceViewController(), title: NSLocalizedString("device", comment: ""), index: 2 , imagename: "control.png" )
+        self.addChildVC(childVC: DataViewController(), title: NSLocalizedString("report_", comment: ""), index: 3, imagename: "data.png")
         
         if #available(iOS 13.0, *) {
                 self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
@@ -29,8 +30,8 @@ class MainViewController: UITabBarController {
     }
     
     @objc func jumpReportPage() {
-        self.selectedIndex = 2
-        let navController = self.children[2] as! UINavigationController
+        self.selectedIndex = 3
+        let navController = self.children[3] as! UINavigationController
         let rootVc = navController.topViewController as! DataViewController
         rootVc.refreshReport()
     }

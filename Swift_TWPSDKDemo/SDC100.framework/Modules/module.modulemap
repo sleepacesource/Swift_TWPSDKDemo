@@ -1,0 +1,6 @@
+framework module SDC100 {
+  umbrella header "SDC100.h"
+
+  export *
+  module * { export * }
+}

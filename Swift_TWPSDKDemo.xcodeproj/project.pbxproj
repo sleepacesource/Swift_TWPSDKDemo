@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2624A0C12B21B6840050BE1A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26687D422B21B42F00F5B863 /* libc++.tbd */; };
+		26680FCC2B22B0E000C414B2 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26680FCA2B22B0DF00C414B2 /* ControlViewController.swift */; };
+		26680FCD2B22B0E000C414B2 /* ControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26680FCB2B22B0DF00C414B2 /* ControlViewController.xib */; };
+		26680FD22B22B34A00C414B2 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26680FCE2B22B34900C414B2 /* SearchViewController.xib */; };
+		26680FD32B22B34A00C414B2 /* device_btn_refresh_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26680FCF2B22B34900C414B2 /* device_btn_refresh_nor@2x.png */; };
+		26680FD42B22B34A00C414B2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26680FD02B22B34900C414B2 /* SearchViewController.swift */; };
+		26680FD52B22B34A00C414B2 /* device_btn_refresh_nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26680FD12B22B34900C414B2 /* device_btn_refresh_nor@3x.png */; };
+		26680FD92B22B53C00C414B2 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26680FD82B22B53C00C414B2 /* DataManager.m */; };
+		26687D392B21B1B800F5B863 /* BluetoothManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26687D372B21B1B800F5B863 /* BluetoothManager.framework */; };
+		26687D3A2B21B1B800F5B863 /* SDC100.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26687D382B21B1B800F5B863 /* SDC100.framework */; };
 		268329522492428E0032F3F4 /* SLPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268329502492428D0032F3F4 /* SLPCommon.framework */; };
 		268329532492428E0032F3F4 /* SLPTCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268329512492428D0032F3F4 /* SLPTCP.framework */; };
 		26841E262499C40600DC50D3 /* DataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26841E232499C40600DC50D3 /* DataViewController.xib */; };
@@ -77,6 +87,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26680FCA2B22B0DF00C414B2 /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
+		26680FCB2B22B0DF00C414B2 /* ControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlViewController.xib; sourceTree = "<group>"; };
+		26680FCE2B22B34900C414B2 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		26680FCF2B22B34900C414B2 /* device_btn_refresh_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@2x.png"; sourceTree = "<group>"; };
+		26680FD02B22B34900C414B2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		26680FD12B22B34900C414B2 /* device_btn_refresh_nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device_btn_refresh_nor@3x.png"; sourceTree = "<group>"; };
+		26680FD72B22B53C00C414B2 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		26680FD82B22B53C00C414B2 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		26687D372B21B1B800F5B863 /* BluetoothManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BluetoothManager.framework; sourceTree = "<group>"; };
+		26687D382B21B1B800F5B863 /* SDC100.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDC100.framework; sourceTree = "<group>"; };
+		26687D402B21B3DB00F5B863 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		26687D422B21B42F00F5B863 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		268329502492428D0032F3F4 /* SLPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SLPCommon.framework; sourceTree = "<group>"; };
 		268329512492428D0032F3F4 /* SLPTCP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SLPTCP.framework; sourceTree = "<group>"; };
 		26841E222499C40500DC50D3 /* Swift_TWPSDKDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_TWPSDKDemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -189,15 +211,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2624A0C12B21B6840050BE1A /* libc++.tbd in Frameworks */,
+				26687D3A2B21B1B800F5B863 /* SDC100.framework in Frameworks */,
 				268329532492428E0032F3F4 /* SLPTCP.framework in Frameworks */,
 				268329522492428E0032F3F4 /* SLPCommon.framework in Frameworks */,
 				933AFEC554604C943A2D19EA /* libPods-Swift_TWPSDKDemo.a in Frameworks */,
+				26687D392B21B1B800F5B863 /* BluetoothManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26680FD62B22B53C00C414B2 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				26680FD72B22B53C00C414B2 /* DataManager.h */,
+				26680FD82B22B53C00C414B2 /* DataManager.m */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		26841E282499C4A500DC50D3 /* Curvive */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,11 +348,17 @@
 				26D4CF8724B2B3B40001821B /* MBProgressHUD */,
 				268329502492428D0032F3F4 /* SLPCommon.framework */,
 				268329512492428D0032F3F4 /* SLPTCP.framework */,
+				26687D372B21B1B800F5B863 /* BluetoothManager.framework */,
+				26687D382B21B1B800F5B863 /* SDC100.framework */,
 				2684E90B2490C52E00ADF97E /* AppDelegate.swift */,
 				269069A8249315A30043F67B /* MainViewController.swift */,
 				269069A9249315A30043F67B /* MainViewController.xib */,
 				269069B4249316400043F67B /* LoginViewController.swift */,
 				269069B5249316400043F67B /* LoginViewController.xib */,
+				26680FCA2B22B0DF00C414B2 /* ControlViewController.swift */,
+				26680FCB2B22B0DF00C414B2 /* ControlViewController.xib */,
+				26680FD02B22B34900C414B2 /* SearchViewController.swift */,
+				26680FCE2B22B34900C414B2 /* SearchViewController.xib */,
 				269069AC249315D50043F67B /* DeviceViewController.swift */,
 				269069AD249315D50043F67B /* DeviceViewController.xib */,
 				269069B0249315E40043F67B /* ReportViewController.swift */,
@@ -326,6 +366,7 @@
 				26841E242499C40600DC50D3 /* DataViewController.h */,
 				26841E252499C40600DC50D3 /* DataViewController.m */,
 				26841E232499C40600DC50D3 /* DataViewController.xib */,
+				26680FD62B22B53C00C414B2 /* DataManager */,
 				26841E742499C8AA00DC50D3 /* Data */,
 				26841E6B2499C54A00DC50D3 /* CommonUI */,
 				26841E642499C4BE00DC50D3 /* Tool */,
@@ -336,6 +377,8 @@
 				2684E9192490C53200ADF97E /* Info.plist */,
 				269069C224937F990043F67B /* Localizable.strings */,
 				26B0A7D424B5C7F600095301 /* sdk_index_icon_z400twp_2@2x.png */,
+				26680FCF2B22B34900C414B2 /* device_btn_refresh_nor@2x.png */,
+				26680FD12B22B34900C414B2 /* device_btn_refresh_nor@3x.png */,
 				26B0A7D324B5C7F600095301 /* sdk_index_icon_z400twp_2@3x.png */,
 				26B0A7C324B575E400095301 /* control@2x.png */,
 				26B0A7C524B575E500095301 /* control@3x.png */,
@@ -380,6 +423,8 @@
 		49FBEA6B0BCA4FF888B9102D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26687D422B21B42F00F5B863 /* libc++.tbd */,
+				26687D402B21B3DB00F5B863 /* libc.tbd */,
 				E31AF717090B68D496220151 /* libPods-Swift_TWPSDKDemo.a */,
 			);
 			name = Frameworks;
@@ -456,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26B0A7E324B5C83200095301 /* icon-108.png in Resources */,
+				26680FCD2B22B0E000C414B2 /* ControlViewController.xib in Resources */,
 				269069AF249315D50043F67B /* DeviceViewController.xib in Resources */,
 				26B0A7C924B575E500095301 /* control@2x.png in Resources */,
 				26B0A7EB24B5C83200095301 /* Icon-Small@2x.png in Resources */,
@@ -468,6 +514,7 @@
 				2684E9182490C53200ADF97E /* LaunchScreen.storyboard in Resources */,
 				26D4CF8D24B2B3B40001821B /* LICENSE in Resources */,
 				26B0A7CB24B575E500095301 /* control@3x.png in Resources */,
+				26680FD52B22B34A00C414B2 /* device_btn_refresh_nor@3x.png in Resources */,
 				26B0A7CA24B575E500095301 /* data@3x.png in Resources */,
 				269069AB249315A30043F67B /* MainViewController.xib in Resources */,
 				2684E9152490C53200ADF97E /* Assets.xcassets in Resources */,
@@ -475,6 +522,7 @@
 				26B0A7E224B5C83200095301 /* icon-28.png in Resources */,
 				26B0A7E524B5C83200095301 /* icon-60@3x.png in Resources */,
 				269069C024937F990043F67B /* Localizable.strings in Resources */,
+				26680FD32B22B34A00C414B2 /* device_btn_refresh_nor@2x.png in Resources */,
 				26B0A7D524B5C7F600095301 /* sdk_index_icon_z400twp_2@3x.png in Resources */,
 				26D4CF8E24B2B3B40001821B /* README.mdown in Resources */,
 				26B0A7CD24B575E500095301 /* home@2x.png in Resources */,
@@ -484,6 +532,7 @@
 				2684E9132490C52E00ADF97E /* Main.storyboard in Resources */,
 				26B0A7E424B5C83200095301 /* Icon-Small.png in Resources */,
 				26B0A7E624B5C83200095301 /* icon-60.png in Resources */,
+				26680FD22B22B34A00C414B2 /* SearchViewController.xib in Resources */,
 				26B0A7E724B5C83200095301 /* icon-1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +582,7 @@
 				26841E5A2499C4A500DC50D3 /* SBJsonWriter.m in Sources */,
 				26841E5B2499C4A500DC50D3 /* SBJsonStreamWriter.m in Sources */,
 				2684E90C2490C52E00ADF97E /* AppDelegate.swift in Sources */,
+				26680FCC2B22B0E000C414B2 /* ControlViewController.swift in Sources */,
 				26841E5E2499C4A500DC50D3 /* SBJsonStreamWriterState.m in Sources */,
 				26841E692499C4BE00DC50D3 /* Tool.m in Sources */,
 				26841E552499C4A500DC50D3 /* SBJsonParser.m in Sources */,
@@ -543,12 +593,14 @@
 				26841E632499C4A500DC50D3 /* UserObj.m in Sources */,
 				26841E7E2499C8AB00DC50D3 /* DealWithData.m in Sources */,
 				26841E272499C40600DC50D3 /* DataViewController.m in Sources */,
+				26680FD92B22B53C00C414B2 /* DataManager.m in Sources */,
 				26841E7D2499C8AB00DC50D3 /* SimulateData.m in Sources */,
 				26841E712499C54A00DC50D3 /* SLPUnderlineButton.m in Sources */,
 				26841E522499C4A500DC50D3 /* FixView.m in Sources */,
 				26841E802499C8AB00DC50D3 /* UpgradeInfoObj.m in Sources */,
 				26841E532499C4A500DC50D3 /* NSObject+SBJson.m in Sources */,
 				26841E582499C4A500DC50D3 /* SBJsonUTF8Stream.m in Sources */,
+				26680FD42B22B34A00C414B2 /* SearchViewController.swift in Sources */,
 				26841E6A2499C4BE00DC50D3 /* FontColor.m in Sources */,
 				26841E7F2499C8AB00DC50D3 /* SimulateData+ScoreDeduction.m in Sources */,
 				269069B2249315E40043F67B /* ReportViewController.swift in Sources */,
@@ -716,6 +768,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10000;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NV3296URNT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -729,7 +782,25 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.medicatech.M800SDKDemo;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Security\"",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/SLPTCP.framework/SLPTCP",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/BluetoothManager.framework/BluetoothManager",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/SDC100.framework/SDC100",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/SLPCommon.framework/SLPCommon",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.medicatech.sdc100;
 				PRODUCT_NAME = Z400TWP_3_SDK;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift_TWPSDKDemo/Swift_TWPSDKDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -746,6 +817,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10000;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NV3296URNT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -759,7 +831,25 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.medicatech.M800SDKDemo;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CocoaAsyncSocket\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"Security\"",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/SLPTCP.framework/SLPTCP",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/BluetoothManager.framework/BluetoothManager",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/SDC100.framework/SDC100",
+					"-force_load",
+					"$(SRCROOT)/Swift_TWPSDKDemo/SLPCommon.framework/SLPCommon",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.medicatech.sdc100;
 				PRODUCT_NAME = Z400TWP_3_SDK;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift_TWPSDKDemo/Swift_TWPSDKDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

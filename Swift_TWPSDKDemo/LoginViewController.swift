@@ -204,7 +204,7 @@ class LoginViewController: UIViewController {
     @IBAction func upgrade(_ sender: Any) {
         
         var upStr = ""
-        SLPLTcpManager.sharedInstance()?.publicUpdateOperation(withDeviceID: self.deviceIdTextfield.text!, deviceType: SLPDeviceTypes.M800, firmwareType: 2, firmwareVersion: self.versionTextfield.text!, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?) in
+        SLPLTcpManager.sharedInstance()?.publicUpdateOperation(withDeviceID: self.deviceIdTextfield.text!, deviceType: SLPDeviceTypes.SDC100, firmwareType: 2, firmwareVersion: self.versionTextfield.text!, timeout: 10.0, callback: {(status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("notity update succeed")

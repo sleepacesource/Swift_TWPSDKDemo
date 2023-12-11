@@ -268,6 +268,8 @@ typedef NS_ENUM(NSInteger,SLPBLEMessagetUniqTypes) {
     SLPBLEMessagetUniqType_SDCGetNightLight,//离床夜灯获取
     SLPBLEMessagetUniqType_SDCSnoringMeddleDemo,//打鼾干预演示
     SLPBLEMessagetUniqType_SDCGetDeviceInfo, //设备信息
+    SLPBLEMessagetUniqType_SDCSnoreMeddle, //打鼾干预开关
+    SLPBLEMessagetUniqType_SDCGetSnoreMeddle, //获取鼾干预开关
     
     SLPBLEMessagetUniqType_None,
 };

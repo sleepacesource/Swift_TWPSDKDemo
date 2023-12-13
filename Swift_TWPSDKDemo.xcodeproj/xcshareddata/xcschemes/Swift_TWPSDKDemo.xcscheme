@@ -73,7 +73,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "M800"
+      customArchiveName = "SDC100"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

@@ -335,7 +335,6 @@ class ControlViewController: UIViewController {
                 print("zeroGravity failed")
             }
         }
-        
     }
     
     /**

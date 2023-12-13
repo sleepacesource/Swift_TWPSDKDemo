@@ -59,14 +59,14 @@ class LoginViewController: UIViewController {
         }
 //        else
 //        {
-//            self.tokeTextfield.text = "test"
+            self.tokeTextfield.text = "test"
 //        }
         if  (UserDefaults.standard.string(forKey: "deviceID") != nil) {
             self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID") 
         }
 //        else
 //        {
-//            self.deviceIdTextfield.text = "ebv50fwmk2v1m"
+            self.deviceIdTextfield.text = "qsxy3nbxzpsx8"
 //        }
         
 //        self.urlTextfield.text = "http://120.24.68.136:8091"

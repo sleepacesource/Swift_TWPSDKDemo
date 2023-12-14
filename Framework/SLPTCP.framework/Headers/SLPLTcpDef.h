@@ -73,4 +73,6 @@
 
 #define kNotificationNameSA1001WorkModeChanged @"kNotificationNameSA1001WorkModeChanged"//SA1001的工作状态发生了变化
 
+#define kNotificationNameSDC100DeviceStatus @"kNotificationNameSDC100DeviceStatus"//Sdc100当前状态
+
 #endif /* SLPLTcpDef_h */

@@ -122,6 +122,9 @@ typedef NS_ENUM(NSInteger,SLPLTCPMessagetUniqTypes) {
     //public
     SLPLTCPMessagetUniqType_PublicGetDeviceWiFiInfo,//获取WiFi信号强度
     SLPLTCPMessagetUniqType_PublicPostDeviceWiFiInfo,//报送WiFi信号强度
+//    SDC100
+    SLPLTCPMessagetUniqType_SDC100_GetDeviceStatus,//SDC100当前设备状态
+    SLPLTCPMessagetUniqType_SDC100_PostDeviceStatus,//SDC100当前设备状态
     
     SLPlTCPMessagetUniqType_None,
 };

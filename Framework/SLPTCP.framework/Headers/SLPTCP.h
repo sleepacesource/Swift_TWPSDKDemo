@@ -12,7 +12,9 @@
 #import "SLPLTcpManager+TWP.h"
 #import "SLPLTcpManager+EW202W.h"
 #import "SLPLTcpManager+SA1001.h"
+#import "SLPLTcpManager+SDC100.h"
 #import "SLPLTcpDef.h"
 #import "SLPLTcpHeads.h"
 
-#define kTCPVersion @"1.0.25"
+#define kTCPVersion @"1.0.6"
+

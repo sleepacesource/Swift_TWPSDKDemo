@@ -23,4 +23,5 @@
 #import "Loop.h"
 #import "SLPHTTPManager.h"
 
-#define kCommonVersion @"1.0.6"
+#define kCommonVersion @"1.0.7"
+

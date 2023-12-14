@@ -28,6 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UInt16 musicID;//音乐ID
 @property (nonatomic, assign) UInt8 playMode;//播放模式 0：顺序播放 1: 随机播放 2: 单曲播放
 
+/**
+ 设备ID和设备类型为2022-07-15新增，与旧结构不兼容
+ 如需兼容，可以通过第一个字节数值作为判断，值如果小于10表示是旧结构
+ */
+@property (nonatomic, copy) NSString *deviceID;//香薰速率
+@property (nonatomic, assign) UInt16 deviceType;//设备类型
+
+
 @end
 
 NS_ASSUME_NONNULL_END

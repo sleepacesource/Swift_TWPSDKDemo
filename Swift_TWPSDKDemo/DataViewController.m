@@ -223,8 +223,7 @@
                      NSLocalizedString(@"turn_times", nil),
                      NSLocalizedString(@"body_times", nil),
                      NSLocalizedString(@"out_times", nil),
-                     NSLocalizedString(@"temperature", nil),
-                     NSLocalizedString(@"humidity", nil),
+                     NSLocalizedString(@"algorithm_version", nil)
                      ];
     }
     else
@@ -234,8 +233,7 @@
                      NSLocalizedString(@"inbed_time", nil),
                      NSLocalizedString(@"heart_rate", nil),
                      NSLocalizedString(@"respiration_rate", nil),
-                     NSLocalizedString(@"temperature", nil),
-                     NSLocalizedString(@"humidity", nil),
+                     NSLocalizedString(@"algorithm_version", nil)
                      ];
         
     }

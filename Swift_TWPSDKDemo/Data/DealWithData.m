@@ -44,8 +44,8 @@
     
     NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
     humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
-    
-    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate, tempRangeStr, humRangeStr];
+    NSString * arithmeticVer = [NSString stringWithFormat:@"%@",obj.arithmeticVer];
+    return  @[date,sleepTime,duration,averageHeartRate,averageBreathRate,arithmeticVer];
 }
 
 + (NSString *)rangeString:(NSArray *)arr {
@@ -118,8 +118,8 @@
     
     NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
     humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
-    
-    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
+    NSString * arithmeticVer = [NSString stringWithFormat:@"%@",obj.arithmeticVer];
+    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed,arithmeticVer];
 }
 
 

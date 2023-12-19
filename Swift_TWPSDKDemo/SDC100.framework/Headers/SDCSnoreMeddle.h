@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SDCSnoreMeddle : NSObject
 
-@property (nonatomic,assign) UInt8 enable;
-@property (nonatomic,assign) UInt8 side;
+@property (nonatomic,assign) UInt8 on;
+
 
 @end
 

@@ -53,6 +53,32 @@ class ControlViewController: UIViewController {
     }
     
     func initUI() -> Void {
+        self.connectBT.setTitle(NSLocalizedString("connect_device", comment: ""), for: .normal)
+        self.disconnectBT.setTitle(NSLocalizedString("disconnect", comment: ""), for: .normal)
+        self.angleLabel.text = NSLocalizedString("angle_Adjustment", comment: "")
+        self.backLabel.text = NSLocalizedString("back", comment: "")
+        self.backUpBT.setTitle(NSLocalizedString("up", comment: ""), for: .normal)
+        self.backDownBT.setTitle(NSLocalizedString("down", comment: ""), for: .normal)
+        self.legLabel.text = NSLocalizedString("legs", comment: "")
+        self.legUpBT.setTitle(NSLocalizedString("up", comment: ""), for: .normal)
+        self.legkDownBT.setTitle(NSLocalizedString("down", comment: ""), for: .normal)
+        self.tipsLabel1.text = NSLocalizedString("press1", comment: "")
+        self.tipsLabel2.text = NSLocalizedString("press2", comment: "")
+        self.modeLabel.text = NSLocalizedString("mode_Selection", comment: "")
+        self.movieBT.setTitle(NSLocalizedString("viewing_Mode", comment: ""), for: .normal)
+        self.readingBT.setTitle(NSLocalizedString("reading_Mode", comment: ""), for: .normal)
+        self.zeroGravityBT.setTitle(NSLocalizedString("gravity_mode_0", comment: ""), for: .normal)
+        self.layBT.setTitle(NSLocalizedString("flatten", comment: ""), for: .normal)
+        self.m1BT.setTitle(NSLocalizedString("m1", comment: ""), for: .normal)
+        self.saveM1BT.setTitle(NSLocalizedString("save_as_m1", comment: ""), for: .normal)
+        self.m2BT.setTitle(NSLocalizedString("m2", comment: ""), for: .normal)
+        self.saveM2BT.setTitle(NSLocalizedString("save_as_m2", comment: ""), for: .normal)
+        self.lockLabel.text = NSLocalizedString("child_lock", comment: "")
+        self.lockTipsLabel.text = NSLocalizedString("child_lock_mode", comment: "")
+        self.snoringLabel.text = NSLocalizedString("intelligent_Stop_Snoring", comment: "")
+        self.snoringTipsLabel.text = NSLocalizedString("turn_on", comment: "")
+        self.nightLightLabel.text = NSLocalizedString("wake_up_night_light", comment: "")
+        
         self.connectBT.layer.cornerRadius = 2.0;
         self.connectBT.layer.masksToBounds = true;
         self.disconnectBT.layer.cornerRadius = 2.0;
@@ -93,7 +119,22 @@ class ControlViewController: UIViewController {
         let legdownLongPress = UILongPressGestureRecognizer(target: self, action:#selector(legDownLongPress(longPress:)))
         legdownLongPress.minimumPressDuration = 1.0;
         self.legkDownBT.addGestureRecognizer(legdownLongPress)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let isconnected =  (DataManager.shared().peripheral != nil) && SLPBLEManager.shared().peripheralIsConnected(DataManager.shared()?.peripheral)
+        if(isconnected){
+            SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, getSnoreMeddleTimeout: 0) {  (status: SLPDataTransferStatus, data: Any?)  in
+                if status == SLPDataTransferStatus.succeed
+                {
+                    print("getSnoreMeddle succeed")
+                }
+                else
+                {
+                    print("getSnoreMeddle failed")
+                }
+            }
+        }
     }
     
     @IBAction func connectDevice(_ sender: Any) {
@@ -434,7 +475,7 @@ class ControlViewController: UIViewController {
      ctrlVal： 1 or 0
      */
     @IBAction func lockChange(_ sender: UISwitch) {
-        let par = ["keycode" : 9,"ctrlVal": sender.isOn ? 1 : 0,"place": 0]
+        let par = ["keycode" : 10,"ctrlVal": sender.isOn ? 1 : 0,"place": 0]
         SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, control: par, timeout: 0) { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
@@ -448,8 +489,7 @@ class ControlViewController: UIViewController {
     }
     
     @IBAction func snoringChange(_ sender: UISwitch) {
-        let par = ["enable" : sender.isOn ? 1 : 0,"side": 2]
-        SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, snoreMeddle: par, timeout: 0) { (status: SLPDataTransferStatus, data: Any?) in
+        SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, snoreMeddleSwitch: sender.isOn ? 1 : 0, timeout: 0) { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("snoringChange succeed")
@@ -462,17 +502,17 @@ class ControlViewController: UIViewController {
     }
     
     @IBAction func nightLightChange(_ sender: UISwitch) {
-        let par = ["enable" : sender.isOn ? 1 : 0,"lamp": sender.isOn ? 1 : 0,"startHour": 0,"startMin": 0,"endHour": 0,"endMin": 0,]
-        SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, nightLight: par, timeout: 0) { (status: SLPDataTransferStatus, data: Any?) in
-            if status == SLPDataTransferStatus.succeed
-            {
-                print("nightLightChange succeed")
-            }
-            else
-            {
-                print("nightLightChange failed")
-            }
-        }
+
+                SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, lightCtrl: sender.isOn ? 1 : 0, timeout: 0) { (status: SLPDataTransferStatus, data: Any?) in
+                    if status == SLPDataTransferStatus.succeed
+                    {
+                        print("under bed light succeed")
+                    }
+                    else
+                    {
+                        print("under bed light failed")
+                    }
+                }
     }
     
     

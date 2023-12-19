@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/SDCSnoreMeddle.h</key>
 		<data>
-		VyaSHKVOxVgLLfJ7qD0xK2Mn92Q=
+		ExEW+BcYd609Dc0nMioeXqgjRCA=
 		</data>
 		<key>Headers/SDCSnoreStatus.h</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/SLPBLEManager+SDC100.h</key>
 		<data>
-		dQrBcOPicIyFwyKNnFUrzOB9P0I=
+		1w6l7hoBKn2vQb1cM+5uNCW6iIM=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VyaSHKVOxVgLLfJ7qD0xK2Mn92Q=
+			ExEW+BcYd609Dc0nMioeXqgjRCA=
 			</data>
 			<key>hash2</key>
 			<data>
-			9xQEsO3bJ2160wF1QHhRWr37GmufhBqVoIAqY6EhlE0=
+			JA71A8M9c33kgzBacU/M734Kg8Tu3nN2yXB2u6vF+MA=
 			</data>
 		</dict>
 		<key>Headers/SDCSnoreStatus.h</key>
@@ -188,11 +188,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dQrBcOPicIyFwyKNnFUrzOB9P0I=
+			1w6l7hoBKn2vQb1cM+5uNCW6iIM=
 			</data>
 			<key>hash2</key>
 			<data>
-			kO7ZoqhDIO4SLTUoNgUXOsY6htOQj4AxvZlBiZIDXa8=
+			1OrLFcdTA1NeU68LzGocFxixlDNlqWsLaIZ5SW5K8g0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

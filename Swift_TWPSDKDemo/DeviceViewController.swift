@@ -32,8 +32,8 @@ class DeviceViewController: UIViewController {
     let str3 = NSLocalizedString("breathrate", comment: "")
     let str4 = NSLocalizedString("temp", comment: "")
     let str5 = NSLocalizedString("humidity", comment: "")
-    let str6 = NSLocalizedString("cur_temp", comment: "")
-    let str7 = NSLocalizedString("cur_humidity", comment: "")
+//    let str6 = NSLocalizedString("cur_temp", comment: "")
+//    let str7 = NSLocalizedString("cur_humidity", comment: "")
     let str8 = NSLocalizedString("device_online_state", comment: "")
     let str9 = NSLocalizedString("cur_sleep_state", comment: "")
     let str10 = NSLocalizedString("Current_real_time_sleep", comment: "")
@@ -57,9 +57,8 @@ class DeviceViewController: UIViewController {
         self.stopCollect.layer.cornerRadius = 2.0;
         self.stopCollect.layer.masksToBounds = true;
         
-        self.checkEnviBT.layer.cornerRadius = 2.0;
-        self.checkEnviBT.layer.masksToBounds = true;
-        
+//        self.checkEnviBT.layer.cornerRadius = 2.0;
+//        self.checkEnviBT.layer.masksToBounds = true;
         
         self.checkDeviceOnlineBT.layer.cornerRadius = 2.0;
         self.checkDeviceOnlineBT.layer.masksToBounds = true;
@@ -67,14 +66,14 @@ class DeviceViewController: UIViewController {
         self.startRealtimeData.setTitle(NSLocalizedString("view_data", comment: ""), for: UIControl.State.normal)
         self.stopRealtimeData.setTitle(NSLocalizedString("off_data", comment: ""), for: UIControl.State.normal)
         self.stopCollect.setTitle(NSLocalizedString("off_collection", comment: ""), for: UIControl.State.normal)
-        self.checkEnviBT.setTitle(NSLocalizedString("query_envir_data", comment: ""), for: UIControl.State.normal)
+//        self.checkEnviBT.setTitle(NSLocalizedString("query_envir_data", comment: ""), for: UIControl.State.normal)
         self.checkDeviceOnlineBT.setTitle(NSLocalizedString("query_device_online_state", comment: ""), for: UIControl.State.normal)
         self.deviceID =  UserDefaults.standard.string(forKey: "deviceID")!
         self.label1.text = self.str1 + ":"
         self.label2.text = self.str2 + ":"
         self.label3.text = self.str3 + ":"
-        self.label6.text = self.str6 + ":"
-        self.label7.text = self.str7 + ":"
+//        self.label6.text = self.str6 + ":"
+//        self.label7.text = self.str7 + ":"
         self.label8.text = self.str8 + ":"
         if #available(iOS 13.0, *) {
               self.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
@@ -197,40 +196,6 @@ class DeviceViewController: UIViewController {
                 })
             } else {
                 
-            }
-        })
-        
-        
-    }
-    
-    @IBAction func checkEnvironment(_ sender: Any) {
-        
-        SLPLTcpManager.sharedInstance()?.getEnvironmentInfo(withDeviceID: deviceID, timeout: 15.0, callback: { (status: SLPDataTransferStatus, data: Any?)  in
-            if status == SLPDataTransferStatus.succeed
-            {
-                print("check environment info succeed !")
-                
-                let enviInfo : SLPEnvironmentInfo = data as! SLPEnvironmentInfo;
-                
-                self.label6.text = self.str6 + ":" + "\(enviInfo.temperature)" + "℃"
-                self.label7.text = self.str7 + ":" + "\(enviInfo.humidity)"  + "%"
-            }
-            else
-            {
-                self.label6.text = self.str6
-                self.label7.text = self.str7
-                var error = ""
-                if status == SLPDataTransferStatus.failed
-                {
-                    let entity = data as! SLPEnvironmentInfo;
-                    error = self.errorDes(errorCode: Int(entity.errorCode)) as String
-                }
-                else
-                {
-                    error = NSLocalizedString("failure", comment: "")
-                }
-                self.alertShow(message: error as NSString)
-                print("check environment info  failed !")
             }
         })
     }

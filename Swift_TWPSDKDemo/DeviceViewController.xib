@@ -12,13 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeviceViewController" customModule="Z400TWP_3_SDK" customModuleProvider="target">
             <connections>
                 <outlet property="checkDeviceOnlineBT" destination="oBm-9l-NZ6" id="0c0-lQ-iKg"/>
-                <outlet property="checkEnviBT" destination="qsc-QZ-8K1" id="ONx-iC-PWm"/>
-                <outlet property="checkEnviLabel" destination="fC1-qa-JvR" id="WSz-gS-smf"/>
                 <outlet property="label1" destination="FR3-8e-iAb" id="DeG-Co-PDB"/>
                 <outlet property="label2" destination="9qG-AH-y87" id="ZIB-Bt-gco"/>
                 <outlet property="label3" destination="wcn-sc-MHz" id="I6H-sj-BdJ"/>
-                <outlet property="label6" destination="fC1-qa-JvR" id="K3P-Xb-1OD"/>
-                <outlet property="label7" destination="hwn-nz-4VY" id="7o8-C5-bD3"/>
                 <outlet property="label8" destination="oEJ-Ms-D2E" id="UbR-bi-vzO"/>
                 <outlet property="startRealtimeData" destination="5as-MM-UIW" id="ijq-gs-2gS"/>
                 <outlet property="stopCollect" destination="hyk-Zi-JK0" id="ffZ-V5-RZQ"/>
@@ -78,7 +74,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBm-9l-NZ6">
-                    <rect key="frame" x="37" y="369" width="296" height="40"/>
+                    <rect key="frame" x="37" y="274" width="296" height="40"/>
                     <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="GgQ-X7-8aC"/>
@@ -90,18 +86,8 @@
                         <action selector="checkOnlineStatus:" destination="-1" eventType="touchUpInside" id="ZGx-fQ-cRk"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前温度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC1-qa-JvR">
-                    <rect key="frame" x="37" y="316" width="296" height="21"/>
-                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="lrK-KS-mwp"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前设备状态:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEJ-Ms-D2E">
-                    <rect key="frame" x="37" y="417" width="296" height="21"/>
+                    <rect key="frame" x="37" y="322" width="296" height="21"/>
                     <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="C2p-Tr-VV6"/>
@@ -123,34 +109,11 @@
                         <action selector="stopMonitor:" destination="-1" eventType="touchUpInside" id="9DT-8A-y1Y"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsc-QZ-8K1">
-                    <rect key="frame" x="37" y="269" width="296" height="40"/>
-                    <color key="backgroundColor" red="0.46274509800000002" green="0.73725490199999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="fqg-bQ-BCF"/>
-                    </constraints>
-                    <state key="normal" title="查询当前温湿度">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="checkEnvironment:" destination="-1" eventType="touchUpInside" id="nKm-yR-xBh"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实时呼吸率：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcn-sc-MHz">
                     <rect key="frame" x="37" y="238" width="296" height="21"/>
                     <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="b9I-Ye-zn4"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前湿度：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwn-nz-4VY">
-                    <rect key="frame" x="37" y="340" width="296" height="21"/>
-                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="Fgl-2j-RbF"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -164,35 +127,26 @@
                 <constraint firstItem="oBm-9l-NZ6" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="2B7-Uf-YEq"/>
                 <constraint firstItem="oEJ-Ms-D2E" firstAttribute="top" secondItem="oBm-9l-NZ6" secondAttribute="bottom" constant="8" id="3pY-xz-ece"/>
                 <constraint firstItem="FR3-8e-iAb" firstAttribute="top" secondItem="hyk-Zi-JK0" secondAttribute="bottom" constant="9" id="4lX-yn-Zli"/>
+                <constraint firstItem="oBm-9l-NZ6" firstAttribute="top" secondItem="wcn-sc-MHz" secondAttribute="bottom" constant="15" id="53x-d5-YNO"/>
                 <constraint firstItem="wcn-sc-MHz" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="5Bg-ct-b3Q"/>
-                <constraint firstItem="fC1-qa-JvR" firstAttribute="trailing" secondItem="qsc-QZ-8K1" secondAttribute="trailing" id="6ks-UJ-OBu"/>
                 <constraint firstItem="oEJ-Ms-D2E" firstAttribute="leading" secondItem="oBm-9l-NZ6" secondAttribute="leading" id="9I8-Xr-Mnq"/>
-                <constraint firstItem="hwn-nz-4VY" firstAttribute="top" secondItem="fC1-qa-JvR" secondAttribute="bottom" constant="3" id="ABf-qh-D0A"/>
                 <constraint firstItem="9qG-AH-y87" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="ACy-qH-T22"/>
                 <constraint firstItem="FR3-8e-iAb" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="Ara-lo-sJZ"/>
                 <constraint firstItem="oEJ-Ms-D2E" firstAttribute="trailing" secondItem="oBm-9l-NZ6" secondAttribute="trailing" id="CwX-LD-nBj"/>
                 <constraint firstItem="9qG-AH-y87" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="GA3-Yy-rqp"/>
                 <constraint firstItem="FR3-8e-iAb" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="Gza-SC-PkJ"/>
                 <constraint firstItem="9qG-AH-y87" firstAttribute="top" secondItem="FR3-8e-iAb" secondAttribute="bottom" constant="5" id="Nl5-47-i1l"/>
-                <constraint firstItem="fC1-qa-JvR" firstAttribute="top" secondItem="qsc-QZ-8K1" secondAttribute="bottom" constant="7" id="TfM-Sw-jpe"/>
-                <constraint firstItem="fC1-qa-JvR" firstAttribute="leading" secondItem="qsc-QZ-8K1" secondAttribute="leading" id="Xmj-AZ-292"/>
-                <constraint firstItem="qsc-QZ-8K1" firstAttribute="top" secondItem="wcn-sc-MHz" secondAttribute="bottom" constant="10" id="ZDr-iX-bEQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" constant="42" id="dbY-YU-ns1"/>
-                <constraint firstItem="qsc-QZ-8K1" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="iBW-SY-0zp"/>
                 <constraint firstItem="oBm-9l-NZ6" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="ifZ-SH-AYW"/>
                 <constraint firstItem="hyk-Zi-JK0" firstAttribute="top" secondItem="85y-hR-4Y5" secondAttribute="bottom" constant="8" id="kAw-ut-pIJ"/>
                 <constraint firstItem="hyk-Zi-JK0" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" id="lqK-ta-nRe"/>
                 <constraint firstItem="hyk-Zi-JK0" firstAttribute="leading" secondItem="5as-MM-UIW" secondAttribute="leading" id="oZ6-Uw-w0E"/>
-                <constraint firstItem="hwn-nz-4VY" firstAttribute="leading" secondItem="fC1-qa-JvR" secondAttribute="leading" id="oif-Jk-8YG"/>
                 <constraint firstItem="wcn-sc-MHz" firstAttribute="leading" secondItem="hyk-Zi-JK0" secondAttribute="leading" id="qVV-J2-wsc"/>
                 <constraint firstItem="85y-hR-4Y5" firstAttribute="top" secondItem="5as-MM-UIW" secondAttribute="bottom" constant="9" id="qgU-38-ngm"/>
                 <constraint firstItem="5as-MM-UIW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="37" id="rFy-A2-QJ5"/>
                 <constraint firstItem="85y-hR-4Y5" firstAttribute="trailing" secondItem="5as-MM-UIW" secondAttribute="trailing" id="ty8-3f-sH9"/>
                 <constraint firstItem="85y-hR-4Y5" firstAttribute="leading" secondItem="5as-MM-UIW" secondAttribute="leading" id="w08-SM-XmC"/>
-                <constraint firstItem="oBm-9l-NZ6" firstAttribute="top" secondItem="hwn-nz-4VY" secondAttribute="bottom" constant="8" id="w5b-QA-CY3"/>
                 <constraint firstItem="5as-MM-UIW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="xJk-vW-Olf"/>
-                <constraint firstItem="hwn-nz-4VY" firstAttribute="trailing" secondItem="fC1-qa-JvR" secondAttribute="trailing" id="y8c-Ug-2MQ"/>
-                <constraint firstItem="qsc-QZ-8K1" firstAttribute="trailing" secondItem="hyk-Zi-JK0" secondAttribute="trailing" id="yM2-qu-Gbk"/>
             </constraints>
             <point key="canvasLocation" x="136.80000000000001" y="128.18590704647679"/>
         </view>

@@ -404,4 +404,25 @@
 "left" = "左侧（单人）";
 "right" = "右侧";
 "select_side" = "选择绑定位置";
-
+"angle_Adjustment" = "角度调节";
+"back" = "背部";
+"up" = "上升";
+"down" = "下降";
+"legs" = "腿部";
+"press1" = "1.长按上升/下降键，连续发送上升/下降指令";
+"press2" = "2.短按上升/下降键，只发一次上升/下降指令";
+"mode_Selection" = "模式选择";
+"viewing_Mode" = "观影模式";
+"reading_Mode" = "阅读模式";
+"gravity_mode_0" = "0重力模式";
+"flatten" = "放平";
+"m1" = "M1";
+"m2" = "M2";
+"save_as_m1"= "保存为M1";
+"save_as_m2" = "保存为M2";
+"child_lock" = "童锁";
+"child_lock_mode" = "童锁模式下，遥控器App各模式均无法使用，解除童锁，各模式正常使用";
+"intelligent_Stop_Snoring" = "智能止鼾";
+"turn_on" = "开启此功能，当监测到打鼾时，电动床将缓慢抬升一定角度，缓解打鼾程度，同时开启鼾声分析。反之，则关闭止鼾相关功能，不再生成鼾声报告";
+"wake_up_night_light" = "床底灯";
+"algorithm_version"="算法版本";

@@ -138,7 +138,7 @@
     obj.wakeUpTimeStr=@"07:18";
     //    obj.source=[NSNumber numberWithInteger:6];
     obj.timezone=[NSNumber numberWithInteger:28800];
-    obj.arithmeticVer=@"";
+    obj.arithmeticVer=@"1.0.35";
     obj.eHumidityArray = [NSMutableArray arrayWithObjects:@(21), @(24), @(25), @(30), @(26), @(29), nil];
     obj.eTempArray = [NSMutableArray arrayWithObjects:@(46), @(63), @(49), @(55), @(66), @(57), nil];
     
@@ -178,7 +178,7 @@
     obj.recordCount=[NSNumber numberWithInteger:34];
     obj.asleepTime=[NSNumber numberWithInteger:24];
     obj.reportFlag=[NSNumber numberWithInteger:2];
-    obj.arithmeticVer=@"";
+    obj.arithmeticVer=@"1.0.35";
     obj.eHumidityArray = [NSMutableArray arrayWithObjects:@(22), @(19), @(27), @(30), @(24), @(28), nil];
     obj.eTempArray = [NSMutableArray arrayWithObjects:@(51), @(62), @(48), @(57), @(65), @(59), nil];
     return obj;
@@ -204,6 +204,7 @@
     
     int flag = [[summaryDic objectForKey:@"recordCount"] integerValue] >= 180?1:2;
     obj.reportFlag=[NSNumber numberWithInteger:flag];
+    obj.arithmeticVer= [NSString stringWithFormat:@"%@",[summaryDic objectForKey:@"arithmeticVer"]];
     
     //short report
     if (flag == 2) {
@@ -258,7 +259,6 @@
     obj.asleepTime=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"fallAlseepAllTime"]integerValue]];
     obj.recordCount = [NSNumber numberWithInteger:[[summaryDic objectForKey:@"recordCount"] integerValue]];
     obj.lccs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"leaveBedTimes"]integerValue]];
-    obj.arithmeticVer= [analysisDic objectForKey:@"breathRateSlowAllTime"];
     
     NSTimeInterval startTime = obj.startTime.integerValue;//上床时间
     NSTimeInterval endTime = startTime + obj.recordCount.integerValue * 60;//起床时间

@@ -489,7 +489,8 @@ class ControlViewController: UIViewController {
     }
     
     @IBAction func snoringChange(_ sender: UISwitch) {
-        SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, snoreMeddleSwitch: sender.isOn ? 1 : 0, timeout: 0) { (status: SLPDataTransferStatus, data: Any?) in
+        let par = ["enable" : sender.isOn ? 1 : 0,"side": 2]
+        SLPBLEManager.shared().bleSDC100(DataManager.shared().peripheral, snoreMeddle: par, timeout: 0) { (status: SLPDataTransferStatus, data: Any?) in
             if status == SLPDataTransferStatus.succeed
             {
                 print("snoringChange succeed")

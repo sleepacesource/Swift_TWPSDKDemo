@@ -84,10 +84,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 打鼾干预开关
- * @on {number} 开关状态  1 打开 , 0 关闭
- *
+ * @enable {number} 开关状态  1 打开 , 0 关闭
+ * @side {number} 0 左侧, 1 右侧, 2 两侧
  */
--(void)bleSDC100:(CBPeripheral *)peripheral snoreMeddleSwitch:(int)on timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
+-(void)bleSDC100:(CBPeripheral *)peripheral snoreMeddle:(NSDictionary *)params timeout:(CGFloat)timeout completion:(SLPTransforCallback)handle;
 
 /**
  * 获取打鼾干预配置

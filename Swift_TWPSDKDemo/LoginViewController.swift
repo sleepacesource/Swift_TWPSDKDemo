@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
         }
 //        else
 //        {
-            self.deviceIdTextfield.text = "qsxy3nbxzpsx8"
+//            self.deviceIdTextfield.text = "qsxy3nbxzpsx8"
 //        }
         
 //        self.urlTextfield.text = "http://120.24.68.136:8091"
@@ -131,7 +131,6 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(self.versionTextfield.text!, forKey: "version")
         UserDefaults.standard.set(selectLeftRight, forKey: "leftRight")
         
-
         print("leftRight-->",UserDefaults.standard.string(forKey: "leftRight"))
     }
     

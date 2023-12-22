@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2624A0C12B21B6840050BE1A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 26687D422B21B42F00F5B863 /* libc++.tbd */; };
+		265F98282B3525DB00DBB5ED /* sdk_icon_rightarrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265F98262B3525DB00DBB5ED /* sdk_icon_rightarrow@3x.png */; };
+		265F98292B3525DB00DBB5ED /* sdk_icon_rightarrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265F98272B3525DB00DBB5ED /* sdk_icon_rightarrow@2x.png */; };
 		26680FCC2B22B0E000C414B2 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26680FCA2B22B0DF00C414B2 /* ControlViewController.swift */; };
 		26680FCD2B22B0E000C414B2 /* ControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26680FCB2B22B0DF00C414B2 /* ControlViewController.xib */; };
 		26680FD22B22B34A00C414B2 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26680FCE2B22B34900C414B2 /* SearchViewController.xib */; };
@@ -87,6 +89,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		265F98262B3525DB00DBB5ED /* sdk_icon_rightarrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sdk_icon_rightarrow@3x.png"; sourceTree = "<group>"; };
+		265F98272B3525DB00DBB5ED /* sdk_icon_rightarrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sdk_icon_rightarrow@2x.png"; sourceTree = "<group>"; };
 		26680FCA2B22B0DF00C414B2 /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
 		26680FCB2B22B0DF00C414B2 /* ControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlViewController.xib; sourceTree = "<group>"; };
 		26680FCE2B22B34900C414B2 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 				269069C224937F990043F67B /* Localizable.strings */,
 				26B0A7D424B5C7F600095301 /* sdk_index_icon_z400twp_2@2x.png */,
 				26680FCF2B22B34900C414B2 /* device_btn_refresh_nor@2x.png */,
+				265F98272B3525DB00DBB5ED /* sdk_icon_rightarrow@2x.png */,
+				265F98262B3525DB00DBB5ED /* sdk_icon_rightarrow@3x.png */,
 				26680FD12B22B34900C414B2 /* device_btn_refresh_nor@3x.png */,
 				26B0A7D324B5C7F600095301 /* sdk_index_icon_z400twp_2@3x.png */,
 				26B0A7C324B575E400095301 /* control@2x.png */,
@@ -505,12 +511,14 @@
 				269069AF249315D50043F67B /* DeviceViewController.xib in Resources */,
 				26B0A7C924B575E500095301 /* control@2x.png in Resources */,
 				26B0A7EB24B5C83200095301 /* Icon-Small@2x.png in Resources */,
+				265F98292B3525DB00DBB5ED /* sdk_icon_rightarrow@2x.png in Resources */,
 				26B0A7CE24B575E500095301 /* home@3x.png in Resources */,
 				26B0A7CC24B575E500095301 /* data@2x.png in Resources */,
 				26841E262499C40600DC50D3 /* DataViewController.xib in Resources */,
 				26841E722499C54A00DC50D3 /* SLPTitleValueArrowTableViewCell.xib in Resources */,
 				26B0A7D624B5C7F600095301 /* sdk_index_icon_z400twp_2@2x.png in Resources */,
 				269069B3249315E40043F67B /* ReportViewController.xib in Resources */,
+				265F98282B3525DB00DBB5ED /* sdk_icon_rightarrow@3x.png in Resources */,
 				2684E9182490C53200ADF97E /* LaunchScreen.storyboard in Resources */,
 				26D4CF8D24B2B3B40001821B /* LICENSE in Resources */,
 				26B0A7CB24B575E500095301 /* control@3x.png in Resources */,

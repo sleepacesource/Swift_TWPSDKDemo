@@ -53,7 +53,6 @@ class ControlViewController: UIViewController {
     }
     
     func initUI() -> Void {
-        self.connectBT.setTitle(NSLocalizedString("connect_device", comment: ""), for: .normal)
         self.disconnectBT.setTitle(NSLocalizedString("disconnect", comment: ""), for: .normal)
         self.angleLabel.text = NSLocalizedString("angle_Adjustment", comment: "")
         self.backLabel.text = NSLocalizedString("back", comment: "")
@@ -79,8 +78,6 @@ class ControlViewController: UIViewController {
         self.snoringTipsLabel.text = NSLocalizedString("turn_on", comment: "")
         self.nightLightLabel.text = NSLocalizedString("wake_up_night_light", comment: "")
         
-        self.connectBT.layer.cornerRadius = 2.0;
-        self.connectBT.layer.masksToBounds = true;
         self.disconnectBT.layer.cornerRadius = 2.0;
         self.disconnectBT.layer.masksToBounds = true;
         self.backUpBT.layer.cornerRadius = 2.0;
@@ -119,6 +116,20 @@ class ControlViewController: UIViewController {
         let legdownLongPress = UILongPressGestureRecognizer(target: self, action:#selector(legDownLongPress(longPress:)))
         legdownLongPress.minimumPressDuration = 1.0;
         self.legkDownBT.addGestureRecognizer(legdownLongPress)
+        
+        Tool.configSomeKind(ofButtonLikeNomal: self.backUpBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.backDownBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.legUpBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.legkDownBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.movieBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.readingBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.zeroGravityBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.readingBT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.m1BT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.saveM1BT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.m2BT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.saveM2BT)
+        Tool.configSomeKind(ofButtonLikeNomal: self.layBT)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,6 +146,7 @@ class ControlViewController: UIViewController {
                 }
             }
         }
+        self.disabledBT(invalid: isconnected);
     }
     
     @IBAction func connectDevice(_ sender: Any) {
@@ -154,6 +166,7 @@ class ControlViewController: UIViewController {
                     print("disconect succeed")
                     let tipstr = NSLocalizedString("disconnect", comment: "")
                     self.alertShow(message: tipstr as NSString)
+                    self.disabledBT(invalid: false)
                 }
             }
         }
@@ -524,4 +537,18 @@ class ControlViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func disabledBT(invalid : Bool) -> Void {
+        self.backUpBT.isEnabled = invalid;
+        self.backDownBT.isEnabled = invalid;
+        self.legUpBT.isEnabled = invalid;
+        self.legkDownBT.isEnabled = invalid;
+        self.movieBT.isEnabled = invalid;
+        self.readingBT.isEnabled = invalid;
+        self.zeroGravityBT.isEnabled = invalid;
+        self.layBT.isEnabled = invalid;
+        self.m1BT.isEnabled = invalid;
+        self.saveM1BT.isEnabled = invalid;
+        self.m2BT.isEnabled = invalid;
+        self.saveM2BT.isEnabled = invalid;
+    }
 }

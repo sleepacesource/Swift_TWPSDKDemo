@@ -9,6 +9,9 @@
 import UIKit
 import SLPTCP
 import Foundation
+import BluetoothManager
+import SDC100
+import SLPCommon
 
 class LoginViewController: UIViewController {
     
@@ -25,6 +28,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var leftrightLabel: UILabel!
     @IBOutlet weak var leftBT: UIButton!
     @IBOutlet weak var rightBT: UIButton!
+    
+    @IBOutlet weak var getDeviceIdBT: UIButton!
+    @IBOutlet weak var searchLabel: UILabel!
+    @IBOutlet weak var selectBT: UIButton!
+    @IBOutlet weak var selectLabel: UILabel!
+    @IBOutlet weak var selectLabel2: UILabel!
     
     var selectLeftRight = 0
     
@@ -102,6 +111,9 @@ class LoginViewController: UIViewController {
         self.connectBT.setTitle(NSLocalizedString("connect_server", comment: ""), for: .normal)
         self.progressLabel.text = NSLocalizedString("upgrading_device", comment: "")
         
+        self.searchLabel.text = NSLocalizedString("search_device", comment: "")
+        self.selectLabel.text = NSLocalizedString("select_device_id", comment: "")        
+        self.getDeviceIdBT.setTitle(NSLocalizedString("obtain_device_id", comment: ""), for: .normal)
         self.leftBT.setTitle(NSLocalizedString("left", comment: ""), for: .normal)
         self.rightBT.setTitle(NSLocalizedString("right", comment: ""), for: .normal)
         self.leftrightLabel.text = NSLocalizedString("select_side", comment: "")
@@ -119,6 +131,13 @@ class LoginViewController: UIViewController {
         if(selectLeftRight == 0){
             self.leftBT.isSelected = true
             self.leftBT.backgroundColor = UIColor(red: 118/255, green: 188/255, blue: 254/255, alpha: 1.0)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let isconnected =  (DataManager.shared().peripheral != nil) && SLPBLEManager.shared().peripheralIsConnected(DataManager.shared()?.peripheral)
+        if(isconnected){
+            self.selectLabel.text = DataManager.shared()?.deviceName
         }
     }
     
@@ -302,6 +321,23 @@ class LoginViewController: UIViewController {
             error = ""
         }
         return error as NSString
+    }
+
+    @IBAction func searchDevice(_ sneder:Any){
+        let searchVC = SearchViewController ()
+        searchVC.title = NSLocalizedString("search_ble", comment: "")
+        self.navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
+    @IBAction func getDeviceId(_ sneder:Any){
+        let isconnected =  (DataManager.shared().peripheral != nil) && SLPBLEManager.shared().peripheralIsConnected(DataManager.shared()?.peripheral)
+        if(!isconnected){
+            let tipstr = NSLocalizedString("working_state_no", comment: "")
+            self.alertShow(message: tipstr as NSString)
+            return
+        }
+        
+        self.deviceIdTextfield.text = DataManager.shared()?.deviceID
     }
 
     

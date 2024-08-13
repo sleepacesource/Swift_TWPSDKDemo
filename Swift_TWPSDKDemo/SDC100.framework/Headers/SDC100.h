@@ -10,7 +10,7 @@
 #import "SLPBLEManager+SDC100.h"
 
 
-#define kSDC100Version @"1.0.1";
+#define kSDC100Version @"1.0.2";
 
 
 

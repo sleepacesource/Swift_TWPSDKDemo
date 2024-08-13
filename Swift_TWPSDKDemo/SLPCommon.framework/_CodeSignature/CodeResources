@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/SLPCommon.h</key>
 		<data>
-		La225729FyYyAh4dxE/itSDcQyw=
+		IIYXFlmqBwFRZw64P+Fm1RQg63o=
 		</data>
 		<key>Headers/SLPDataTransferCommon.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/SLPDataTransferDef.h</key>
 		<data>
-		R+2okTbuFTfgN14eZ/+OJUYV+B8=
+		FvT+lAIjWHHeDdFA2bbr+d7QE6I=
 		</data>
 		<key>Headers/SLPDeviceInfo.h</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/SLPHTTPManager.h</key>
 		<data>
-		TRhPVnjdTxEiyg5W81caBWHRtTs=
+		1mCykLNaAEK64HMAFQBvJrYpKM0=
 		</data>
 		<key>Headers/SLPLight.h</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NABYBzT/N+BABEq0YAR+QzC++/s=
+		F+bmUNSryH4fnLoMX4ieT9A9bZ0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		28s1WrvIkqLdtWuhJCJv0dGzn1M=
+		1Amu1ofz8rRTkbDoRca5DdwEF4M=
 		</data>
 		<key>PrivateHeaders/SLPBaseMusicModel.h</key>
 		<data>
@@ -161,11 +161,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			La225729FyYyAh4dxE/itSDcQyw=
+			IIYXFlmqBwFRZw64P+Fm1RQg63o=
 			</data>
 			<key>hash2</key>
 			<data>
-			ltCDcDPM25eXGc9WfMuFVMaRwMn59lk44yz96Q2bgzw=
+			tC7i1JzOwmAg3Gz3Vnczu9edCvJx0fA/g06S44wbvWo=
 			</data>
 		</dict>
 		<key>Headers/SLPDataTransferCommon.h</key>
@@ -183,11 +183,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			R+2okTbuFTfgN14eZ/+OJUYV+B8=
+			FvT+lAIjWHHeDdFA2bbr+d7QE6I=
 			</data>
 			<key>hash2</key>
 			<data>
-			cas2RKfSf+9lLEMiLBsqHMH8PikhaGwd7yF34E0bBps=
+			z18XiKtH+gymc0WvFpQfmNrMairwdNDlLLWjhvfdMCo=
 			</data>
 		</dict>
 		<key>Headers/SLPDeviceInfo.h</key>
@@ -216,11 +216,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TRhPVnjdTxEiyg5W81caBWHRtTs=
+			1mCykLNaAEK64HMAFQBvJrYpKM0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q5oVO2n2sVSCL3XNFjg+XSJg2YZzkHHIAsNEDGxq8Zg=
+			o4hr6FuMFxX1RyuZd6cdbj3H6MppM84AAW/DyoCb0Z4=
 			</data>
 		</dict>
 		<key>Headers/SLPLight.h</key>
@@ -282,11 +282,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			28s1WrvIkqLdtWuhJCJv0dGzn1M=
+			1Amu1ofz8rRTkbDoRca5DdwEF4M=
 			</data>
 			<key>hash2</key>
 			<data>
-			LbsgjENJ9aAerMHHP3hFpYOdjmQujzBah0SMSo90LTs=
+			c61j2fRtAQq5OYSBi8mNo8JAqW6Nb7LRLAVg72tb8tA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SLPBaseMusicModel.h</key>

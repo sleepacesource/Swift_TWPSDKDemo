@@ -195,7 +195,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func bind(_ sender:Any){
-        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: self.deviceIdTextfield.text!, timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
+        SLPHTTPManager.sharedInstance().bindDevice(withDeviceId: self.deviceIdTextfield.text!,leftRight: 0, timeOut: 10.0) { (result: Bool, responseObject: Any, error: String?)  in
             var bindStr = ""
             if result
             {
@@ -212,7 +212,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func unbind(_ sneder:Any){
-        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: self.deviceIdTextfield.text!, timeOut: 10.0) { (result: Bool, error: String?) in
+        SLPHTTPManager.sharedInstance().unBindDevice(withDeviceId: self.deviceIdTextfield.text!,leftRight: 0, timeOut: 10.0) { (result: Bool, error: String?) in
             var unbindStr = ""
             if result
             {

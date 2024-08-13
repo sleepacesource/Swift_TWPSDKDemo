@@ -74,11 +74,11 @@
 		</data>
 		<key>Headers/SLPLTcpManager+EW202W.h</key>
 		<data>
-		8AwOnHIlW69NJ11Tu2a52lEhi1Q=
+		YTuP/EdIHbZz0+GuXJCcQDTO1KU=
 		</data>
 		<key>Headers/SLPLTcpManager+Public.h</key>
 		<data>
-		OQ+z/Yh1e3EmqcSx6zYfDw7WiNg=
+		XRoihAtZSvWHEvwZAEQRYhU1nak=
 		</data>
 		<key>Headers/SLPLTcpManager+SA1001.h</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Headers/SLPLTcpManager+TWP.h</key>
 		<data>
-		nzhCJdBTOIKajAiOGhUtMDWUbVA=
+		X4HqK1St/udA9d9m1MTrkBQSPK8=
 		</data>
 		<key>Headers/SLPLTcpManager.h</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Headers/SLPTCP.h</key>
 		<data>
-		ZhXwESobpvF0hPZXLEHrpsiipdg=
+		AuBygo5pKIYt/88dN3kGVt8Afi8=
 		</data>
 		<key>Headers/SLPTCPBaseEntity.h</key>
 		<data>
@@ -130,11 +130,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iGiKKuz689v8dVWqN0B/9XMx7so=
+		83OmC4lN0dlIWjnaJSIT9/jUH58=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		gPwQE1qcWMqL1xdteZCX9ntyV7Y=
+		IUTeleLIPDvjxiErzqHmvApENMQ=
 		</data>
 		<key>PrivateHeaders/SLPLTcpBaseEntity.h</key>
 		<data>
@@ -350,22 +350,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8AwOnHIlW69NJ11Tu2a52lEhi1Q=
+			YTuP/EdIHbZz0+GuXJCcQDTO1KU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Pyi33XtXduR6qkwZJyGBZpF8Ag+NCNNE2Qsa1xNsnro=
+			vD4QBAnrXsYkmmho+26frOz+y4QGXdzKC6U6pI8iCCQ=
 			</data>
 		</dict>
 		<key>Headers/SLPLTcpManager+Public.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OQ+z/Yh1e3EmqcSx6zYfDw7WiNg=
+			XRoihAtZSvWHEvwZAEQRYhU1nak=
 			</data>
 			<key>hash2</key>
 			<data>
-			NExvg6jRidy6PnEQYTprm5YO6N/KKJ2nEy6Ik22sR50=
+			+BSW3SkMnT9mwRXOSHoPR8RNqemrmalma83VOUjMwkI=
 			</data>
 		</dict>
 		<key>Headers/SLPLTcpManager+SA1001.h</key>
@@ -383,11 +383,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nzhCJdBTOIKajAiOGhUtMDWUbVA=
+			X4HqK1St/udA9d9m1MTrkBQSPK8=
 			</data>
 			<key>hash2</key>
 			<data>
-			KJBrQAECIz19BC/8gqb/3GRRUhFHz/opW2V7HIbFg/U=
+			GliaEOknZ5UWU64y5xFTFVO+atRzxKBnqoGQ6yhCRYI=
 			</data>
 		</dict>
 		<key>Headers/SLPLTcpManager.h</key>
@@ -427,11 +427,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZhXwESobpvF0hPZXLEHrpsiipdg=
+			AuBygo5pKIYt/88dN3kGVt8Afi8=
 			</data>
 			<key>hash2</key>
 			<data>
-			D1kdmoka6/IMAcyIknPsChiOWQFxWdFck1Xin3Rmyy4=
+			1WU1pXxF4r1zbu96t/Ie4DZtouuHg/8wVlaBgpkuXq4=
 			</data>
 		</dict>
 		<key>Headers/SLPTCPBaseEntity.h</key>
@@ -504,11 +504,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gPwQE1qcWMqL1xdteZCX9ntyV7Y=
+			IUTeleLIPDvjxiErzqHmvApENMQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			IKMvWj751r6MUMGV/cpgK+xcIISq47ZaOzROfHJKzNk=
+			3s34srU29si9gu2v43U2krq6tONGPchhhBGzI44Jeq8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SLPLTcpBaseEntity.h</key>

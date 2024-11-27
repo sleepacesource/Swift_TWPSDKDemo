@@ -401,3 +401,17 @@
 "left" = "Left Side(Single）";
 "right" = "Right Side";
 "select_side" = "Select bind side";
+"hrvRmssd" = "hrv mean, unit: ms";
+"hrvStress" = "Stress state";
+"hrv_30_avg" = "30-day hrv average";
+"hrv_range" = "hrv baseline range";
+"ahIndex" = "ahi value";
+"breath_pause_distribution"="Distribution of apnea times";
+"breath_duration"="Total duration of breathing events";
+"breath_cnt"="Total number of breathing events";
+"csaDur"= "Duration of central apnea during sleep, unit: s";
+"csaCnt" = "Number of central apnea occurrences during sleep";
+"csaMaxDur"= "The longest duration of central apnea during sleep, unit: s";
+"osaDur"= "Duration of obstructive apnea/hypopnea during sleep, unit: s";
+"osaCnt" = "Number of obstructive apneas/hypopneas during sleep";
+"osaMaxDur"= "The longest duration of obstructive apnea/hypopnea during sleep, unit: s";

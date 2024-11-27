@@ -212,6 +212,20 @@
                      NSLocalizedString(@"fall_asleep_duration", nil),
                      NSLocalizedString(@"heart_rate", nil),
                      NSLocalizedString(@"respiration_rate", nil),
+                     NSLocalizedString(@"hrvRmssd", nil),//hrv均值
+                     NSLocalizedString(@"hrvStress", nil),//压力
+                     NSLocalizedString(@"hrv_30_avg", nil),//30日hrv均值
+                     NSLocalizedString(@"hrv_range", nil),//hrv基线范围
+                     NSLocalizedString(@"ahIndex", nil),//ahi值
+                     NSLocalizedString(@"breath_pause_distribution", nil),//ahi呼吸暂时次数分布
+                     NSLocalizedString(@"breath_duration", nil),//ahi呼吸事件总持续时长
+                     NSLocalizedString(@"breath_cnt", nil),//ahi呼吸事件总次数
+                     NSLocalizedString(@"csaDur", nil),//睡眠期内中枢性呼吸暂停持续时长，单位：秒
+                     NSLocalizedString(@"csaCnt", nil),//睡眠期内中枢性呼吸暂停出现的次数
+                     NSLocalizedString(@"csaMaxDur", nil),//睡眠期内最长中枢性呼吸暂停持续的时长，单位：秒
+                     NSLocalizedString(@"osaDur", nil),//睡眠期内阻塞性呼吸暂停/低通气持续时长，单位：秒
+                     NSLocalizedString(@"osaCnt", nil),//睡眠期内阻塞性呼吸暂停/低通气出现的次数
+                     NSLocalizedString(@"osaMaxDur", nil),//睡眠期内最长阻塞性呼吸暂停/低通气持续的时长，单位：秒
                      NSLocalizedString(@"respiration_pause", nil),
                      NSLocalizedString(@"deep_sleep_proportion", nil),
                      NSLocalizedString(@"medium_sleep_proportion", nil),

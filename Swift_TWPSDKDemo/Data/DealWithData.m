@@ -118,8 +118,30 @@
     
     NSString *humRangeStr = [self rangeString:obj.eHumidityArray];
     humRangeStr = [NSString stringWithFormat:@"%@%@", humRangeStr, @"%"];
+
+    //hrv
+    NSString *hrvRmssd = [NSString stringWithFormat:@"%@", obj.hrvRmssd];
+    NSString *hrvStress =[NSString stringWithFormat:@"%@", obj.hrvStress];
+    NSString *hrvRmssdMean =[NSString stringWithFormat:@"%@", obj.hrvRmssdMean];
+    NSString *hrvRmssdRange =[NSString stringWithFormat:@"%@~%@", obj.hrvRmssdMin,obj.hrvRmssdMax];
     
-    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
+    //ahi
+    NSString *ahIndex =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.ahIndex : @"--"];
+    
+    NSString *brPauseDis =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.brPauseDis : @"--"];
+    NSString *brDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.brDur : @"--"];
+    NSString *brCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.brCnt : @"--"];
+    
+    NSString *csaDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaDur : @"--"];
+    NSString *csaCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaCnt : @"--"];
+    NSString *csaMaxDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaMaxDur : @"--"];
+    
+    NSString *osaDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaDur : @"--"];
+    NSString *osaCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaCnt : @"--"];
+    NSString *osaMaxDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaMaxDur : @"--"];
+    
+    
+    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,hrvRmssd,hrvStress,hrvRmssdMean,hrvRmssdRange,ahIndex,brPauseDis,brDur,brCnt,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur ,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
 }
 
 

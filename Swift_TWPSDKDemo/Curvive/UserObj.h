@@ -151,6 +151,31 @@ typedef NS_ENUM(NSInteger,SLPSleepBodyMovementGrades) {
 @property (nonatomic,readonly)SLPSleepScoreGrades sleepScoreGrades;
 @property (nonatomic,readonly)SLPSleepBodyMovementGrades bodymovementGrades;
 
+//hrv
+@property(nonatomic,strong)NSNumber  *hrvRmssd;
+//@property(nonatomic,strong)NSNumber  *
+@property(nonatomic,strong)NSNumber  *hrvRmssdMean;
+@property(nonatomic,strong)NSNumber  *hrvRmssdMin;
+@property(nonatomic,strong)NSNumber  *hrvRmssdMax;
+@property(nonatomic,strong)NSNumber  *hrvStress;
+
+//ahi
+@property (nonatomic,assign) BOOL showAHi;
+@property(nonatomic,strong)NSNumber  *ahIndex;
+
+@property(nonatomic,strong)NSNumber  *brPauseDis;
+@property(nonatomic,strong)NSNumber  *brDur;
+@property(nonatomic,strong)NSNumber  *brCnt;
+
+@property(nonatomic,strong)NSNumber  *csaDur;
+@property(nonatomic,strong)NSNumber  *csaCnt;
+@property(nonatomic,strong)NSNumber  *csaMaxDur;
+
+@property(nonatomic,strong)NSNumber  *osaDur;
+@property(nonatomic,strong)NSNumber  *osaCnt;
+@property(nonatomic,strong)NSNumber  *osaMaxDur;
+
+
 -(id )init;
 
 /**

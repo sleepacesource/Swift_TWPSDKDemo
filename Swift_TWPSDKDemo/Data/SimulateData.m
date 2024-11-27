@@ -292,6 +292,25 @@
     obj.deductionName=[self backDeductionArrayyFromAnalysis:scoreList][0];
     obj.deductionValue=[self backDeductionArrayyFromAnalysis:scoreList][1];
     
+    //hrv
+    obj.hrvRmssd =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"hrvRmssd"]integerValue]];
+    obj.hrvRmssdMean =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"hrvRmssdMean"]integerValue]];
+    obj.hrvRmssdMin =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"hrvRmssdMin"]integerValue]];
+    obj.hrvRmssdMax =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"hrvRmssdMax"]integerValue]];
+    obj.hrvStress  =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"hrvStress"]integerValue]];
+    
+    //ahi
+    obj.showAHi = [[analysisDic objectForKey:@"ahiFlag"] boolValue];
+    obj.ahIndex =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"ahIndex"]integerValue]];
+    obj.csaDur =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaDur"]integerValue]];
+    obj.csaCnt =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaCnt"]integerValue]];
+    obj.csaMaxDur =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"csaMaxDur"]integerValue]];
+    obj.osaDur =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaDur"]integerValue]];
+    obj.osaCnt =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaCnt"]integerValue]];
+    obj.osaMaxDur =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"osaMaxDur"]integerValue]];
+    
+    NSArray * ahiArray = [[analysisDic objectForKey:@"ahiArrayStr"] componentsSeparatedByString:@","];
+    
     
     return obj;
 }

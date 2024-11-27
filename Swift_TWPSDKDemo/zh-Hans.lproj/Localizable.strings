@@ -404,4 +404,18 @@
 "left" = "左侧（单人）";
 "right" = "右侧";
 "select_side" = "选择绑定位置";
+"hrvRmssd" = "hrv均值,单位：ms";
+"hrvStress" = "压力状态";
+"hrv_30_avg" = "30日hrv均值";
+"hrv_range" = "hrv基线范围";
+"ahIndex" = "ahi值";
+"breath_pause_distribution"="呼吸暂停次数分布";
+"breath_duration"="呼吸事件总持续时长";
+"breath_cnt"="呼吸事件总次数";
+"csaDur"= "睡眠期内中枢性呼吸暂停持续时长，单位：s";
+"csaCnt"= "睡眠期内中枢性呼吸暂停出现的次数";
+"csaMaxDur"= "睡眠期内最长中枢性呼吸暂停持续的时长，单位：s";
+"osaDur"= "睡眠期内阻塞性呼吸暂停/低通气持续时长，单位：s";
+"osaCnt"= "睡眠期内阻塞性呼吸暂停/低通气出现的次数";
+"osaMaxDur"= "睡眠期内最长阻塞性呼吸暂停/低通气持续的时长，单位：s";
 

@@ -13,4 +13,6 @@
 
 +(NSString *)backBreathPause:(NSArray *)breathArray user:(UserObj *)obj;
 
++(NSString *)backBreathPauseTimes:(NSString *)ahiArrayStr;
+
 @end

@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var leftBT: UIButton!
     @IBOutlet weak var rightBT: UIButton!
     
+    
     var selectLeftRight = 0
     
     

@@ -142,6 +142,25 @@
     obj.eHumidityArray = [NSMutableArray arrayWithObjects:@(21), @(24), @(25), @(30), @(26), @(29), nil];
     obj.eTempArray = [NSMutableArray arrayWithObjects:@(46), @(63), @(49), @(55), @(66), @(57), nil];
     
+    obj.hrvRmssd = @"59";
+    obj.hrvStress = @"状态正常";
+    obj.hrvRmssdMean = @"56";
+    obj.hrvRmssdMin = @"50";
+    obj.hrvRmssdMax = @"60";
+    
+    obj.showAHi = true;
+    obj.ahIndex = [NSNumber numberWithInteger:0];
+    obj.ahiArrayStr= [self backBreathPauseTimes:@"[4638,5916,6,2,22,9,8,44,64]"];;
+    obj.breathPauseTimes = [NSNumber numberWithInteger:6];
+    obj.breathPauseAllTime = [NSNumber numberWithInteger:121];
+    
+    obj.osaDur = [NSNumber numberWithInteger:60];
+    obj.osaCnt = [NSNumber numberWithInteger:5];
+    obj.osaMaxDur = [NSNumber numberWithInteger:15];
+    obj.csaDur = [NSNumber numberWithInteger:24];
+    obj.csaCnt = [NSNumber numberWithInteger:2];
+    obj.csaMaxDur = [NSNumber numberWithInteger:17];
+    
     return obj;
 }
 

@@ -162,10 +162,9 @@ typedef NS_ENUM(NSInteger,SLPSleepBodyMovementGrades) {
 //ahi
 @property (nonatomic,assign) BOOL showAHi;
 @property(nonatomic,strong)NSNumber  *ahIndex;
-
-@property(nonatomic,strong)NSNumber  *brPauseDis;
-@property(nonatomic,strong)NSNumber  *brDur;
-@property(nonatomic,strong)NSNumber  *brCnt;
+@property(nonatomic,strong)NSString *ahiArrayStr;
+@property(nonatomic,strong)NSString *breathPauseAllTime;
+@property(nonatomic,strong)NSString *breathPauseTimes;
 
 @property(nonatomic,strong)NSNumber  *csaDur;
 @property(nonatomic,strong)NSNumber  *csaCnt;

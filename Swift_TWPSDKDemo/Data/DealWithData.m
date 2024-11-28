@@ -127,10 +127,9 @@
     
     //ahi
     NSString *ahIndex =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.ahIndex : @"--"];
-    
-    NSString *brPauseDis =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.brPauseDis : @"--"];
-    NSString *brDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.brDur : @"--"];
-    NSString *brCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.brCnt : @"--"];
+    NSArray *ahiArray = obj.ahiArrayStr ?  [obj.ahiArrayStr componentsSeparatedByString:@","] : @[];
+    NSString *breathPauseAllTime =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.breathPauseAllTime : @"--"];
+    NSString *breathPauseTimes =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.breathPauseTimes : @"--"];
     
     NSString *csaDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaDur : @"--"];
     NSString *csaCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaCnt : @"--"];
@@ -140,8 +139,7 @@
     NSString *osaCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaCnt : @"--"];
     NSString *osaMaxDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaMaxDur : @"--"];
     
-    
-    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,hrvRmssd,hrvStress,hrvRmssdMean,hrvRmssdRange,ahIndex,brPauseDis,brDur,brCnt,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur ,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
+    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,hrvRmssd,hrvStress,hrvRmssdMean,hrvRmssdRange,ahIndex,@"",breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur ,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
 }
 
 

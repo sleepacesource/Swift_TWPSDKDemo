@@ -277,7 +277,7 @@
     obj.asleepTime=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"fallAlseepAllTime"]integerValue]];
     obj.recordCount = [NSNumber numberWithInteger:[[summaryDic objectForKey:@"recordCount"] integerValue]];
     obj.lccs=[NSNumber numberWithInteger:[[analysisDic objectForKey:@"leaveBedTimes"]integerValue]];
-    obj.arithmeticVer= [analysisDic objectForKey:@"breathRateSlowAllTime"];
+    obj.arithmeticVer= [NSString stringWithFormat:@"%@",[summaryDic objectForKey:@"arithmeticVer"]];
     
     NSTimeInterval startTime = obj.startTime.integerValue;//上床时间
     NSTimeInterval endTime = startTime + obj.recordCount.integerValue * 60;//起床时间
@@ -319,7 +319,7 @@
     obj.hrvStress  =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"hrvStress"]integerValue]];
     
     //ahi
-    obj.showAHi = [[analysisDic objectForKey:@"ahiFlag"] boolValue];
+//    obj.showAHi = [[analysisDic objectForKey:@"ahiFlag"] boolValue];
     obj.ahIndex =[NSNumber numberWithInteger:[[analysisDic objectForKey:@"ahIndex"]integerValue]];
     obj.ahiArrayStr = [self backBreathPauseTimes:[analysisDic objectForKey:@"ahiArrayStr"]];
     obj.breathPauseAllTime = [NSNumber numberWithInteger:[[analysisDic objectForKey:@"breathPauseAllTime"]integerValue]];

@@ -126,20 +126,22 @@
     NSString *hrvRmssdRange =[NSString stringWithFormat:@"%@~%@", obj.hrvRmssdMin,obj.hrvRmssdMax];
     
     //ahi
-    NSString *ahIndex =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.ahIndex : @"--"];
-    NSString *ahiArrayStr = obj.ahiArrayStr ? [NSString stringWithFormat:@"%@",obj.ahiArrayStr] : @"--";
-    NSString *breathPauseAllTime =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.breathPauseAllTime : @"--"];
-    NSString *breathPauseTimes =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.breathPauseTimes : @"--"];
+    NSString *ahIndex =[NSString stringWithFormat:@"%@",  obj.ahIndex ];
+    NSString *ahiArrayStr = obj.ahiArrayStr ? [NSString stringWithFormat:@"%@",obj.ahiArrayStr] :@"--" ;
+    NSString *breathPauseAllTime =[NSString stringWithFormat:@"%@",  obj.breathPauseAllTime ];
+    NSString *breathPauseTimes =[NSString stringWithFormat:@"%@",  obj.breathPauseTimes ];
     
-    NSString *csaDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaDur : @"--"];
-    NSString *csaCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaCnt : @"--"];
-    NSString *csaMaxDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.csaMaxDur : @"--"];
+    NSString *csaDur =[NSString stringWithFormat:@"%@",  obj.csaDur ];
+    NSString *csaCnt =[NSString stringWithFormat:@"%@", obj.csaCnt ];
+    NSString *csaMaxDur =[NSString stringWithFormat:@"%@",  obj.csaMaxDur ];
     
-    NSString *osaDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaDur : @"--"];
-    NSString *osaCnt =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaCnt : @"--"];
-    NSString *osaMaxDur =[NSString stringWithFormat:@"%@", obj.showAHi ? obj.osaMaxDur : @"--"];
+    NSString *osaDur =[NSString stringWithFormat:@"%@", obj.osaDur ];
+    NSString *osaCnt =[NSString stringWithFormat:@"%@",  obj.osaCnt ];
+    NSString *osaMaxDur =[NSString stringWithFormat:@"%@", obj.osaMaxDur];
+    NSString *ver = [NSString stringWithFormat:@"%@",obj.arithmeticVer];
     
-    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,hrvRmssd,hrvStress,hrvRmssdMean,hrvRmssdRange,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur ,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr];
+    
+    return  @[date,score,deArr,sleepTime,duration,asleepTime,averageHeartRate,averageBreathRate,hrvRmssd,hrvStress,hrvRmssdMean,hrvRmssdRange,ahIndex,ahiArrayStr,breathPauseAllTime,breathPauseTimes,csaDur,csaCnt,csaMaxDur,osaDur,osaCnt,osaMaxDur ,breathPauseStr,deepPre,remPre,lightPre,wakePre,wakes,turnOver,bodyMovement,leaveBed, tempRangeStr, humRangeStr,ver];
 }
 
 

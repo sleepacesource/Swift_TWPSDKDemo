@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         }
 //        else
 //        {
-//            self.tokeTextfield.text = "test"
+            self.tokeTextfield.text = "895882396@qq.com"
 //        }
         if  (UserDefaults.standard.string(forKey: "deviceID") != nil) {
             self.deviceIdTextfield.text = UserDefaults.standard.string(forKey: "deviceID") 

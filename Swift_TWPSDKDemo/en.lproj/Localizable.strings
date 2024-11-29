@@ -415,3 +415,4 @@
 "osaDur"= "Duration of obstructive apnea/hypopnea during sleep, unit: s";
 "osaCnt" = "Number of obstructive apneas/hypopneas during sleep";
 "osaMaxDur"= "The longest duration of obstructive apnea/hypopnea during sleep, unit: s";
+"arithmeticVer" ="arithmetic Version";

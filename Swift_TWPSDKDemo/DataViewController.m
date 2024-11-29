@@ -237,6 +237,7 @@
                      NSLocalizedString(@"out_times", nil),
                      NSLocalizedString(@"temperature", nil),
                      NSLocalizedString(@"humidity", nil),
+                     NSLocalizedString(@"arithmeticVer", nil)
                      ];
     }
     else
